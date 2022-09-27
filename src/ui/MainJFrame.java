@@ -28,38 +28,19 @@ public class MainJFrame extends javax.swing.JFrame {
 
         splitPane = new javax.swing.JSplitPane();
         controlPanel = new javax.swing.JPanel();
-        createButton = new javax.swing.JButton();
-        viewButton = new javax.swing.JButton();
         workspacePanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        createButton.setText("Create");
-
-        viewButton.setText("View");
-        viewButton.setToolTipText("");
 
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
         controlPanel.setLayout(controlPanelLayout);
         controlPanelLayout.setHorizontalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(controlPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(controlPanelLayout.createSequentialGroup()
-                        .addComponent(createButton, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(viewButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+            .addGap(0, 227, Short.MAX_VALUE)
         );
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(controlPanelLayout.createSequentialGroup()
-                .addGap(138, 138, 138)
-                .addComponent(createButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(viewButton)
-                .addGap(398, 398, 398))
+            .addGap(0, 600, Short.MAX_VALUE)
         );
 
         splitPane.setLeftComponent(controlPanel);
@@ -128,9 +109,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel controlPanel;
-    private javax.swing.JButton createButton;
     private javax.swing.JSplitPane splitPane;
-    private javax.swing.JButton viewButton;
     private javax.swing.JPanel workspacePanel;
     // End of variables declaration//GEN-END:variables
 }
