@@ -41,10 +41,10 @@
                   <Component id="txtEmployeeId" alignment="2" max="32767" attributes="0"/>
                   <Component id="txtAge" alignment="2" min="-2" pref="250" max="-2" attributes="0"/>
                   <Component id="txtGender" alignment="2" min="-2" pref="250" max="-2" attributes="0"/>
-                  <Component id="inputName4" alignment="2" min="-2" pref="250" max="-2" attributes="0"/>
+                  <Component id="txtStartDate" alignment="2" min="-2" pref="250" max="-2" attributes="0"/>
                   <Component id="txtLevel" alignment="2" min="-2" pref="250" max="-2" attributes="0"/>
                   <Component id="txtTeamInfo" alignment="2" min="-2" pref="250" max="-2" attributes="0"/>
-                  <Component id="txtPositinTitle" alignment="2" min="-2" pref="250" max="-2" attributes="0"/>
+                  <Component id="txtPositionTitle" alignment="2" min="-2" pref="250" max="-2" attributes="0"/>
                   <Component id="txtCellPhoneNumber" alignment="2" min="-2" pref="250" max="-2" attributes="0"/>
                   <Component id="txtEmailAddress" alignment="2" min="-2" pref="250" max="-2" attributes="0"/>
               </Group>
@@ -87,7 +87,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="2" attributes="0">
                   <Component id="startDate" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputName4" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtStartDate" alignment="2" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="2" attributes="0">
@@ -102,7 +102,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="2" attributes="0">
                   <Component id="positionTitle" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtPositinTitle" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtPositionTitle" alignment="2" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="2" attributes="0">
@@ -211,9 +211,9 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtGenderActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputName4">
+    <Component class="javax.swing.JTextField" name="txtStartDate">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputName4ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtStartDateActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtLevel">
@@ -226,9 +226,9 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTeamInfoActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtPositinTitle">
+    <Component class="javax.swing.JTextField" name="txtPositionTitle">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPositinTitleActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPositionTitleActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtCellPhoneNumber">
@@ -251,6 +251,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Save"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="reset">
       <Properties>

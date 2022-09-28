@@ -6,6 +6,7 @@ package ui;
 
 import model.ContactInfo;
 import model.EmployeeProfile;
+import model.EmployeeProfileHistory;
 
 /**
  *
@@ -14,16 +15,14 @@ import model.EmployeeProfile;
 public class MainJFrame extends javax.swing.JFrame {
     
     
-    private EmployeeProfile employeeProfile;
-    private ContactInfo contactInfo;
+    private EmployeeProfileHistory employeeProfileHistory;
 
     /**
      * Creates new form MainJFrame
      */
     public MainJFrame() {
         initComponents();
-        employeeProfile = new EmployeeProfile();
-        contactInfo = new ContactInfo();
+        employeeProfileHistory = new EmployeeProfileHistory();
     }
 
     /**
@@ -108,7 +107,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private void createEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createEmployeeActionPerformed
         // TODO add your handling code here:
         
-        CreateJPanel createJPanel= new CreateJPanel();
+        CreateJPanel createJPanel= new CreateJPanel(employeeProfileHistory);
         splitPane.setRightComponent(createJPanel);
     }//GEN-LAST:event_createEmployeeActionPerformed
 

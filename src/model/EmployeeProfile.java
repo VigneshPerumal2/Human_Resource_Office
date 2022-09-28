@@ -18,15 +18,29 @@ public class EmployeeProfile {
     private int level ;
     private String teamInfo ;
     private String positionTitle ;
-    private ContactInfo contactInfo;
     //Add photo
+    private int cellPhoneNumber;
+    private String emailAddress;
+    private ContactInfo contactInfo;
 
-    public ContactInfo getContactInfo() {
-        return contactInfo;
+    public EmployeeProfile() {
+        this.contactInfo = new ContactInfo();
+    }
+    
+    public int getCellPhoneNumber() {
+        return contactInfo.getCellPhoneNumber();
     }
 
-    public void setContactInfo(ContactInfo contactInfo) {
-        this.contactInfo = contactInfo;
+    public void setCellPhoneNumber(int cellPhoneNumber) {
+        this.contactInfo.setCellPhoneNumber(cellPhoneNumber);
+    }
+
+    public String getEmailAddress() {
+        return contactInfo.getEmailAddress();
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        this.contactInfo.setEmailAddress(emailAddress);
     }
 
     public String getName() {

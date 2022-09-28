@@ -4,17 +4,23 @@
  */
 package ui;
 
+import model.EmployeeProfile;
+import model.EmployeeProfileHistory;
+
 /**
  *
  * @author vigy
  */
 public class CreateJPanel extends javax.swing.JPanel {
+    
+    EmployeeProfileHistory employeeProfileHistory;
 
     /**
      * Creates new form CreateJPanel
      */
-    public CreateJPanel() {
+    public CreateJPanel(EmployeeProfileHistory employeeProfileHistory) {
         initComponents();
+        this.employeeProfileHistory=employeeProfileHistory;
     }
 
     /**
@@ -41,10 +47,10 @@ public class CreateJPanel extends javax.swing.JPanel {
         txtEmployeeId = new javax.swing.JTextField();
         txtAge = new javax.swing.JTextField();
         txtGender = new javax.swing.JTextField();
-        inputName4 = new javax.swing.JTextField();
+        txtStartDate = new javax.swing.JTextField();
         txtLevel = new javax.swing.JTextField();
         txtTeamInfo = new javax.swing.JTextField();
-        txtPositinTitle = new javax.swing.JTextField();
+        txtPositionTitle = new javax.swing.JTextField();
         txtCellPhoneNumber = new javax.swing.JTextField();
         txtEmailAddress = new javax.swing.JTextField();
         save = new javax.swing.JButton();
@@ -101,9 +107,9 @@ public class CreateJPanel extends javax.swing.JPanel {
             }
         });
 
-        inputName4.addActionListener(new java.awt.event.ActionListener() {
+        txtStartDate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputName4ActionPerformed(evt);
+                txtStartDateActionPerformed(evt);
             }
         });
 
@@ -119,9 +125,9 @@ public class CreateJPanel extends javax.swing.JPanel {
             }
         });
 
-        txtPositinTitle.addActionListener(new java.awt.event.ActionListener() {
+        txtPositionTitle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPositinTitleActionPerformed(evt);
+                txtPositionTitleActionPerformed(evt);
             }
         });
 
@@ -140,6 +146,11 @@ public class CreateJPanel extends javax.swing.JPanel {
         save.setBackground(new java.awt.Color(0, 51, 204));
         save.setForeground(new java.awt.Color(255, 255, 255));
         save.setText("Save");
+        save.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveActionPerformed(evt);
+            }
+        });
 
         reset.setText("Reset");
 
@@ -170,10 +181,10 @@ public class CreateJPanel extends javax.swing.JPanel {
                     .addComponent(txtEmployeeId)
                     .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtGender, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inputName4, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtTeamInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPositinTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPositionTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtCellPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtEmailAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(90, 90, 90))
@@ -208,7 +219,7 @@ public class CreateJPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(startDate)
-                    .addComponent(inputName4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(level)
@@ -220,7 +231,7 @@ public class CreateJPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(positionTitle)
-                    .addComponent(txtPositinTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPositionTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(cellPhoneNumber)
@@ -241,10 +252,6 @@ public class CreateJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNameActionPerformed
 
-    private void txtEmployeeIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmployeeIdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEmployeeIdActionPerformed
-
     private void txtAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAgeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAgeActionPerformed
@@ -253,9 +260,9 @@ public class CreateJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtGenderActionPerformed
 
-    private void inputName4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputName4ActionPerformed
+    private void txtStartDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStartDateActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputName4ActionPerformed
+    }//GEN-LAST:event_txtStartDateActionPerformed
 
     private void txtLevelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLevelActionPerformed
         // TODO add your handling code here:
@@ -265,9 +272,9 @@ public class CreateJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTeamInfoActionPerformed
 
-    private void txtPositinTitleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPositinTitleActionPerformed
+    private void txtPositionTitleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPositionTitleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtPositinTitleActionPerformed
+    }//GEN-LAST:event_txtPositionTitleActionPerformed
 
     private void txtCellPhoneNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCellPhoneNumberActionPerformed
         // TODO add your handling code here:
@@ -277,6 +284,26 @@ public class CreateJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailAddressActionPerformed
 
+    private void txtEmployeeIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmployeeIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmployeeIdActionPerformed
+
+    private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
+        // TODO add your handling code here:
+        
+     String name = txtName.getText();
+     int employeeId = Integer.parseInt(txtEmployeeId.getText()) ;
+     int age = Integer.parseInt(txtAge.getText()) ;
+     String gender = txtGender.getText(); 
+     String startDate = txtStartDate.getText(); 
+     int level = Integer.parseInt(txtLevel.getText()) ;
+     String teamInfo = txtTeamInfo.getText() ;
+     String positionTitle= txtPositionTitle.getText() ;
+     int cellPhoneNumber = Integer.parseInt(txtEmployeeId.getText()) ;
+     String emailAddress= txtEmailAddress.getText();
+     
+    }//GEN-LAST:event_saveActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel age;
@@ -285,7 +312,6 @@ public class CreateJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel emailAddress;
     private javax.swing.JLabel employeeId;
     private javax.swing.JLabel gender;
-    private javax.swing.JTextField inputName4;
     private javax.swing.JLabel level;
     private javax.swing.JLabel name;
     private javax.swing.JLabel positionTitle;
@@ -300,7 +326,8 @@ public class CreateJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtGender;
     private javax.swing.JTextField txtLevel;
     private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtPositinTitle;
+    private javax.swing.JTextField txtPositionTitle;
+    private javax.swing.JTextField txtStartDate;
     private javax.swing.JTextField txtTeamInfo;
     // End of variables declaration//GEN-END:variables
 }
