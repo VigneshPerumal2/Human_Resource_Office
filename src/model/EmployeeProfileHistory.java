@@ -28,9 +28,17 @@ public class EmployeeProfileHistory {
     
     public EmployeeProfile addNewEmployee(EmployeeProfile employeeProfile){
         history.add(employeeProfile); 
-        System.out.println("Item Succefully added");
+        System.out.println("Item Successfully added");
         System.out.println("Employee Profile->"+employeeProfile);
         return employeeProfile;
+    }
+    
+    public void deleteEmployee(int index){
+        history.remove(index);
+    }
+    
+    public void updateEmployee(EmployeeProfile ep,int index){
+        history.set(index,ep);
     }
     
 }
