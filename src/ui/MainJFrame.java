@@ -53,6 +53,11 @@ public class MainJFrame extends javax.swing.JFrame {
         });
 
         viewButton.setText("View Employee");
+        viewButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
         controlPanel.setLayout(controlPanelLayout);
@@ -72,7 +77,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(createEmployee)
                 .addGap(18, 18, 18)
                 .addComponent(viewButton)
-                .addContainerGap(314, Short.MAX_VALUE))
+                .addContainerGap(514, Short.MAX_VALUE))
         );
 
         splitPane.setLeftComponent(controlPanel);
@@ -81,11 +86,11 @@ public class MainJFrame extends javax.swing.JFrame {
         workspacePanel.setLayout(workspacePanelLayout);
         workspacePanelLayout.setHorizontalGroup(
             workspacePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 675, Short.MAX_VALUE)
+            .addGap(0, 768, Short.MAX_VALUE)
         );
         workspacePanelLayout.setVerticalGroup(
             workspacePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGap(0, 800, Short.MAX_VALUE)
         );
 
         splitPane.setRightComponent(workspacePanel);
@@ -108,8 +113,17 @@ public class MainJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         CreateJPanel createJPanel= new CreateJPanel(employeeProfileHistory);
+        
         splitPane.setRightComponent(createJPanel);
+      
+
     }//GEN-LAST:event_createEmployeeActionPerformed
+
+    private void viewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewButtonActionPerformed
+        // TODO add your handling code here:
+        ViewJPanel viewJPanel = new ViewJPanel(employeeProfileHistory);
+        splitPane.setRightComponent(viewJPanel);
+    }//GEN-LAST:event_viewButtonActionPerformed
 
     /**
      * @param args the command line arguments

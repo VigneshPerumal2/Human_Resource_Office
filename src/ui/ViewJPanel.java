@@ -4,7 +4,7 @@
  */
 package ui;
 
-import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import model.EmployeeProfile;
 import model.EmployeeProfileHistory;
 
@@ -12,16 +12,17 @@ import model.EmployeeProfileHistory;
  *
  * @author vigy
  */
-public class CreateJPanel extends javax.swing.JPanel {
-    
-    EmployeeProfileHistory employeeProfileHistory;
+public class ViewJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form CreateJPanel
+     * Creates new form ViewJPanel
      */
-    public CreateJPanel(EmployeeProfileHistory employeeProfileHistory) {
+    
+    EmployeeProfileHistory employeeProfileHistory;
+    public ViewJPanel(EmployeeProfileHistory employeeProfileHistory) {
         initComponents();
-        this.employeeProfileHistory=employeeProfileHistory;
+        this.employeeProfileHistory =  employeeProfileHistory;
+        populateTable();
     }
 
     /**
@@ -34,6 +35,20 @@ public class CreateJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         createEmployeeLabel = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblEmployeeHistory = new javax.swing.JTable();
+        btnDelete = new javax.swing.JButton();
+        btnEdit = new javax.swing.JButton();
+        cellPhoneNumber = new javax.swing.JLabel();
+        txtEmailAddress = new javax.swing.JTextField();
+        emailAddress = new javax.swing.JLabel();
+        txtName = new javax.swing.JTextField();
+        txtEmployeeId = new javax.swing.JTextField();
+        txtAge = new javax.swing.JTextField();
+        txtGender = new javax.swing.JTextField();
+        txtStartDate = new javax.swing.JTextField();
+        txtLevel = new javax.swing.JTextField();
+        txtTeamInfo = new javax.swing.JTextField();
         name = new javax.swing.JLabel();
         employeeId = new javax.swing.JLabel();
         age = new javax.swing.JLabel();
@@ -41,52 +56,78 @@ public class CreateJPanel extends javax.swing.JPanel {
         startDate = new javax.swing.JLabel();
         level = new javax.swing.JLabel();
         teamInfo = new javax.swing.JLabel();
-        positionTitle = new javax.swing.JLabel();
-        cellPhoneNumber = new javax.swing.JLabel();
-        emailAddress = new javax.swing.JLabel();
-        txtName = new javax.swing.JTextField();
-        txtAge = new javax.swing.JTextField();
-        txtGender = new javax.swing.JTextField();
-        txtStartDate = new javax.swing.JTextField();
-        txtLevel = new javax.swing.JTextField();
-        txtTeamInfo = new javax.swing.JTextField();
         txtPositionTitle = new javax.swing.JTextField();
+        positionTitle = new javax.swing.JLabel();
         txtCellPhoneNumber = new javax.swing.JTextField();
-        txtEmailAddress = new javax.swing.JTextField();
-        save = new javax.swing.JButton();
-        reset = new javax.swing.JButton();
-        txtEmployeeId = new javax.swing.JTextField();
 
         createEmployeeLabel.setBackground(new java.awt.Color(153, 153, 153));
         createEmployeeLabel.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         createEmployeeLabel.setForeground(new java.awt.Color(153, 153, 153));
         createEmployeeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        createEmployeeLabel.setText("Create Employee");
+        createEmployeeLabel.setText("View Employee");
         createEmployeeLabel.setToolTipText("To create new employee");
 
-        name.setText("Name:");
+        tblEmployeeHistory.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Employee Id", "Name", "Age", "Gender", "Start Date", "Level", "Team Info", "Position Title", "Cell Phone Number", "Email Address"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, true, false
+            };
 
-        employeeId.setText("Employee Id:");
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
-        age.setText("Age:");
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tblEmployeeHistory);
 
-        gender.setText("Gender:");
+        btnDelete.setBackground(new java.awt.Color(255, 0, 0));
+        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
+        btnDelete.setText("Delete");
 
-        startDate.setText("Start Date:");
-
-        level.setText("Level:");
-
-        teamInfo.setText("Team Info:");
-
-        positionTitle.setText("Position Title:");
+        btnEdit.setBackground(new java.awt.Color(0, 51, 255));
+        btnEdit.setForeground(new java.awt.Color(255, 255, 255));
+        btnEdit.setText("Edit");
 
         cellPhoneNumber.setText("Cell Phone Number:");
+
+        txtEmailAddress.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmailAddressActionPerformed(evt);
+            }
+        });
 
         emailAddress.setText("Email Address:");
 
         txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNameActionPerformed(evt);
+            }
+        });
+
+        txtEmployeeId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmployeeIdActionPerformed(evt);
             }
         });
 
@@ -120,11 +161,27 @@ public class CreateJPanel extends javax.swing.JPanel {
             }
         });
 
+        name.setText("Name:");
+
+        employeeId.setText("Employee Id:");
+
+        age.setText("Age:");
+
+        gender.setText("Gender:");
+
+        startDate.setText("Start Date:");
+
+        level.setText("Level:");
+
+        teamInfo.setText("Team Info:");
+
         txtPositionTitle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPositionTitleActionPerformed(evt);
             }
         });
+
+        positionTitle.setText("Position Title:");
 
         txtCellPhoneNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,82 +189,62 @@ public class CreateJPanel extends javax.swing.JPanel {
             }
         });
 
-        txtEmailAddress.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEmailAddressActionPerformed(evt);
-            }
-        });
-
-        save.setBackground(new java.awt.Color(0, 51, 204));
-        save.setForeground(new java.awt.Color(255, 255, 255));
-        save.setText("Save");
-        save.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveActionPerformed(evt);
-            }
-        });
-
-        reset.setText("Reset");
-        reset.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                resetActionPerformed(evt);
-            }
-        });
-
-        txtEmployeeId.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEmployeeIdActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(createEmployeeLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(createEmployeeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(employeeId)
-                            .addComponent(name)
-                            .addComponent(age)
-                            .addComponent(gender)
-                            .addComponent(startDate)
-                            .addComponent(level)
-                            .addComponent(teamInfo)
-                            .addComponent(positionTitle)
-                            .addComponent(cellPhoneNumber)
-                            .addComponent(emailAddress))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtGender, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtTeamInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPositionTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCellPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtEmailAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtEmployeeId, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(90, 90, 90))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(reset)
-                        .addGap(18, 18, 18)
-                        .addComponent(save)
-                        .addGap(91, 91, 91))))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnDelete)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnEdit)))
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(102, 102, 102)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(employeeId)
+                    .addComponent(name)
+                    .addComponent(age)
+                    .addComponent(gender)
+                    .addComponent(startDate)
+                    .addComponent(level)
+                    .addComponent(teamInfo)
+                    .addComponent(positionTitle)
+                    .addComponent(cellPhoneNumber)
+                    .addComponent(emailAddress))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtGender, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTeamInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPositionTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCellPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEmailAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEmployeeId, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnDelete, btnEdit});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(createEmployeeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(createEmployeeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnDelete)
+                    .addComponent(btnEdit))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(name)
                     .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -247,17 +284,21 @@ public class CreateJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(emailAddress)
                     .addComponent(txtEmailAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(save)
-                    .addComponent(reset))
-                .addGap(42, 42, 42))
+                .addGap(0, 224, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtEmailAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailAddressActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmailAddressActionPerformed
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNameActionPerformed
+
+    private void txtEmployeeIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmployeeIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmployeeIdActionPerformed
 
     private void txtAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAgeActionPerformed
         // TODO add your handling code here:
@@ -287,86 +328,22 @@ public class CreateJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCellPhoneNumberActionPerformed
 
-    private void txtEmailAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailAddressActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEmailAddressActionPerformed
-
-    private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
-        // TODO add your handling code here:
-        
-     String name = txtName.getText();
-     int employeeId = Integer.parseInt(txtEmployeeId.getText()) ;
-     int age = Integer.parseInt(txtAge.getText()) ;
-     String gender = txtGender.getText(); 
-     String startDate = txtStartDate.getText(); 
-     int level = Integer.parseInt(txtLevel.getText()) ;
-     String teamInfo = txtTeamInfo.getText() ;
-     String positionTitle= txtPositionTitle.getText() ;
-     int cellPhoneNumber = Integer.parseInt(txtCellPhoneNumber.getText()) ;
-     String emailAddress= txtEmailAddress.getText();
-     
-     System.out.println("Age->"+age);
-     
-     EmployeeProfile ep = new EmployeeProfile();
-     ep.setName(name);
-     ep.setCellPhoneNumber(cellPhoneNumber);
-     ep.setEmailAddress(emailAddress);
-     ep.setEmployeeId(employeeId);
-     ep.setGender(gender);
-     ep.setLevel(level);
-     ep.setPositionTitle(positionTitle);
-     ep.setStartDate(startDate);
-     ep.setTeamInfo(teamInfo);
-     ep.setAge(age);
-     employeeProfileHistory.addNewEmployee(ep);
-     txtName.setText("");
-     txtEmployeeId.setText("");
-     txtAge.setText("");
-     txtGender.setText("");
-     txtStartDate.setText("");
-     txtLevel.setText("");
-     txtTeamInfo.setText("");
-     txtPositionTitle.setText("");
-     txtEmployeeId.setText("");
-     txtEmailAddress.setText("");
-     txtCellPhoneNumber.setText("");
-     JOptionPane.showMessageDialog(this,"New Employee Details was added");
-     
-    }//GEN-LAST:event_saveActionPerformed
-
-    private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
-        // TODO add your handling code here:
-        txtName.setText("");
-     txtEmployeeId.setText("");
-     txtAge.setText("");
-     txtGender.setText("");
-     txtStartDate.setText("");
-     txtLevel.setText("");
-     txtTeamInfo.setText("");
-     txtPositionTitle.setText("");
-     txtEmployeeId.setText("");
-     txtEmailAddress.setText("");
-     txtCellPhoneNumber.setText("");
-    }//GEN-LAST:event_resetActionPerformed
-
-    private void txtEmployeeIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmployeeIdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEmployeeIdActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel age;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnEdit;
     private javax.swing.JLabel cellPhoneNumber;
     private javax.swing.JLabel createEmployeeLabel;
     private javax.swing.JLabel emailAddress;
     private javax.swing.JLabel employeeId;
     private javax.swing.JLabel gender;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel level;
     private javax.swing.JLabel name;
     private javax.swing.JLabel positionTitle;
-    private javax.swing.JButton reset;
-    private javax.swing.JButton save;
     private javax.swing.JLabel startDate;
+    private javax.swing.JTable tblEmployeeHistory;
     private javax.swing.JLabel teamInfo;
     private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtCellPhoneNumber;
@@ -379,4 +356,27 @@ public class CreateJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtStartDate;
     private javax.swing.JTextField txtTeamInfo;
     // End of variables declaration//GEN-END:variables
+
+    private void populateTable() {
+        
+        DefaultTableModel model =(DefaultTableModel) tblEmployeeHistory.getModel();
+        model.setRowCount(0);
+        
+        for(EmployeeProfile e: employeeProfileHistory.getHistory()){
+            Object row[]=new Object[10];
+            row[0] = e.getEmployeeId();
+            row[1] = e.getName();
+            row[2] = e.getAge();
+            row[3] = e.getGender();
+            row[4] = e.getStartDate();
+            row[5] = e.getLevel();
+            row[6] = e.getTeamInfo();
+            row[7] = e.getPositionTitle();
+            row[8] = e.getCellPhoneNumber();
+            row[9] = e.getEmailAddress();
+            
+            model.addRow(row);
+            
+        }
+    }
 }
