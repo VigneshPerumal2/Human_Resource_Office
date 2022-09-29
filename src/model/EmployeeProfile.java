@@ -21,27 +21,24 @@ public class EmployeeProfile {
     //Add photo
     private int cellPhoneNumber;
     private String emailAddress;
-    private ContactInfo contactInfo;
 
-    public EmployeeProfile() {
-        this.contactInfo = new ContactInfo();
-    }
-    
     public int getCellPhoneNumber() {
-        return contactInfo.getCellPhoneNumber();
+        return cellPhoneNumber;
     }
 
     public void setCellPhoneNumber(int cellPhoneNumber) {
-        this.contactInfo.setCellPhoneNumber(cellPhoneNumber);
+        this.cellPhoneNumber = cellPhoneNumber;
     }
 
     public String getEmailAddress() {
-        return contactInfo.getEmailAddress();
+        return emailAddress;
     }
 
     public void setEmailAddress(String emailAddress) {
-        this.contactInfo.setEmailAddress(emailAddress);
+        this.emailAddress = emailAddress;
     }
+
+    
 
     public String getName() {
         return name;
@@ -106,5 +103,11 @@ public class EmployeeProfile {
     public void setPositionTitle(String positionTitle) {
         this.positionTitle = positionTitle;
     }
+
+    @Override
+    public String toString() {
+        return "EmployeeProfile{" + "name=" + name + ", employeeId=" + employeeId + ", age=" + age + ", gender=" + gender + ", startDate=" + startDate + ", level=" + level + ", teamInfo=" + teamInfo + ", positionTitle=" + positionTitle + ", cellPhoneNumber=" + cellPhoneNumber + ", emailAddress=" + emailAddress + '}';
+    }
+
     
 }

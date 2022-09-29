@@ -302,6 +302,20 @@ public class CreateJPanel extends javax.swing.JPanel {
      int cellPhoneNumber = Integer.parseInt(txtEmployeeId.getText()) ;
      String emailAddress= txtEmailAddress.getText();
      
+     System.out.println("Age->"+age);
+     
+     EmployeeProfile ep = new EmployeeProfile();
+     ep.setName(name);
+     ep.setCellPhoneNumber(cellPhoneNumber);
+     ep.setEmailAddress(emailAddress);
+     ep.setEmployeeId(employeeId);
+     ep.setGender(gender);
+     ep.setLevel(level);
+     ep.setPositionTitle(positionTitle);
+     ep.setStartDate(startDate);
+     ep.setTeamInfo(teamInfo);
+     ep.setAge(age);
+     employeeProfileHistory.addNewEmployee(ep);
     }//GEN-LAST:event_saveActionPerformed
 
 
