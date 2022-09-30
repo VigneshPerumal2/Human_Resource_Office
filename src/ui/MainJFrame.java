@@ -36,8 +36,9 @@ public class MainJFrame extends javax.swing.JFrame {
 
         splitPane = new javax.swing.JSplitPane();
         controlPanel = new javax.swing.JPanel();
-        createEmployee = new javax.swing.JButton();
-        viewButton = new javax.swing.JButton();
+        btnCreateEmployee = new javax.swing.JButton();
+        btnEditEmployee = new javax.swing.JButton();
+        btnSearchEmployee = new javax.swing.JButton();
         workspacePanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -45,17 +46,24 @@ public class MainJFrame extends javax.swing.JFrame {
         controlPanel.setBackground(new java.awt.Color(0, 51, 204));
         controlPanel.setForeground(new java.awt.Color(51, 51, 255));
 
-        createEmployee.setText("Create Employee");
-        createEmployee.addActionListener(new java.awt.event.ActionListener() {
+        btnCreateEmployee.setText("Create Employee");
+        btnCreateEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createEmployeeActionPerformed(evt);
+                btnCreateEmployeeActionPerformed(evt);
             }
         });
 
-        viewButton.setText("View Employee");
-        viewButton.addActionListener(new java.awt.event.ActionListener() {
+        btnEditEmployee.setText("Edit Employee");
+        btnEditEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewButtonActionPerformed(evt);
+                btnEditEmployeeActionPerformed(evt);
+            }
+        });
+
+        btnSearchEmployee.setText("Search Employee");
+        btnSearchEmployee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchEmployeeActionPerformed(evt);
             }
         });
 
@@ -66,18 +74,21 @@ public class MainJFrame extends javax.swing.JFrame {
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(createEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
-                    .addComponent(viewButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnCreateEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
+                    .addComponent(btnEditEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSearchEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addGap(222, 222, 222)
-                .addComponent(createEmployee)
+                .addComponent(btnCreateEmployee)
                 .addGap(18, 18, 18)
-                .addComponent(viewButton)
-                .addContainerGap(514, Short.MAX_VALUE))
+                .addComponent(btnEditEmployee)
+                .addGap(18, 18, 18)
+                .addComponent(btnSearchEmployee)
+                .addContainerGap(273, Short.MAX_VALUE))
         );
 
         splitPane.setLeftComponent(controlPanel);
@@ -86,11 +97,11 @@ public class MainJFrame extends javax.swing.JFrame {
         workspacePanel.setLayout(workspacePanelLayout);
         workspacePanelLayout.setHorizontalGroup(
             workspacePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 768, Short.MAX_VALUE)
+            .addGap(0, 568, Short.MAX_VALUE)
         );
         workspacePanelLayout.setVerticalGroup(
             workspacePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
 
         splitPane.setRightComponent(workspacePanel);
@@ -99,17 +110,17 @@ public class MainJFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(splitPane, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(splitPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(splitPane)
+            .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void createEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createEmployeeActionPerformed
+    private void btnCreateEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateEmployeeActionPerformed
         // TODO add your handling code here:
         
         CreateJPanel createJPanel= new CreateJPanel(employeeProfileHistory);
@@ -117,13 +128,20 @@ public class MainJFrame extends javax.swing.JFrame {
         splitPane.setRightComponent(createJPanel);
       
 
-    }//GEN-LAST:event_createEmployeeActionPerformed
+    }//GEN-LAST:event_btnCreateEmployeeActionPerformed
 
-    private void viewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewButtonActionPerformed
+    private void btnEditEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditEmployeeActionPerformed
         // TODO add your handling code here:
         ViewJPanel viewJPanel = new ViewJPanel(employeeProfileHistory);
         splitPane.setRightComponent(viewJPanel);
-    }//GEN-LAST:event_viewButtonActionPerformed
+    }//GEN-LAST:event_btnEditEmployeeActionPerformed
+
+    private void btnSearchEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchEmployeeActionPerformed
+        // TODO add your handling code here:
+        //SearchJPanel viewJPanel = new SearchJPanel(employeeProfileHistory);
+        SearchJPanel searchJPanel = new SearchJPanel();
+        splitPane.setRightComponent(searchJPanel);
+    }//GEN-LAST:event_btnSearchEmployeeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,10 +179,11 @@ public class MainJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCreateEmployee;
+    private javax.swing.JButton btnEditEmployee;
+    private javax.swing.JButton btnSearchEmployee;
     private javax.swing.JPanel controlPanel;
-    private javax.swing.JButton createEmployee;
     private javax.swing.JSplitPane splitPane;
-    private javax.swing.JButton viewButton;
     private javax.swing.JPanel workspacePanel;
     // End of variables declaration//GEN-END:variables
 }

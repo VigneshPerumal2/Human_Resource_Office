@@ -66,7 +66,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         createEmployeeLabel.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         createEmployeeLabel.setForeground(new java.awt.Color(153, 153, 153));
         createEmployeeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        createEmployeeLabel.setText("View Employee");
+        createEmployeeLabel.setText("Edit Employee");
         createEmployeeLabel.setToolTipText("To create new employee");
 
         tblEmployeeHistory.setModel(new javax.swing.table.DefaultTableModel(
@@ -306,7 +306,7 @@ public class ViewJPanel extends javax.swing.JPanel {
                     .addComponent(txtEmailAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnUpdate)
-                .addGap(0, 183, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

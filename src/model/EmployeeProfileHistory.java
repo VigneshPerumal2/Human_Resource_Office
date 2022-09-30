@@ -28,8 +28,6 @@ public class EmployeeProfileHistory {
     
     public EmployeeProfile addNewEmployee(EmployeeProfile employeeProfile){
         history.add(employeeProfile); 
-        System.out.println("Item Successfully added");
-        System.out.println("Employee Profile->"+employeeProfile);
         return employeeProfile;
     }
     
