@@ -4,6 +4,10 @@
  */
 package ui;
 
+import javax.swing.table.DefaultTableModel;
+import model.EmployeeProfile;
+import model.EmployeeProfileHistory;
+
 /**
  *
  * @author vigy
@@ -13,8 +17,12 @@ public class SearchJPanel extends javax.swing.JPanel {
     /**
      * Creates new form SearchJPanel
      */
-    public SearchJPanel() {
+    
+    EmployeeProfileHistory employeeProfileHistory;
+    public SearchJPanel(EmployeeProfileHistory employeeProfileHistory) {
         initComponents();
+        employeeProfileHistory = new EmployeeProfileHistory();
+        populateTable(employeeProfileHistory);
     }
 
     /**
@@ -30,14 +38,14 @@ public class SearchJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblEmployeeHistory = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        txtSearchBox = new javax.swing.JTextField();
+        txtNameSearch = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         txtSearchBox1 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtSearchBox2 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnNameSearch = new javax.swing.JButton();
 
         createEmployeeLabel.setBackground(new java.awt.Color(153, 153, 153));
         createEmployeeLabel.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
@@ -100,10 +108,10 @@ public class SearchJPanel extends javax.swing.JPanel {
             }
         });
 
-        jButton3.setText("Search");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnNameSearch.setText("Search");
+        btnNameSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnNameSearchActionPerformed(evt);
             }
         });
 
@@ -130,13 +138,13 @@ public class SearchJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
-                        .addComponent(txtSearchBox, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtNameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
-                    .addComponent(jButton3))
-                .addContainerGap(12, Short.MAX_VALUE))
+                    .addComponent(btnNameSearch))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,8 +153,8 @@ public class SearchJPanel extends javax.swing.JPanel {
                 .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jLabel1)
-                    .addComponent(txtSearchBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3))
+                    .addComponent(txtNameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnNameSearch))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jLabel2)
@@ -171,22 +179,60 @@ public class SearchJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnNameSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNameSearchActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
+        searchByName(txtNameSearch.getText());
+    }//GEN-LAST:event_btnNameSearchActionPerformed
+    private void searchByName(String name){
+        System.out.println("EmployeeProfileHistory->"+employeeProfileHistory);
+        int count=0;
+        EmployeeProfileHistory temp=new EmployeeProfileHistory();
+        for(EmployeeProfile ep: employeeProfileHistory.getHistory()){
+            if(ep.getName().equals(name)){
+                temp.addNewEmployee(ep);
+                count++;
+            }
+        }
+        System.out.println("Testing->"+temp);
+        populateTable(temp);
+    }
+    
+    private void populateTable(EmployeeProfileHistory employeeProfileHistory) {
+        System.out.println(" populateTable -> EmployeeProfileHistory->"+employeeProfileHistory);
+        
+        DefaultTableModel model =(DefaultTableModel) tblEmployeeHistory.getModel();
+        model.setRowCount(0);
+        
+        for(EmployeeProfile e: employeeProfileHistory.getHistory()){
+            Object row[]=new Object[10];
+            row[0] = e.getEmployeeId();
+            row[1] = e.getName();
+            row[2] = e.getAge();
+            row[3] = e.getGender();
+            row[4] = e.getStartDate();
+            row[5] = e.getLevel();
+            row[6] = e.getTeamInfo();
+            row[7] = e.getPositionTitle();
+            row[8] = e.getCellPhoneNumber();
+            row[9] = e.getEmailAddress();
+            
+            model.addRow(row);
+            
+        }
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnNameSearch;
     private javax.swing.JLabel createEmployeeLabel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblEmployeeHistory;
-    private javax.swing.JTextField txtSearchBox;
+    private javax.swing.JTextField txtNameSearch;
     private javax.swing.JTextField txtSearchBox1;
     private javax.swing.JTextField txtSearchBox2;
     // End of variables declaration//GEN-END:variables
