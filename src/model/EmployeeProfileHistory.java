@@ -34,7 +34,6 @@ public class EmployeeProfileHistory {
     }
     
     public EmployeeProfile addNewEmployee(EmployeeProfile employeeProfile){
-        System.out.println("Added->"+employeeProfile);
         history.add(employeeProfile); 
         return employeeProfile;
     }
