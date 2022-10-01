@@ -4,6 +4,10 @@
  */
 package model;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  *
  * @author vigy
@@ -14,13 +18,14 @@ public class EmployeeProfile {
     private int employeeId;
     private int age; 
     private String gender ;
-    private String startDate ;
+    private Date startDate ;
     private int level ;
     private String teamInfo ;
     private String positionTitle ;
     //Add photo
     private int cellPhoneNumber;
     private String emailAddress;
+    DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
 
     public int getCellPhoneNumber() {
         return cellPhoneNumber;
@@ -72,13 +77,15 @@ public class EmployeeProfile {
         this.gender = gender;
     }
 
-    public String getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(String startDate) {
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
+
+    
 
     public int getLevel() {
         return level;
@@ -109,7 +116,7 @@ public class EmployeeProfile {
         return "EmployeeProfile{" + "name=" + name + ", employeeId=" + employeeId + ", age=" + age + ", gender=" + gender + ", startDate=" + startDate + ", level=" + level + ", teamInfo=" + teamInfo + ", positionTitle=" + positionTitle + ", cellPhoneNumber=" + cellPhoneNumber + ", emailAddress=" + emailAddress + '}';
     }
 
-    public EmployeeProfile(String name, int employeeId, int age, String gender, String startDate, int level, String teamInfo, String positionTitle, int cellPhoneNumber, String emailAddress) {
+    public EmployeeProfile(String name, int employeeId, int age, String gender, Date startDate, int level, String teamInfo, String positionTitle, int cellPhoneNumber, String emailAddress) {
         this.name = name;
         this.employeeId = employeeId;
         this.age = age;
@@ -123,6 +130,7 @@ public class EmployeeProfile {
     }
 
     public EmployeeProfile() {
+       
     }
     
     

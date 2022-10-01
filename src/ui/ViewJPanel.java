@@ -4,6 +4,9 @@
  */
 package ui;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.EmployeeProfile;
@@ -417,7 +420,7 @@ public class ViewJPanel extends javax.swing.JPanel {
      ep.setGender(gender);
      ep.setLevel(level);
      ep.setPositionTitle(positionTitle);
-     ep.setStartDate(startDate);
+     ep.setStartDate(new Date(startDate));
      ep.setTeamInfo(teamInfo);
      ep.setAge(age);
      employeeProfileHistory.updateEmployee(ep,selectedRow);
@@ -467,7 +470,9 @@ public class ViewJPanel extends javax.swing.JPanel {
             row[1] = e.getName();
             row[2] = e.getAge();
             row[3] = e.getGender();
-            row[4] = e.getStartDate();
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
+            String strDate = dateFormat.format(e.getStartDate()); 
+            row[4] = strDate;
             row[5] = e.getLevel();
             row[6] = e.getTeamInfo();
             row[7] = e.getPositionTitle();

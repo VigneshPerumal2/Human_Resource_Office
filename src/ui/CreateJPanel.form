@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -16,49 +16,46 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="createEmployeeLabel" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="2" attributes="0">
+                  <Group type="102" alignment="2" attributes="0">
+                      <Component id="reset" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="save" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="createEmployeeLabel" alignment="2" pref="739" max="32767" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="126" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="employeeId" min="-2" max="-2" attributes="0"/>
-                          <Component id="name" min="-2" max="-2" attributes="0"/>
-                          <Component id="age" min="-2" max="-2" attributes="0"/>
-                          <Component id="gender" min="-2" max="-2" attributes="0"/>
-                          <Component id="startDate" min="-2" max="-2" attributes="0"/>
-                          <Component id="level" min="-2" max="-2" attributes="0"/>
-                          <Component id="teamInfo" min="-2" max="-2" attributes="0"/>
-                          <Component id="positionTitle" min="-2" max="-2" attributes="0"/>
-                          <Component id="cellPhoneNumber" min="-2" max="-2" attributes="0"/>
-                          <Component id="emailAddress" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="2" attributes="0">
-                          <Component id="txtName" alignment="2" min="-2" pref="250" max="-2" attributes="0"/>
-                          <Component id="txtAge" alignment="2" min="-2" pref="250" max="-2" attributes="0"/>
-                          <Component id="txtGender" alignment="2" min="-2" pref="250" max="-2" attributes="0"/>
-                          <Component id="txtStartDate" alignment="2" min="-2" pref="250" max="-2" attributes="0"/>
-                          <Component id="txtLevel" alignment="2" min="-2" pref="250" max="-2" attributes="0"/>
-                          <Component id="txtTeamInfo" alignment="2" min="-2" pref="250" max="-2" attributes="0"/>
-                          <Component id="txtPositionTitle" alignment="2" min="-2" pref="250" max="-2" attributes="0"/>
-                          <Component id="txtCellPhoneNumber" alignment="2" min="-2" pref="250" max="-2" attributes="0"/>
-                          <Component id="txtEmailAddress" alignment="2" min="-2" pref="250" max="-2" attributes="0"/>
-                          <Component id="txtEmployeeId" alignment="2" min="-2" pref="250" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="reset" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="save" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="name" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="age" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="gender" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="startDate" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="teamInfo" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="employeeId" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="positionTitle" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="cellPhoneNumber" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="emailAddress" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="level" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="txtEmployeeId" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
+                  <Component id="txtName" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
+                  <Component id="txtAge" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="drpGender" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtStartDate" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
+                  <Component id="drpPositionTitle" alignment="0" min="-2" pref="249" max="-2" attributes="0"/>
+                  <Component id="txtLevel" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
+                  <Component id="txtTeamInfo" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
+                  <Component id="txtCellPhoneNumber" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
+                  <Component id="txtEmailAddress" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -78,34 +75,34 @@
                   <Component id="txtEmployeeId" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="2" attributes="0">
-                  <Component id="age" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtAge" alignment="2" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="age" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtAge" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="2" attributes="0">
-                  <Component id="gender" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtGender" alignment="2" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="gender" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="drpGender" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="2" attributes="0">
-                  <Component id="startDate" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtStartDate" alignment="2" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="startDate" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtStartDate" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="2" attributes="0">
-                  <Component id="level" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtLevel" alignment="2" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="positionTitle" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="drpPositionTitle" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txtLevel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="level" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="2" attributes="0">
                   <Component id="teamInfo" alignment="2" min="-2" max="-2" attributes="0"/>
                   <Component id="txtTeamInfo" alignment="2" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="2" attributes="0">
-                  <Component id="positionTitle" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtPositionTitle" alignment="2" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="2" attributes="0">
@@ -117,12 +114,12 @@
                   <Component id="emailAddress" alignment="2" min="-2" max="-2" attributes="0"/>
                   <Component id="txtEmailAddress" alignment="2" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="save" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="reset" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="40" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="2" attributes="0">
+                  <Component id="reset" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="save" alignment="2" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -199,22 +196,11 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNameActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtAge">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtAgeActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtGender">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtGenderActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtStartDate">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtStartDateActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JTextField" name="txtLevel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="1"/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtLevelActionPerformed"/>
       </Events>
@@ -222,11 +208,6 @@
     <Component class="javax.swing.JTextField" name="txtTeamInfo">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTeamInfoActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtPositionTitle">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPositionTitleActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtCellPhoneNumber">
@@ -265,6 +246,48 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEmployeeIdActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="com.toedter.calendar.JDateChooser" name="txtStartDate">
+    </Component>
+    <Component class="javax.swing.JComboBox" name="drpPositionTitle">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="5">
+            <StringItem index="0" value="Intern"/>
+            <StringItem index="1" value="Junior Software Engineer"/>
+            <StringItem index="2" value="Senior Software Engineer"/>
+            <StringItem index="3" value="Team lead"/>
+            <StringItem index="4" value="Project Manager"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="drpPositionTitleActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JSpinner" name="txtAge">
+      <Properties>
+        <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+          <SpinnerModel initial="18" maximum="60" minimum="18" numberType="java.lang.Integer" stepSize="1" type="number"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="drpGender">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="3">
+            <StringItem index="0" value="Male"/>
+            <StringItem index="1" value="Female"/>
+            <StringItem index="2" value="Others"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

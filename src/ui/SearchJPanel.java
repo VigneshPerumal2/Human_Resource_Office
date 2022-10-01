@@ -4,6 +4,7 @@
  */
 package ui;
 
+import java.util.Date;
 import javax.swing.table.DefaultTableModel;
 import model.EmployeeProfile;
 import model.EmployeeProfileHistory;
@@ -222,7 +223,7 @@ public class SearchJPanel extends javax.swing.JPanel {
         EmployeeProfileHistory temp=new EmployeeProfileHistory();
         temp.deleteAll();
         for(EmployeeProfile ep: getEmployeeProfileHistory().getHistory()){
-            if(ep.getStartDate().equalsIgnoreCase(date)){
+            if(ep.getStartDate().compareTo(new Date(date))>0){
                 temp.addNewEmployee(ep);
             }
         }
