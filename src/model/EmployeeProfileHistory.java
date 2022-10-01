@@ -23,7 +23,7 @@ public class EmployeeProfileHistory {
         addNewEmployee(new EmployeeProfile("Vignesh",104,25,"Male","23 Sept 2022",13,"CNAS","Front-End Developer",12312123,"vignesh@n.co"));
         addNewEmployee(new EmployeeProfile("Sonu",105,25,"Female","23 Sept 2022",13,"CNAS","Front-End Developer",12312123,"sonu@n.co"));
 
-    }
+    }   
 
     public ArrayList<EmployeeProfile> getHistory() {
         return history;
@@ -34,6 +34,7 @@ public class EmployeeProfileHistory {
     }
     
     public EmployeeProfile addNewEmployee(EmployeeProfile employeeProfile){
+        System.out.println("Added->"+employeeProfile);
         history.add(employeeProfile); 
         return employeeProfile;
     }
@@ -45,7 +46,9 @@ public class EmployeeProfileHistory {
     public void updateEmployee(EmployeeProfile ep,int index){
         history.set(index,ep);
     }
-
+    public void deleteAll(){
+    history.removeAll(history);
+    }
     @Override
     public String toString() {
         return "EmployeeProfileHistory{" + "history=" + history + '}';

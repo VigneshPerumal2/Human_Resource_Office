@@ -21,8 +21,8 @@ public class SearchJPanel extends javax.swing.JPanel {
     EmployeeProfileHistory employeeProfileHistory;
     public SearchJPanel(EmployeeProfileHistory employeeProfileHistory) {
         initComponents();
-        employeeProfileHistory = new EmployeeProfileHistory();
-        populateTable(employeeProfileHistory);
+        setEmployeeProfileHistory(employeeProfileHistory);
+        populateTable(getEmployeeProfileHistory());
     }
 
     /**
@@ -184,17 +184,25 @@ public class SearchJPanel extends javax.swing.JPanel {
         searchByName(txtNameSearch.getText());
     }//GEN-LAST:event_btnNameSearchActionPerformed
     private void searchByName(String name){
-        System.out.println("EmployeeProfileHistory->"+employeeProfileHistory);
-        int count=0;
+        
         EmployeeProfileHistory temp=new EmployeeProfileHistory();
-        for(EmployeeProfile ep: employeeProfileHistory.getHistory()){
+        temp.deleteAll();
+        for(EmployeeProfile ep: getEmployeeProfileHistory().getHistory()){
             if(ep.getName().equals(name)){
+                System.out.println("Inside If condtion->"+ep);
                 temp.addNewEmployee(ep);
-                count++;
             }
         }
-        System.out.println("Testing->"+temp);
+        System.out.println("Testing TEMP->"+temp);
         populateTable(temp);
+    }
+
+    public EmployeeProfileHistory getEmployeeProfileHistory() {
+        return employeeProfileHistory;
+    }
+
+    public void setEmployeeProfileHistory(EmployeeProfileHistory employeeProfileHistory) {
+        this.employeeProfileHistory = employeeProfileHistory;
     }
     
     private void populateTable(EmployeeProfileHistory employeeProfileHistory) {

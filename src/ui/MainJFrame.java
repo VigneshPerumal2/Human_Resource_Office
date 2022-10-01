@@ -4,8 +4,6 @@
  */
 package ui;
 
-import model.ContactInfo;
-import model.EmployeeProfile;
 import model.EmployeeProfileHistory;
 
 /**
@@ -97,7 +95,7 @@ public class MainJFrame extends javax.swing.JFrame {
         workspacePanel.setLayout(workspacePanelLayout);
         workspacePanelLayout.setHorizontalGroup(
             workspacePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 788, Short.MAX_VALUE)
+            .addGap(0, 1188, Short.MAX_VALUE)
         );
         workspacePanelLayout.setVerticalGroup(
             workspacePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

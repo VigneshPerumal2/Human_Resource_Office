@@ -363,8 +363,6 @@ public class ViewJPanel extends javax.swing.JPanel {
             populateTable();
             JOptionPane.showMessageDialog(this, "Employee Deleted");
         }
-        
-        
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
@@ -376,18 +374,18 @@ public class ViewJPanel extends javax.swing.JPanel {
             return;
         }
         
-        EmployeeProfile ep = employeeProfileHistory.getHistory().get(selectedRow);
-        txtAge.setText(String.valueOf(ep.getAge()));
-     txtCellPhoneNumber.setText(String.valueOf(ep.getCellPhoneNumber()));
-     txtEmailAddress.setText(String.valueOf(ep.getEmailAddress()));
+     EmployeeProfile ep = employeeProfileHistory.getHistory().get(selectedRow);
+     
+     txtAge.setText(String.valueOf(ep.getAge()));
+    txtCellPhoneNumber.setText(String.valueOf(ep.getCellPhoneNumber()));
+    txtEmailAddress.setText(String.valueOf(ep.getEmailAddress()));
     txtEmployeeId.setText(String.valueOf(ep.getEmployeeId()));
      txtGender.setText(String.valueOf(ep.getGender()));
     txtLevel.setText(String.valueOf(ep.getLevel()));
     txtName.setText(String.valueOf(ep.getName()));
     txtPositionTitle.setText(String.valueOf(ep.getPositionTitle()));
      txtStartDate.setText(String.valueOf(ep.getStartDate()));
-     txtTeamInfo.setText(String.valueOf(ep.getTeamInfo()));
-        
+     txtTeamInfo.setText(String.valueOf(ep.getTeamInfo()));     
     }//GEN-LAST:event_btnEditActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
@@ -399,8 +397,8 @@ public class ViewJPanel extends javax.swing.JPanel {
             return;
         }
         
-        EmployeeProfile ep = employeeProfileHistory.getHistory().get(selectedRow);
-       String name = txtName.getText();
+     EmployeeProfile ep = employeeProfileHistory.getHistory().get(selectedRow);
+     String name = txtName.getText();
      int employeeId = Integer.parseInt(txtEmployeeId.getText()) ;
      int age = Integer.parseInt(txtAge.getText()) ;
      String gender = txtGender.getText(); 

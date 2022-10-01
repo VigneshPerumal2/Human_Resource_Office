@@ -305,9 +305,9 @@ public class CreateJPanel extends javax.swing.JPanel {
      int cellPhoneNumber = Integer.parseInt(txtCellPhoneNumber.getText()) ;
      String emailAddress= txtEmailAddress.getText();
      
-     System.out.println("Age->"+age);
      
      EmployeeProfile ep = new EmployeeProfile();
+     
      ep.setName(name);
      ep.setCellPhoneNumber(cellPhoneNumber);
      ep.setEmailAddress(emailAddress);
@@ -318,7 +318,9 @@ public class CreateJPanel extends javax.swing.JPanel {
      ep.setStartDate(startDate);
      ep.setTeamInfo(teamInfo);
      ep.setAge(age);
+     
      employeeProfileHistory.addNewEmployee(ep);
+     
      txtName.setText("");
      txtEmployeeId.setText("");
      txtAge.setText("");
@@ -336,7 +338,7 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
         // TODO add your handling code here:
-        txtName.setText("");
+     txtName.setText("");
      txtEmployeeId.setText("");
      txtAge.setText("");
      txtGender.setText("");
