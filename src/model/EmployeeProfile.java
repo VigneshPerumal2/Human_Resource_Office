@@ -4,6 +4,7 @@
  */
 package model;
 
+import java.awt.Image;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -22,10 +23,19 @@ public class EmployeeProfile {
     private int level ;
     private String teamInfo ;
     private String positionTitle ;
-    //Add photo
+    private Image photo;
     private int cellPhoneNumber;
     private String emailAddress;
+    
     DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
+
+    public Image getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(Image photo) {
+        this.photo = photo;
+    }
 
     public int getCellPhoneNumber() {
         return cellPhoneNumber;
@@ -113,8 +123,10 @@ public class EmployeeProfile {
 
     @Override
     public String toString() {
-        return "EmployeeProfile{" + "name=" + name + ", employeeId=" + employeeId + ", age=" + age + ", gender=" + gender + ", startDate=" + startDate + ", level=" + level + ", teamInfo=" + teamInfo + ", positionTitle=" + positionTitle + ", cellPhoneNumber=" + cellPhoneNumber + ", emailAddress=" + emailAddress + '}';
+        return "EmployeeProfile{" + "name=" + name + ", employeeId=" + employeeId + ", age=" + age + ", gender=" + gender + ", startDate=" + startDate + ", level=" + level + ", teamInfo=" + teamInfo + ", positionTitle=" + positionTitle + ", photo=" + photo + ", cellPhoneNumber=" + cellPhoneNumber + ", emailAddress=" + emailAddress + ", dateFormat=" + dateFormat + '}';
     }
+
+    
 
     public EmployeeProfile(String name, int employeeId, int age, String gender, Date startDate, int level, String teamInfo, String positionTitle, int cellPhoneNumber, String emailAddress) {
         this.name = name;
@@ -130,7 +142,6 @@ public class EmployeeProfile {
     }
 
     public EmployeeProfile() {
-       
     }
     
     
