@@ -381,7 +381,7 @@ public class CreateJPanel extends javax.swing.JPanel {
      int level = Integer.parseInt(txtLevel.getText()) ;
      String teamInfo = txtTeamInfo.getText() ;
      String positionTitle= (String)drpPositionTitle.getSelectedItem() ;
-     int cellPhoneNumber = Integer.parseInt(txtCellPhoneNumber.getText()) ;
+     long cellPhoneNumber = Long.parseLong(txtCellPhoneNumber.getText()) ;
      String emailAddress= txtEmailAddress.getText();
      
      
@@ -545,7 +545,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         else{
             try 
 		{ 
-			Integer.parseInt(cellPhoneNumber); 
+			Long.parseLong(cellPhoneNumber); 
 		}  
 		catch (NumberFormatException e)  
 		{ 

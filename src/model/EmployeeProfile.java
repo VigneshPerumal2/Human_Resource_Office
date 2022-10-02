@@ -24,7 +24,7 @@ public class EmployeeProfile {
     private String teamInfo ;
     private String positionTitle ;
     private Image photo;
-    private int cellPhoneNumber;
+    private long cellPhoneNumber;
     private String emailAddress;
     
     DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
@@ -37,11 +37,11 @@ public class EmployeeProfile {
         this.photo = photo;
     }
 
-    public int getCellPhoneNumber() {
+    public long getCellPhoneNumber() {
         return cellPhoneNumber;
     }
 
-    public void setCellPhoneNumber(int cellPhoneNumber) {
+    public void setCellPhoneNumber(long cellPhoneNumber) {
         this.cellPhoneNumber = cellPhoneNumber;
     }
 
