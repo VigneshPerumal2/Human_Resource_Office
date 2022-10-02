@@ -6,6 +6,7 @@ package ui;
 
 import java.awt.Image;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -22,7 +23,7 @@ public class CreateJPanel extends javax.swing.JPanel {
     
     EmployeeProfileHistory employeeProfileHistory;
     Image employeeImage;
-
+    
     public Image getEmployeeImage() {
         return employeeImage;
     }
@@ -507,6 +508,15 @@ public class CreateJPanel extends javax.swing.JPanel {
             try 
 		{ 
 			Integer.parseInt(employeeId); 
+                        ArrayList<Integer> eids= new ArrayList<>();
+                        for(EmployeeProfile e:employeeProfileHistory.getHistory()){
+                            eids.add(e.getEmployeeId());
+                        }
+                     
+                        if(eids.contains(Integer.parseInt(employeeId))){
+                            valEmployeeId.setText("EmployeeId must be an unique");
+                            validation=false;
+                        }
 		}  
 		catch (NumberFormatException e)  
 		{ 
@@ -514,6 +524,7 @@ public class CreateJPanel extends javax.swing.JPanel {
                         validation=false;
 		} 
         }
+        
         //Date Validation
         if(startDate==null){
             valDate.setText("Please Enter Start Date");
@@ -545,8 +556,8 @@ public class CreateJPanel extends javax.swing.JPanel {
 		} 
         }
         //EmailAddress Validation
-        if(emailAddress.length()<=0){
-            valEmailAddress.setText("Please Enter Email Address");
+        if(emailAddress.length()<=0 || !emailAddress.matches("^(.+)@(\\S+)$")){
+            valEmailAddress.setText("Please Enter valid Email Address");
             validation=false;
         }
         //Photo Validation

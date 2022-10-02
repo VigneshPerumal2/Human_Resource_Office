@@ -117,7 +117,7 @@ public class ViewJPanel extends javax.swing.JPanel {
 
         btnEdit.setBackground(new java.awt.Color(0, 51, 255));
         btnEdit.setForeground(new java.awt.Color(255, 255, 255));
-        btnEdit.setText("Edit");
+        btnEdit.setText("Read");
         btnEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditActionPerformed(evt);
