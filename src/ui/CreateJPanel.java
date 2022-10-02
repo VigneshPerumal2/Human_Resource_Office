@@ -418,9 +418,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         
      
      
-     
-     
-     
+ 
     }//GEN-LAST:event_saveActionPerformed
 
     private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
@@ -514,7 +512,7 @@ public class CreateJPanel extends javax.swing.JPanel {
                         }
                      
                         if(eids.contains(Integer.parseInt(employeeId))){
-                            valEmployeeId.setText("EmployeeId must be an unique");
+                            valEmployeeId.setText("EmployeeId must be unique");
                             validation=false;
                         }
 		}  
