@@ -369,6 +369,7 @@ public class CreateJPanel extends javax.swing.JPanel {
      valTeamInfo.setText("");
      valCellPhoneNumber.setText("");
      valEmailAddress.setText("");
+     valPhoto.setText("");
      
      if(validation()){
          String name = txtName.getText();
@@ -441,6 +442,15 @@ public class CreateJPanel extends javax.swing.JPanel {
      valTeamInfo.setText("");
      valCellPhoneNumber.setText("");
      valEmailAddress.setText("");
+        
+     //Reset validation
+     valName.setText("");
+     valEmployeeId.setText("");
+     valDate.setText("");
+     valTeamInfo.setText("");
+     valCellPhoneNumber.setText("");
+     valEmailAddress.setText("");
+     valPhoto.setText("");
     }//GEN-LAST:event_resetActionPerformed
 
     private void txtEmployeeIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmployeeIdActionPerformed
@@ -500,13 +510,13 @@ public class CreateJPanel extends javax.swing.JPanel {
 		}  
 		catch (NumberFormatException e)  
 		{ 
-			valEmployeeId.setText("EmployeeId must be an Integer");
+			valEmployeeId.setText("EmployeeId must be an number");
                         validation=false;
 		} 
         }
         //Date Validation
         if(startDate==null){
-            valDate.setText("Please Enter Start Sate");
+            valDate.setText("Please Enter Start Date");
                         validation=false;
         }
         //TeamInfo Validation
@@ -515,18 +525,22 @@ public class CreateJPanel extends javax.swing.JPanel {
             validation=false;
         }
         //CellphoneNumber validation
-        if(cellPhoneNumber.length()<=0){
-            valCellPhoneNumber.setText("Please Enter CellPhoneNumber");
+        if(!cellPhoneNumber.matches("^\\d{10}$")){
+                valCellPhoneNumber.setText("Please Enter 10 digits");
+                validation=false;
+            }
+        if(cellPhoneNumber.length()<=0 || cellPhoneNumber.length()>10){
+            valCellPhoneNumber.setText("Please Enter 10 digits");
             validation=false;
         }
         else{
             try 
 		{ 
-			Integer.parseInt(employeeId); 
+			Integer.parseInt(cellPhoneNumber); 
 		}  
 		catch (NumberFormatException e)  
 		{ 
-			valCellPhoneNumber.setText("CellPhoneNumber must be an Integer");
+			valCellPhoneNumber.setText("CellPhoneNumber must be an number");
                         validation=false;
 		} 
         }
