@@ -43,6 +43,7 @@ public class SearchJPanel extends javax.swing.JPanel {
         btnNameSearch = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         drpFields = new javax.swing.JComboBox<>();
+        btnReset = new javax.swing.JButton();
 
         createEmployeeLabel.setBackground(new java.awt.Color(153, 153, 153));
         createEmployeeLabel.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
@@ -108,6 +109,13 @@ public class SearchJPanel extends javax.swing.JPanel {
 
         drpFields.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Name", "Employee ID", "Age", "Gender", "Start Date", "Level", "Team Info", "Position Title", "CellPhone Number", "Email Address" }));
 
+        btnReset.setText("Reset");
+        btnReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -127,6 +135,8 @@ public class SearchJPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(txtNameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnReset)
+                        .addGap(18, 18, 18)
                         .addComponent(btnNameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(187, 187, 187)))
                 .addGap(244, 244, 244))
@@ -144,7 +154,9 @@ public class SearchJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel4)
                     .addComponent(drpFields, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnNameSearch)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnNameSearch)
+                    .addComponent(btnReset))
                 .addGap(102, 102, 102)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(235, Short.MAX_VALUE))
@@ -174,6 +186,11 @@ public class SearchJPanel extends javax.swing.JPanel {
         if(drpFields.getSelectedItem().toString().equalsIgnoreCase("Email Address"))
             searchByEmailAddress(txtNameSearch.getText());
     }//GEN-LAST:event_btnNameSearchActionPerformed
+
+    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+        // TODO add your handling code here:
+        populateTable(getEmployeeProfileHistory());
+    }//GEN-LAST:event_btnResetActionPerformed
     private void searchByName(String name){
         
         EmployeeProfileHistory temp=new EmployeeProfileHistory();
@@ -320,6 +337,7 @@ public class SearchJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnNameSearch;
+    private javax.swing.JButton btnReset;
     private javax.swing.JLabel createEmployeeLabel;
     private javax.swing.JComboBox<String> drpFields;
     private javax.swing.JLabel jLabel1;
