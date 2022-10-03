@@ -390,7 +390,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         
      EmployeeProfile ep = employeeProfileHistory.getHistory().get(selectedRow);
      
-     txtAge.setValue(String.valueOf(ep.getAge()));
+     txtAge.setValue(ep.getAge());
     txtCellPhoneNumber.setText(String.valueOf(ep.getCellPhoneNumber()));
     txtEmailAddress.setText(String.valueOf(ep.getEmailAddress()));
     txtEmployeeId.setText(String.valueOf(ep.getEmployeeId()));
@@ -399,7 +399,8 @@ public class ViewJPanel extends javax.swing.JPanel {
     txtName.setText(String.valueOf(ep.getName()));
     drpPositionTitle.setSelectedItem(String.valueOf(ep.getPositionTitle()));
      txtStartDate.setDate((ep.getStartDate()));
-     txtTeamInfo.setText(String.valueOf(ep.getTeamInfo()));     
+     txtTeamInfo.setText(String.valueOf(ep.getTeamInfo()));  
+     photo.setIcon(ep.getPhoto());
     }//GEN-LAST:event_btnReadActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
