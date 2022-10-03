@@ -387,9 +387,9 @@ public class CreateJPanel extends javax.swing.JPanel {
      
      EmployeeProfile ep = new EmployeeProfile();
      ContactInfo ci = new ContactInfo();
-     ci.setEmailAddress(emailAddress);
-     ci.setCellPhoneNumber(cellPhoneNumber);
-     ep.setContact(ci);
+//     ci.setEmailAddress(emailAddress);
+//     ci.setCellPhoneNumber(cellPhoneNumber);
+//     ep.setContact(ci);
      ep.setName(name);
      ep.setCellPhoneNumber(cellPhoneNumber);
      ep.setEmailAddress(emailAddress);

@@ -27,7 +27,7 @@ public class EmployeeProfile {
     private long cellPhoneNumber;
     private String emailAddress;
     
-    private ContactInfo contact;
+    
     
     DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
 
@@ -123,14 +123,7 @@ public class EmployeeProfile {
         this.positionTitle = positionTitle;
     }
 
-    public ContactInfo getContact() {
-        return contact;
-    }
-
-    public void setContact(ContactInfo contact) {
-        this.contact = contact;
-    }
-
+    
     
     
     @Override

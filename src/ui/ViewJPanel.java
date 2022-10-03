@@ -285,8 +285,8 @@ public class ViewJPanel extends javax.swing.JPanel {
      EmployeeProfile ep = employeeProfileHistory.getHistory().get(selectedRow);
      
      txtAge.setValue(ep.getAge());
-    txtCellPhoneNumber.setText(String.valueOf(ep.getContact().getCellPhoneNumber()));
-    txtEmailAddress.setText(String.valueOf(ep.getContact().getEmailAddress()));
+    txtCellPhoneNumber.setText(String.valueOf(ep.getCellPhoneNumber()));
+    txtEmailAddress.setText(String.valueOf(ep.getEmailAddress()));
     txtEmployeeId.setText(String.valueOf(ep.getEmployeeId()));
      drpGender.setSelectedItem(String.valueOf(ep.getGender()));
     txtLevel.setText(String.valueOf(ep.getLevel()));
@@ -309,7 +309,7 @@ public class ViewJPanel extends javax.swing.JPanel {
      EmployeeProfile ep = employeeProfileHistory.getHistory().get(selectedRow);
      String name = txtName.getText();
      int employeeId = Integer.parseInt(txtEmployeeId.getText()) ;
-     int age = Integer.parseInt((String)txtAge.getValue()) ;
+     int age = Integer.parseInt(String.valueOf(txtAge.getValue())) ;
      String gender = (String)drpGender.getSelectedItem(); 
      Date startDate = txtStartDate.getDate(); 
      int level = Integer.parseInt(txtLevel.getText()) ;
@@ -330,7 +330,7 @@ public class ViewJPanel extends javax.swing.JPanel {
      ep.setTeamInfo(teamInfo);
      ep.setAge(age);
      employeeProfileHistory.updateEmployee(ep,selectedRow);
-     
+     JOptionPane.showMessageDialog(this, "Row is updated!");
      populateTable();
         
     }//GEN-LAST:event_btnUpdateActionPerformed
