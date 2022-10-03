@@ -9,14 +9,18 @@ package model;
  * @author vigy
  */
 public class ContactInfo {
-    private int cellPhoneNumber;
+    private long cellPhoneNumber;
     private String emailAddress;
+    
+    public void ContactInfo() {
+        
+    }
 
-    public int getCellPhoneNumber() {
+    public long getCellPhoneNumber() {
         return cellPhoneNumber;
     }
 
-    public void setCellPhoneNumber(int cellPhoneNumber) {
+    public void setCellPhoneNumber(long cellPhoneNumber) {
         this.cellPhoneNumber = cellPhoneNumber;
     }
 
