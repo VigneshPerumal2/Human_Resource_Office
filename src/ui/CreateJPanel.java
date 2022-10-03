@@ -82,9 +82,11 @@ public class CreateJPanel extends javax.swing.JPanel {
         valEmailAddress = new javax.swing.JLabel();
         valPhoto = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(239, 210, 141));
+
         createEmployeeLabel.setBackground(new java.awt.Color(153, 153, 153));
         createEmployeeLabel.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        createEmployeeLabel.setForeground(new java.awt.Color(153, 153, 153));
+        createEmployeeLabel.setForeground(new java.awt.Color(0, 71, 119));
         createEmployeeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         createEmployeeLabel.setText("Create Employee");
         createEmployeeLabel.setToolTipText("To create new employee");
@@ -141,7 +143,7 @@ public class CreateJPanel extends javax.swing.JPanel {
             }
         });
 
-        save.setBackground(new java.awt.Color(0, 51, 204));
+        save.setBackground(new java.awt.Color(255, 119, 0));
         save.setForeground(new java.awt.Color(255, 255, 255));
         save.setText("Save");
         save.addActionListener(new java.awt.event.ActionListener() {
@@ -181,7 +183,8 @@ public class CreateJPanel extends javax.swing.JPanel {
             }
         });
 
-        photo.setForeground(new java.awt.Color(204, 204, 204));
+        photo.setBackground(new java.awt.Color(239, 210, 141));
+        photo.setForeground(new java.awt.Color(0, 71, 119));
         photo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         photo.setText("Upload Employee Photo");
 

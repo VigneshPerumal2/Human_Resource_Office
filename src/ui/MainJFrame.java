@@ -41,7 +41,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        controlPanel.setBackground(new java.awt.Color(0, 51, 204));
+        controlPanel.setBackground(new java.awt.Color(0, 71, 119));
         controlPanel.setForeground(new java.awt.Color(51, 51, 255));
 
         btnCreateEmployee.setText("Create Employee");
@@ -90,6 +90,8 @@ public class MainJFrame extends javax.swing.JFrame {
         );
 
         splitPane.setLeftComponent(controlPanel);
+
+        workspacePanel.setBackground(new java.awt.Color(239, 210, 141));
 
         javax.swing.GroupLayout workspacePanelLayout = new javax.swing.GroupLayout(workspacePanel);
         workspacePanel.setLayout(workspacePanelLayout);

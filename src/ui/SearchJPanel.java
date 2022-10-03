@@ -45,9 +45,11 @@ public class SearchJPanel extends javax.swing.JPanel {
         drpFields = new javax.swing.JComboBox<>();
         btnReset = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(239, 210, 141));
+
         createEmployeeLabel.setBackground(new java.awt.Color(153, 153, 153));
         createEmployeeLabel.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        createEmployeeLabel.setForeground(new java.awt.Color(153, 153, 153));
+        createEmployeeLabel.setForeground(new java.awt.Color(0, 71, 119));
         createEmployeeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         createEmployeeLabel.setText("Search Employee");
         createEmployeeLabel.setToolTipText("To create new employee");
@@ -107,7 +109,7 @@ public class SearchJPanel extends javax.swing.JPanel {
 
         jLabel4.setText("Select a field :");
 
-        drpFields.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Name", "Employee ID", "Age", "Gender", "Start Date", "Level", "Team Info", "Position Title", "CellPhone Number", "Email Address" }));
+        drpFields.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Name", "Employee ID", "Age", "Gender", "Level", "Team Info", "Position Title", "CellPhone Number", "Email Address" }));
 
         btnReset.setText("Reset");
         btnReset.addActionListener(new java.awt.event.ActionListener() {
