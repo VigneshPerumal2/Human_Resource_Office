@@ -88,7 +88,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         createEmployeeLabel.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         createEmployeeLabel.setForeground(new java.awt.Color(0, 71, 119));
         createEmployeeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        createEmployeeLabel.setText("Create Employee");
+        createEmployeeLabel.setText("Create Hospitals");
         createEmployeeLabel.setToolTipText("To create new employee");
 
         name.setText("Name:");

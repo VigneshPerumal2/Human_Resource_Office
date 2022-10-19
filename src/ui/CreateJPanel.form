@@ -206,7 +206,7 @@
           <Color blue="77" green="47" red="0" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Create Employee"/>
+        <Property name="text" type="java.lang.String" value="Create Hospitals"/>
         <Property name="toolTipText" type="java.lang.String" value="To create new employee"/>
       </Properties>
     </Component>
