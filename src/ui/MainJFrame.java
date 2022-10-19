@@ -213,7 +213,7 @@ public class MainJFrame extends javax.swing.JFrame {
                                         .addGap(165, 165, 165)))
                                 .addGap(332, 332, 332))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, workspacePanelLayout.createSequentialGroup()
-                        .addComponent(labelHospitalManagementSystem1, javax.swing.GroupLayout.DEFAULT_SIZE, 1176, Short.MAX_VALUE)
+                        .addComponent(labelHospitalManagementSystem1, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
                         .addContainerGap())))
         );
         workspacePanelLayout.setVerticalGroup(
@@ -237,7 +237,7 @@ public class MainJFrame extends javax.swing.JFrame {
                     .addComponent(labelHospitalManagementSystem2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(46, 46, 46)
                 .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(233, Short.MAX_VALUE))
+                .addContainerGap(397, Short.MAX_VALUE))
         );
 
         splitPane.setRightComponent(workspacePanel);
@@ -260,7 +260,6 @@ public class MainJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         CreateJPanel createJPanel= new CreateJPanel(employeeProfileHistory);
-        
         splitPane.setRightComponent(createJPanel);
       
 
@@ -297,6 +296,8 @@ public class MainJFrame extends javax.swing.JFrame {
         
         if(systemAdmin.getUserName().equals(username) && systemAdmin.getPassword().equals(password) && role.equals("System") ){
             JOptionPane.showMessageDialog(this,"Logged in as System Admin");
+            AdminDashboardJPanel adminDashboardJPanel = new AdminDashboardJPanel(patientDirectory,doctorDirectory);
+            splitPane.setRightComponent(adminDashboardJPanel);
         }
         
         else if(hospitalAdmin.getUserName().equals(username) && hospitalAdmin.getPassword().equals(password) && role.equals("Hospital") ){
