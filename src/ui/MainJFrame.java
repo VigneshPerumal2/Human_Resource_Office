@@ -37,7 +37,8 @@ public class MainJFrame extends javax.swing.JFrame {
         systemAdmin = new Admin("System", "SystemAdmin",  22,  "Male",  "asd@gmail.com",  123123,  "sysadmin",  "sysadmin");
         hospitalAdmin = new Admin("Hospital", "HospitalAdmin",  22,  "Male",  "asd@gmail.com",  123123,  "hosadmin",  "hosadmin");
         communityAdmin = new Admin("Community", "CommunityAdmin",  22,  "Male",  "asd@gmail.com",  123123,  "comadmin",  "comadmin");
-
+        
+        btnLogout.setVisible(false);
         
     }
 
@@ -52,9 +53,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         splitPane = new javax.swing.JSplitPane();
         controlPanel = new javax.swing.JPanel();
-        btnCreateEmployee = new javax.swing.JButton();
-        btnEditEmployee = new javax.swing.JButton();
-        btnSearchEmployee = new javax.swing.JButton();
+        btnLogout = new javax.swing.JButton();
         workspacePanel = new javax.swing.JPanel();
         labelHospitalManagementSystem = new javax.swing.JLabel();
         labelHospitalManagementSystem1 = new javax.swing.JLabel();
@@ -71,24 +70,10 @@ public class MainJFrame extends javax.swing.JFrame {
         controlPanel.setBackground(new java.awt.Color(0, 71, 119));
         controlPanel.setForeground(new java.awt.Color(51, 51, 255));
 
-        btnCreateEmployee.setText("Create Employee");
-        btnCreateEmployee.addActionListener(new java.awt.event.ActionListener() {
+        btnLogout.setText("Logout");
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCreateEmployeeActionPerformed(evt);
-            }
-        });
-
-        btnEditEmployee.setText("Edit Employee");
-        btnEditEmployee.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditEmployeeActionPerformed(evt);
-            }
-        });
-
-        btnSearchEmployee.setText("Search Employee");
-        btnSearchEmployee.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchEmployeeActionPerformed(evt);
+                btnLogoutActionPerformed(evt);
             }
         });
 
@@ -98,22 +83,15 @@ public class MainJFrame extends javax.swing.JFrame {
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCreateEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnEditEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSearchEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE))
+                .addComponent(btnLogout, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
                 .addContainerGap())
         );
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(controlPanelLayout.createSequentialGroup()
-                .addGap(222, 222, 222)
-                .addComponent(btnCreateEmployee)
-                .addGap(18, 18, 18)
-                .addComponent(btnEditEmployee)
-                .addGap(18, 18, 18)
-                .addComponent(btnSearchEmployee)
-                .addContainerGap(509, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
+                .addContainerGap(544, Short.MAX_VALUE)
+                .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(401, 401, 401))
         );
 
         splitPane.setLeftComponent(controlPanel);
@@ -195,22 +173,21 @@ public class MainJFrame extends javax.swing.JFrame {
                                 .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(494, 494, 494))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, workspacePanelLayout.createSequentialGroup()
-                                .addGroup(workspacePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(workspacePanelLayout.createSequentialGroup()
-                                        .addComponent(labelHospitalManagementSystem3, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, workspacePanelLayout.createSequentialGroup()
-                                        .addGroup(workspacePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(labelHospitalManagementSystem2, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(labelHospitalManagementSystem4, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(workspacePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(cmbLoginType, 0, 284, Short.MAX_VALUE)
-                                            .addComponent(txtPassword)))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, workspacePanelLayout.createSequentialGroup()
-                                        .addComponent(labelHospitalManagementSystem, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(165, 165, 165)))
+                                .addGroup(workspacePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(labelHospitalManagementSystem, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(workspacePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(workspacePanelLayout.createSequentialGroup()
+                                            .addComponent(labelHospitalManagementSystem3, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, workspacePanelLayout.createSequentialGroup()
+                                            .addGroup(workspacePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(labelHospitalManagementSystem2, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(labelHospitalManagementSystem4, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addGroup(workspacePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(cmbLoginType, 0, 284, Short.MAX_VALUE)
+                                                .addComponent(txtPassword)))))
                                 .addGap(332, 332, 332))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, workspacePanelLayout.createSequentialGroup()
                         .addComponent(labelHospitalManagementSystem1, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
@@ -256,28 +233,6 @@ public class MainJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCreateEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateEmployeeActionPerformed
-        // TODO add your handling code here:
-        
-        CreateJPanel createJPanel= new CreateJPanel(employeeProfileHistory);
-        splitPane.setRightComponent(createJPanel);
-      
-
-    }//GEN-LAST:event_btnCreateEmployeeActionPerformed
-
-    private void btnEditEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditEmployeeActionPerformed
-        // TODO add your handling code here:
-        ViewJPanel viewJPanel = new ViewJPanel(employeeProfileHistory);
-        splitPane.setRightComponent(viewJPanel);
-    }//GEN-LAST:event_btnEditEmployeeActionPerformed
-
-    private void btnSearchEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchEmployeeActionPerformed
-        // TODO add your handling code here:
-        //SearchJPanel viewJPanel = new SearchJPanel(employeeProfileHistory);
-        SearchJPanel searchJPanel = new SearchJPanel(employeeProfileHistory);
-        splitPane.setRightComponent(searchJPanel);
-    }//GEN-LAST:event_btnSearchEmployeeActionPerformed
-
     private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPasswordActionPerformed
@@ -295,21 +250,37 @@ public class MainJFrame extends javax.swing.JFrame {
         System.out.println(username + password + role);
         
         if(systemAdmin.getUserName().equals(username) && systemAdmin.getPassword().equals(password) && role.equals("System") ){
+            btnLogout.setVisible(true);
             JOptionPane.showMessageDialog(this,"Logged in as System Admin");
+            
             AdminDashboardJPanel adminDashboardJPanel = new AdminDashboardJPanel(patientDirectory,doctorDirectory);
             splitPane.setRightComponent(adminDashboardJPanel);
+            
         }
         
         else if(hospitalAdmin.getUserName().equals(username) && hospitalAdmin.getPassword().equals(password) && role.equals("Hospital") ){
+            btnLogout.setVisible(true);
             JOptionPane.showMessageDialog(this,"Logged in as Hospital Admin");
         }
         
         else if(communityAdmin.getUserName().equals(username) && communityAdmin.getPassword().equals(password) && role.equals("Community") ){
+            btnLogout.setVisible(true);
             JOptionPane.showMessageDialog(this,"Logged in as Community Admin");
         }
         
         
     }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
+        // TODO add your handling code here:
+
+        
+        splitPane.setRightComponent(workspacePanel);
+        btnLogout.setVisible(false);
+        txtPassword.setText("");
+        txtUserName.setText("");
+
+    }//GEN-LAST:event_btnLogoutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -347,10 +318,8 @@ public class MainJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCreateEmployee;
-    private javax.swing.JButton btnEditEmployee;
     private javax.swing.JButton btnLogin;
-    private javax.swing.JButton btnSearchEmployee;
+    private javax.swing.JButton btnLogout;
     private javax.swing.JComboBox<String> cmbLoginType;
     private javax.swing.JPanel controlPanel;
     private javax.swing.JLabel labelHospitalManagementSystem;

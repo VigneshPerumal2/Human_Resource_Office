@@ -20,6 +20,12 @@ public class Doctor extends Person {
         this.specialization = specialization;
     }
     
+    public Doctor(String specialization,String name, int age, String gender, String emailId, long phoneNumber, String userName, String password) {
+        super( name,  age,  gender,  emailId,  phoneNumber,  userName,  password);
+        this.specialization = specialization;
+    }
+    public Doctor(){
+    }
     
     
 }

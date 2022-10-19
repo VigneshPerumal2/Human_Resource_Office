@@ -44,7 +44,7 @@ public class AdminDashboardJPanel extends javax.swing.JPanel {
         btnCreatePatient = new javax.swing.JButton();
         splitWorkspace = new javax.swing.JPanel();
         tabDoctor = new javax.swing.JPanel();
-        splitPanePatient1 = new javax.swing.JSplitPane();
+        splitPaneDoctor = new javax.swing.JSplitPane();
         splitNavigation1 = new javax.swing.JPanel();
         btnViewDoctor = new javax.swing.JButton();
         btnCreateDoctor = new javax.swing.JButton();
@@ -166,7 +166,7 @@ public class AdminDashboardJPanel extends javax.swing.JPanel {
                 .addContainerGap(171, Short.MAX_VALUE))
         );
 
-        splitPanePatient1.setLeftComponent(splitNavigation1);
+        splitPaneDoctor.setLeftComponent(splitNavigation1);
 
         splitWorkspace1.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -181,7 +181,7 @@ public class AdminDashboardJPanel extends javax.swing.JPanel {
             .addGap(0, 526, Short.MAX_VALUE)
         );
 
-        splitPanePatient1.setRightComponent(splitWorkspace1);
+        splitPaneDoctor.setRightComponent(splitWorkspace1);
 
         javax.swing.GroupLayout tabDoctorLayout = new javax.swing.GroupLayout(tabDoctor);
         tabDoctor.setLayout(tabDoctorLayout);
@@ -189,14 +189,14 @@ public class AdminDashboardJPanel extends javax.swing.JPanel {
             tabDoctorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabDoctorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(splitPanePatient1)
+                .addComponent(splitPaneDoctor)
                 .addContainerGap())
         );
         tabDoctorLayout.setVerticalGroup(
             tabDoctorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabDoctorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(splitPanePatient1)
+                .addComponent(splitPaneDoctor)
                 .addContainerGap())
         );
 
@@ -259,10 +259,14 @@ public class AdminDashboardJPanel extends javax.swing.JPanel {
 
     private void btnViewDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDoctorActionPerformed
         // TODO add your handling code here:
+        ViewDoctorJPanel viewDoctorJPanel= new ViewDoctorJPanel(doctorDirectory);
+        splitPaneDoctor.setRightComponent(viewDoctorJPanel);
     }//GEN-LAST:event_btnViewDoctorActionPerformed
 
     private void btnCreateDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateDoctorActionPerformed
         // TODO add your handling code here:
+        CreateDoctorJPanel createDoctorJPanel= new CreateDoctorJPanel(doctorDirectory);
+        splitPaneDoctor.setRightComponent(createDoctorJPanel);
     }//GEN-LAST:event_btnCreateDoctorActionPerformed
 
 
@@ -275,8 +279,8 @@ public class AdminDashboardJPanel extends javax.swing.JPanel {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JPanel splitNavigation;
     private javax.swing.JPanel splitNavigation1;
+    private javax.swing.JSplitPane splitPaneDoctor;
     private javax.swing.JSplitPane splitPanePatient;
-    private javax.swing.JSplitPane splitPanePatient1;
     private javax.swing.JPanel splitWorkspace;
     private javax.swing.JPanel splitWorkspace1;
     private javax.swing.JPanel tabDoctor;
