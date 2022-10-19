@@ -14,6 +14,26 @@ public class Person {
     private String gender;
     private String emailId;
     private long phoneNumber;
+    private String userName;
+    private String password;
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    
+    
 
     public String getName() {
         return name;
@@ -53,6 +73,19 @@ public class Person {
 
     public void setPhoneNumber(long phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public Person(String name, int age, String gender, String emailId, long phoneNumber, String userName, String password) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.emailId = emailId;
+        this.phoneNumber = phoneNumber;
+        this.userName = userName;
+        this.password = password;
+    }
+
+    public Person() {
     }
     
     

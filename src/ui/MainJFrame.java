@@ -4,7 +4,10 @@
  */
 package ui;
 
+import model.Admin;
+import model.DoctorDirectory;
 import model.EmployeeProfileHistory;
+import model.PatientDirectory;
 
 /**
  *
@@ -14,6 +17,12 @@ public class MainJFrame extends javax.swing.JFrame {
     
     
     private EmployeeProfileHistory employeeProfileHistory;
+    private PatientDirectory patientDirectory;
+    private DoctorDirectory doctorDirectory;
+    
+    private Admin systemAdmin;
+    private Admin hospitalAdmin;
+    private Admin communityAdmin;
 
     /**
      * Creates new form MainJFrame
@@ -21,6 +30,14 @@ public class MainJFrame extends javax.swing.JFrame {
     public MainJFrame() {
         initComponents();
         employeeProfileHistory = new EmployeeProfileHistory();
+        patientDirectory= new PatientDirectory();
+        doctorDirectory= new DoctorDirectory();
+        
+        systemAdmin = new Admin("System", "SystemAdmin",  22,  "Male",  "asd@gmail.com",  123123,  "sysadmin",  "sysadmin");
+        hospitalAdmin = new Admin("Hospital", "HospitalAdmin",  22,  "Male",  "asd@gmail.com",  123123,  "hosadmin",  "hosadmin");
+        communityAdmin = new Admin("Community", "CommunityAdmin",  22,  "Male",  "asd@gmail.com",  123123,  "comadmin",  "comadmin");
+
+        
     }
 
     /**
