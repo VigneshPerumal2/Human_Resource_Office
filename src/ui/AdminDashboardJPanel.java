@@ -4,9 +4,7 @@
  */
 package ui;
 
-import javax.swing.JOptionPane;
 import model.DoctorDirectory;
-import model.Patient;
 import model.PatientDirectory;
 
 /**
@@ -25,6 +23,7 @@ public class AdminDashboardJPanel extends javax.swing.JPanel {
         initComponents();
         this.patientDirectory = patientDirectory;
         this.doctorDirectory = doctorDirectory;
+       
     }
 
     /**
@@ -39,31 +38,17 @@ public class AdminDashboardJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         tabPatient = new javax.swing.JPanel();
-        jSplitPane1 = new javax.swing.JSplitPane();
+        splitPanePatient = new javax.swing.JSplitPane();
         splitNavigation = new javax.swing.JPanel();
         btnViewPatient = new javax.swing.JButton();
         btnCreatePatient = new javax.swing.JButton();
         splitWorkspace = new javax.swing.JPanel();
-        employeeId = new javax.swing.JLabel();
-        save = new javax.swing.JButton();
-        txtAge = new javax.swing.JSpinner();
-        txtName = new javax.swing.JTextField();
-        name = new javax.swing.JLabel();
-        reset = new javax.swing.JButton();
-        gender = new javax.swing.JLabel();
-        emailAddress = new javax.swing.JLabel();
-        txtEmailAddress = new javax.swing.JTextField();
-        txtUsername = new javax.swing.JTextField();
-        createEmployeeLabel = new javax.swing.JLabel();
-        txtCellPhoneNumber = new javax.swing.JTextField();
-        drpGender = new javax.swing.JComboBox<>();
-        age = new javax.swing.JLabel();
-        cellPhoneNumber = new javax.swing.JLabel();
-        txtPassword = new javax.swing.JTextField();
-        employeeId1 = new javax.swing.JLabel();
-        txtDisease = new javax.swing.JTextField();
-        emailAddress1 = new javax.swing.JLabel();
         tabDoctor = new javax.swing.JPanel();
+        splitPanePatient1 = new javax.swing.JSplitPane();
+        splitNavigation1 = new javax.swing.JPanel();
+        btnViewDoctor = new javax.swing.JButton();
+        btnCreateDoctor = new javax.swing.JButton();
+        splitWorkspace1 = new javax.swing.JPanel();
         tabHospital = new javax.swing.JPanel();
         tabEncounters = new javax.swing.JPanel();
 
@@ -106,224 +91,113 @@ public class AdminDashboardJPanel extends javax.swing.JPanel {
                 .addComponent(btnCreatePatient, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(btnViewPatient, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(159, Short.MAX_VALUE))
+                .addContainerGap(171, Short.MAX_VALUE))
         );
 
-        jSplitPane1.setLeftComponent(splitNavigation);
+        splitPanePatient.setLeftComponent(splitNavigation);
 
         splitWorkspace.setBackground(new java.awt.Color(204, 204, 255));
-
-        employeeId.setText("Username:");
-
-        save.setBackground(new java.awt.Color(255, 119, 0));
-        save.setForeground(new java.awt.Color(255, 255, 255));
-        save.setText("Register");
-        save.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveActionPerformed(evt);
-            }
-        });
-
-        txtAge.setModel(new javax.swing.SpinnerNumberModel(18, 18, 60, 1));
-
-        txtName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNameActionPerformed(evt);
-            }
-        });
-
-        name.setText("Name:");
-
-        reset.setText("Reset");
-        reset.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                resetActionPerformed(evt);
-            }
-        });
-
-        gender.setText("Gender:");
-
-        emailAddress.setText("Email Address:");
-
-        txtEmailAddress.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEmailAddressActionPerformed(evt);
-            }
-        });
-
-        txtUsername.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsernameActionPerformed(evt);
-            }
-        });
-
-        createEmployeeLabel.setBackground(new java.awt.Color(153, 153, 153));
-        createEmployeeLabel.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        createEmployeeLabel.setForeground(new java.awt.Color(0, 71, 119));
-        createEmployeeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        createEmployeeLabel.setText("Create Patient");
-        createEmployeeLabel.setToolTipText("To create new employee");
-
-        txtCellPhoneNumber.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCellPhoneNumberActionPerformed(evt);
-            }
-        });
-
-        drpGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Others" }));
-
-        age.setText("Age:");
-
-        cellPhoneNumber.setText("Cell Phone Number:");
-
-        txtPassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPasswordActionPerformed(evt);
-            }
-        });
-
-        employeeId1.setText("Password:");
-
-        txtDisease.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDiseaseActionPerformed(evt);
-            }
-        });
-
-        emailAddress1.setText("Disease:");
 
         javax.swing.GroupLayout splitWorkspaceLayout = new javax.swing.GroupLayout(splitWorkspace);
         splitWorkspace.setLayout(splitWorkspaceLayout);
         splitWorkspaceLayout.setHorizontalGroup(
             splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(splitWorkspaceLayout.createSequentialGroup()
-                .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(splitWorkspaceLayout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(splitWorkspaceLayout.createSequentialGroup()
-                                    .addComponent(emailAddress)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(txtEmailAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(splitWorkspaceLayout.createSequentialGroup()
-                                    .addComponent(cellPhoneNumber)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(txtCellPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(splitWorkspaceLayout.createSequentialGroup()
-                                    .addComponent(employeeId1)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(splitWorkspaceLayout.createSequentialGroup()
-                                    .addComponent(emailAddress1)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(txtDisease, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(splitWorkspaceLayout.createSequentialGroup()
-                                .addGap(134, 134, 134)
-                                .addComponent(reset)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(save, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(splitWorkspaceLayout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(splitWorkspaceLayout.createSequentialGroup()
-                                .addComponent(age)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(13, 13, 13))
-                            .addGroup(splitWorkspaceLayout.createSequentialGroup()
-                                .addComponent(gender)
-                                .addGap(18, 18, 18)
-                                .addComponent(drpGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(466, Short.MAX_VALUE))
-            .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(splitWorkspaceLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(createEmployeeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(splitWorkspaceLayout.createSequentialGroup()
-                            .addGap(80, 80, 80)
-                            .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(name, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(employeeId, javax.swing.GroupLayout.Alignment.TRAILING))
-                            .addGap(18, 18, 18)
-                            .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 465, Short.MAX_VALUE)))
-                    .addContainerGap()))
+            .addGap(0, 882, Short.MAX_VALUE)
         );
         splitWorkspaceLayout.setVerticalGroup(
             splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(splitWorkspaceLayout.createSequentialGroup()
-                .addGap(155, 155, 155)
-                .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(employeeId1)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(age)
-                    .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(gender)
-                    .addComponent(drpGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(cellPhoneNumber)
-                    .addComponent(txtCellPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(emailAddress)
-                    .addComponent(txtEmailAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(emailAddress1)
-                    .addComponent(txtDisease, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(8, 8, 8)
-                .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(save)
-                    .addComponent(reset))
-                .addContainerGap(148, Short.MAX_VALUE))
-            .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(splitWorkspaceLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(createEmployeeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(name)
-                        .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(employeeId)
-                        .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(367, Short.MAX_VALUE)))
+            .addGap(0, 526, Short.MAX_VALUE)
         );
 
-        jSplitPane1.setRightComponent(splitWorkspace);
+        splitPanePatient.setRightComponent(splitWorkspace);
 
         javax.swing.GroupLayout tabPatientLayout = new javax.swing.GroupLayout(tabPatient);
         tabPatient.setLayout(tabPatientLayout);
         tabPatientLayout.setHorizontalGroup(
             tabPatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1)
+            .addGroup(tabPatientLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(splitPanePatient)
+                .addContainerGap())
         );
         tabPatientLayout.setVerticalGroup(
             tabPatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1)
+            .addGroup(tabPatientLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(splitPanePatient)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Patient", tabPatient);
+
+        btnViewDoctor.setFont(new java.awt.Font("Helvetica Neue", 1, 10)); // NOI18N
+        btnViewDoctor.setText("View Doctor");
+        btnViewDoctor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewDoctorActionPerformed(evt);
+            }
+        });
+
+        btnCreateDoctor.setFont(new java.awt.Font("Helvetica Neue", 1, 10)); // NOI18N
+        btnCreateDoctor.setText("Create Doctor");
+        btnCreateDoctor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateDoctorActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout splitNavigation1Layout = new javax.swing.GroupLayout(splitNavigation1);
+        splitNavigation1.setLayout(splitNavigation1Layout);
+        splitNavigation1Layout.setHorizontalGroup(
+            splitNavigation1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(splitNavigation1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(splitNavigation1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnCreateDoctor, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                    .addComponent(btnViewDoctor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        splitNavigation1Layout.setVerticalGroup(
+            splitNavigation1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(splitNavigation1Layout.createSequentialGroup()
+                .addGap(118, 118, 118)
+                .addComponent(btnCreateDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(btnViewDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(171, Short.MAX_VALUE))
+        );
+
+        splitPanePatient1.setLeftComponent(splitNavigation1);
+
+        splitWorkspace1.setBackground(new java.awt.Color(204, 204, 255));
+
+        javax.swing.GroupLayout splitWorkspace1Layout = new javax.swing.GroupLayout(splitWorkspace1);
+        splitWorkspace1.setLayout(splitWorkspace1Layout);
+        splitWorkspace1Layout.setHorizontalGroup(
+            splitWorkspace1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 882, Short.MAX_VALUE)
+        );
+        splitWorkspace1Layout.setVerticalGroup(
+            splitWorkspace1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 526, Short.MAX_VALUE)
+        );
+
+        splitPanePatient1.setRightComponent(splitWorkspace1);
 
         javax.swing.GroupLayout tabDoctorLayout = new javax.swing.GroupLayout(tabDoctor);
         tabDoctor.setLayout(tabDoctorLayout);
         tabDoctorLayout.setHorizontalGroup(
             tabDoctorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1024, Short.MAX_VALUE)
+            .addGroup(tabDoctorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(splitPanePatient1)
+                .addContainerGap())
         );
         tabDoctorLayout.setVerticalGroup(
             tabDoctorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 514, Short.MAX_VALUE)
+            .addGroup(tabDoctorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(splitPanePatient1)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Doctor", tabDoctor);
@@ -332,11 +206,11 @@ public class AdminDashboardJPanel extends javax.swing.JPanel {
         tabHospital.setLayout(tabHospitalLayout);
         tabHospitalLayout.setHorizontalGroup(
             tabHospitalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1024, Short.MAX_VALUE)
+            .addGap(0, 1036, Short.MAX_VALUE)
         );
         tabHospitalLayout.setVerticalGroup(
             tabHospitalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 514, Short.MAX_VALUE)
+            .addGap(0, 538, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Hospital", tabHospital);
@@ -345,11 +219,11 @@ public class AdminDashboardJPanel extends javax.swing.JPanel {
         tabEncounters.setLayout(tabEncountersLayout);
         tabEncountersLayout.setHorizontalGroup(
             tabEncountersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1024, Short.MAX_VALUE)
+            .addGap(0, 1036, Short.MAX_VALUE)
         );
         tabEncountersLayout.setVerticalGroup(
             tabEncountersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 514, Short.MAX_VALUE)
+            .addGap(0, 538, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Encounters", tabEncounters);
@@ -371,131 +245,43 @@ public class AdminDashboardJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnViewPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewPatientActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnViewPatientActionPerformed
-
     private void btnCreatePatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreatePatientActionPerformed
         // TODO add your handling code here:
-        
+        CreatePatientJPanel createPatientJPanel= new CreatePatientJPanel(patientDirectory);
+        splitPanePatient.setRightComponent(createPatientJPanel);
     }//GEN-LAST:event_btnCreatePatientActionPerformed
 
-    private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
+    private void btnViewPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewPatientActionPerformed
         // TODO add your handling code here:
+        ViewPatientJPanel viewPatientJPanel= new ViewPatientJPanel(patientDirectory);
+        splitPanePatient.setRightComponent(viewPatientJPanel);
+    }//GEN-LAST:event_btnViewPatientActionPerformed
 
-        //Reset validation
-//        valName.setText("");
-//        valEmployeeId.setText("");
-//        valDate.setText("");
-//        valTeamInfo.setText("");
-//        valCellPhoneNumber.setText("");
-//        valEmailAddress.setText("");
-//        valPhoto.setText("");
-//        if(validation()){
-        String name = txtName.getText();
-        String username = txtUsername.getText();
-        String password = txtPassword.getText();
-        int age = Integer.parseInt(txtAge.getValue().toString());
-        String gender = (String) drpGender.getSelectedItem();
-        long cellPhoneNumber = Long.parseLong(txtCellPhoneNumber.getText());
-        String emailAddress = txtEmailAddress.getText();
-        String disease = txtDisease.getText();
-
-        Patient p = new Patient(disease, name, age, gender, emailAddress, cellPhoneNumber, username, password);
-
-        patientDirectory.add(p);
-        JOptionPane.showMessageDialog(this, "New Patient Details was created ! ");
-        txtName.setText("");
-        txtUsername.setText("");
-        txtAge.setValue(18);
-        drpGender.setSelectedItem("Male");
-        txtUsername.setText("");
-        txtEmailAddress.setText("");
-        txtCellPhoneNumber.setText("");
-        txtUsername.setText("");
-        txtPassword.setText("");
-        txtDisease.setText("");
-//    }
-
-    }//GEN-LAST:event_saveActionPerformed
-
-    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
+    private void btnViewDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDoctorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNameActionPerformed
+    }//GEN-LAST:event_btnViewDoctorActionPerformed
 
-    private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
+    private void btnCreateDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateDoctorActionPerformed
         // TODO add your handling code here:
-        txtName.setText("");
-        txtUsername.setText("");
-        txtAge.setValue(18);
-        drpGender.setSelectedItem("Male");
-        txtUsername.setText("");
-        txtEmailAddress.setText("");
-        txtCellPhoneNumber.setText("");
-        txtUsername.setText("");
-        txtPassword.setText("");
-        txtDisease.setText("");
-        //Reset validation
-//        valName.setText("");
-//        valEmployeeId.setText("");
-//        valDate.setText("");
-//        valTeamInfo.setText("");
-//        valCellPhoneNumber.setText("");
-//        valEmailAddress.setText("");
-//        valPhoto.setText("");
-    }//GEN-LAST:event_resetActionPerformed
-
-    private void txtEmailAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailAddressActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEmailAddressActionPerformed
-
-    private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsernameActionPerformed
-
-    private void txtCellPhoneNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCellPhoneNumberActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCellPhoneNumberActionPerformed
-
-    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPasswordActionPerformed
-
-    private void txtDiseaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDiseaseActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDiseaseActionPerformed
+    }//GEN-LAST:event_btnCreateDoctorActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel age;
+    private javax.swing.JButton btnCreateDoctor;
     private javax.swing.JButton btnCreatePatient;
+    private javax.swing.JButton btnViewDoctor;
     private javax.swing.JButton btnViewPatient;
-    private javax.swing.JLabel cellPhoneNumber;
-    private javax.swing.JLabel createEmployeeLabel;
-    private javax.swing.JComboBox<String> drpGender;
-    private javax.swing.JLabel emailAddress;
-    private javax.swing.JLabel emailAddress1;
-    private javax.swing.JLabel employeeId;
-    private javax.swing.JLabel employeeId1;
-    private javax.swing.JLabel gender;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JLabel name;
-    private javax.swing.JButton reset;
-    private javax.swing.JButton save;
     private javax.swing.JPanel splitNavigation;
+    private javax.swing.JPanel splitNavigation1;
+    private javax.swing.JSplitPane splitPanePatient;
+    private javax.swing.JSplitPane splitPanePatient1;
     private javax.swing.JPanel splitWorkspace;
+    private javax.swing.JPanel splitWorkspace1;
     private javax.swing.JPanel tabDoctor;
     private javax.swing.JPanel tabEncounters;
     private javax.swing.JPanel tabHospital;
     private javax.swing.JPanel tabPatient;
-    private javax.swing.JSpinner txtAge;
-    private javax.swing.JTextField txtCellPhoneNumber;
-    private javax.swing.JTextField txtDisease;
-    private javax.swing.JTextField txtEmailAddress;
-    private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtPassword;
-    private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 }

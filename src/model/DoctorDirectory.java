@@ -26,17 +26,17 @@ public class DoctorDirectory {
         this.history = history;
     }
     
-    public Doctor addNewEmployee(Doctor patient){
+    public Doctor add(Doctor patient){
         System.out.println("Employee Added->"+patient);
         history.add(patient); 
         return patient;
     }
     
-    public void deleteEmployee(int index){
+    public void delete(int index){
         history.remove(index);
     }
     
-    public void updateEmployee(Doctor ep,int index){
+    public void update(Doctor ep,int index){
         history.set(index,ep);
     }
     public void deleteAll(){
