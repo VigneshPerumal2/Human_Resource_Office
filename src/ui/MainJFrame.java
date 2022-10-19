@@ -4,6 +4,7 @@
  */
 package ui;
 
+import javax.swing.JOptionPane;
 import model.Admin;
 import model.DoctorDirectory;
 import model.EmployeeProfileHistory;
@@ -58,7 +59,7 @@ public class MainJFrame extends javax.swing.JFrame {
         labelHospitalManagementSystem = new javax.swing.JLabel();
         labelHospitalManagementSystem1 = new javax.swing.JLabel();
         txtPassword = new javax.swing.JTextField();
-        txtUserName1 = new javax.swing.JTextField();
+        txtUserName = new javax.swing.JTextField();
         labelHospitalManagementSystem2 = new javax.swing.JLabel();
         labelHospitalManagementSystem3 = new javax.swing.JLabel();
         cmbLoginType = new javax.swing.JComboBox<>();
@@ -140,10 +141,10 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
-        txtUserName1.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        txtUserName1.addActionListener(new java.awt.event.ActionListener() {
+        txtUserName.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        txtUserName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUserName1ActionPerformed(evt);
+                txtUserNameActionPerformed(evt);
             }
         });
 
@@ -161,7 +162,7 @@ public class MainJFrame extends javax.swing.JFrame {
         labelHospitalManagementSystem3.setText("User Name :");
         labelHospitalManagementSystem3.setToolTipText("To create new employee");
 
-        cmbLoginType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Patient", "Doctor" }));
+        cmbLoginType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "System", "Hospital", "Community" }));
 
         labelHospitalManagementSystem4.setBackground(new java.awt.Color(153, 153, 153));
         labelHospitalManagementSystem4.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
@@ -174,6 +175,11 @@ public class MainJFrame extends javax.swing.JFrame {
         btnLogin.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("Login");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout workspacePanelLayout = new javax.swing.GroupLayout(workspacePanel);
         workspacePanel.setLayout(workspacePanelLayout);
@@ -193,7 +199,7 @@ public class MainJFrame extends javax.swing.JFrame {
                                     .addGroup(workspacePanelLayout.createSequentialGroup()
                                         .addComponent(labelHospitalManagementSystem3, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtUserName1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, workspacePanelLayout.createSequentialGroup()
                                         .addGroup(workspacePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(labelHospitalManagementSystem2, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -220,7 +226,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(workspacePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelHospitalManagementSystem3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtUserName1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(workspacePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -277,9 +283,32 @@ public class MainJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPasswordActionPerformed
 
-    private void txtUserName1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserName1ActionPerformed
+    private void txtUserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtUserName1ActionPerformed
+    }//GEN-LAST:event_txtUserNameActionPerformed
+
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        // TODO add your handling code here:
+        String username = txtUserName.getText();
+        String password = txtPassword.getText();
+        String role = (String)cmbLoginType.getSelectedItem();
+        
+        System.out.println(username + password + role);
+        
+        if(systemAdmin.getUserName().equals(username) && systemAdmin.getPassword().equals(password) && role.equals("System") ){
+            JOptionPane.showMessageDialog(this,"Logged in as System Admin");
+        }
+        
+        else if(hospitalAdmin.getUserName().equals(username) && hospitalAdmin.getPassword().equals(password) && role.equals("Hospital") ){
+            JOptionPane.showMessageDialog(this,"Logged in as Hospital Admin");
+        }
+        
+        else if(communityAdmin.getUserName().equals(username) && communityAdmin.getPassword().equals(password) && role.equals("Community") ){
+            JOptionPane.showMessageDialog(this,"Logged in as Community Admin");
+        }
+        
+        
+    }//GEN-LAST:event_btnLoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -330,7 +359,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel labelHospitalManagementSystem4;
     private javax.swing.JSplitPane splitPane;
     private javax.swing.JTextField txtPassword;
-    private javax.swing.JTextField txtUserName1;
+    private javax.swing.JTextField txtUserName;
     private javax.swing.JPanel workspacePanel;
     // End of variables declaration//GEN-END:variables
 }
