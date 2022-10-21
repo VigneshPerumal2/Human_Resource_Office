@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 import model.Admin;
 import model.DoctorDirectory;
 import model.EmployeeProfileHistory;
+import model.HospitalDirectory;
 import model.PatientDirectory;
 
 /**
@@ -20,6 +21,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private EmployeeProfileHistory employeeProfileHistory;
     private PatientDirectory patientDirectory;
     private DoctorDirectory doctorDirectory;
+    private HospitalDirectory hospitalDirectory;
     
     private Admin systemAdmin;
     private Admin hospitalAdmin;
@@ -33,6 +35,7 @@ public class MainJFrame extends javax.swing.JFrame {
         employeeProfileHistory = new EmployeeProfileHistory();
         patientDirectory= new PatientDirectory();
         doctorDirectory= new DoctorDirectory();
+        hospitalDirectory = new HospitalDirectory();
         
         systemAdmin = new Admin("System", "SystemAdmin",  22,  "Male",  "asd@gmail.com",  123123,  "sysadmin",  "sysadmin");
         hospitalAdmin = new Admin("Hospital", "HospitalAdmin",  22,  "Male",  "asd@gmail.com",  123123,  "hosadmin",  "hosadmin");
@@ -244,7 +247,7 @@ public class MainJFrame extends javax.swing.JFrame {
             btnLogout.setVisible(true);
             JOptionPane.showMessageDialog(this,"Logged in as System Admin");
             
-            AdminDashboardJPanel adminDashboardJPanel = new AdminDashboardJPanel(patientDirectory,doctorDirectory);
+            SystemAdminDashboardJPanel adminDashboardJPanel = new SystemAdminDashboardJPanel(patientDirectory,doctorDirectory,hospitalDirectory);
             splitPane.setRightComponent(adminDashboardJPanel);
             
         }
