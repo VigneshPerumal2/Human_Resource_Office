@@ -10,6 +10,7 @@
             <file>file:/Users/vigy/NetBeansProjects/Human_Resource_Officer/src/ui/MainJFrame.java</file>
             <file>file:/Users/vigy/NetBeansProjects/Human_Resource_Officer/src/ui/ViewJPanel.java</file>
             <file>file:/Users/vigy/NetBeansProjects/Human_Resource_Officer/src/model/Patient.java</file>
+            <file>file:/Users/vigy/NetBeansProjects/Human_Resource_Officer/src/ui/ViewPatientJPanel.java</file>
             <file>file:/Users/vigy/NetBeansProjects/Human_Resource_Officer/src/model/ContactInfo.java</file>
             <file>file:/Users/vigy/NetBeansProjects/Human_Resource_Officer/src/model/Person.java</file>
             <file>file:/Users/vigy/NetBeansProjects/Human_Resource_Officer/src/model/EmployeeProfileHistory.java</file>
@@ -17,6 +18,7 @@
             <file>file:/Users/vigy/NetBeansProjects/Human_Resource_Officer/src/model/Admin.java</file>
             <file>file:/Users/vigy/NetBeansProjects/Human_Resource_Officer/src/ui/AdminDashboardJPanel.java</file>
             <file>file:/Users/vigy/NetBeansProjects/Human_Resource_Officer/src/ui/SearchJPanel.java</file>
+            <file>file:/Users/vigy/NetBeansProjects/Human_Resource_Officer/src/ui/CreatePatientJPanel.java</file>
         </group>
     </open-files>
 </project-private>

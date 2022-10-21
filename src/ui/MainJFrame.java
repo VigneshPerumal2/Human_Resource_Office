@@ -57,13 +57,13 @@ public class MainJFrame extends javax.swing.JFrame {
         workspacePanel = new javax.swing.JPanel();
         labelHospitalManagementSystem = new javax.swing.JLabel();
         labelHospitalManagementSystem1 = new javax.swing.JLabel();
-        txtPassword = new javax.swing.JTextField();
         txtUserName = new javax.swing.JTextField();
         labelHospitalManagementSystem2 = new javax.swing.JLabel();
         labelHospitalManagementSystem3 = new javax.swing.JLabel();
         cmbLoginType = new javax.swing.JComboBox<>();
         labelHospitalManagementSystem4 = new javax.swing.JLabel();
         btnLogin = new javax.swing.JButton();
+        txtPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -88,10 +88,10 @@ public class MainJFrame extends javax.swing.JFrame {
         );
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
-                .addContainerGap(544, Short.MAX_VALUE)
+            .addGroup(controlPanelLayout.createSequentialGroup()
+                .addGap(386, 386, 386)
                 .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(401, 401, 401))
+                .addContainerGap(559, Short.MAX_VALUE))
         );
 
         splitPane.setLeftComponent(controlPanel);
@@ -111,13 +111,6 @@ public class MainJFrame extends javax.swing.JFrame {
         labelHospitalManagementSystem1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelHospitalManagementSystem1.setText("Hospital Management System");
         labelHospitalManagementSystem1.setToolTipText("To create new employee");
-
-        txtPassword.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        txtPassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPasswordActionPerformed(evt);
-            }
-        });
 
         txtUserName.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         txtUserName.addActionListener(new java.awt.event.ActionListener() {
@@ -159,6 +152,8 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        txtPassword.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+
         javax.swing.GroupLayout workspacePanelLayout = new javax.swing.GroupLayout(workspacePanel);
         workspacePanel.setLayout(workspacePanelLayout);
         workspacePanelLayout.setHorizontalGroup(
@@ -175,7 +170,7 @@ public class MainJFrame extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, workspacePanelLayout.createSequentialGroup()
                                 .addGroup(workspacePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(labelHospitalManagementSystem, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(workspacePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(workspacePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(workspacePanelLayout.createSequentialGroup()
                                             .addComponent(labelHospitalManagementSystem3, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -198,7 +193,7 @@ public class MainJFrame extends javax.swing.JFrame {
             .addGroup(workspacePanelLayout.createSequentialGroup()
                 .addGap(90, 90, 90)
                 .addComponent(labelHospitalManagementSystem1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addGap(40, 40, 40)
                 .addComponent(labelHospitalManagementSystem, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(workspacePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -206,15 +201,15 @@ public class MainJFrame extends javax.swing.JFrame {
                     .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(workspacePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelHospitalManagementSystem4, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelHospitalManagementSystem4, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(workspacePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmbLoginType, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelHospitalManagementSystem2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(46, 46, 46)
                 .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(397, Short.MAX_VALUE))
+                .addContainerGap(385, Short.MAX_VALUE))
         );
 
         splitPane.setRightComponent(workspacePanel);
@@ -232,10 +227,6 @@ public class MainJFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPasswordActionPerformed
 
     private void txtUserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserNameActionPerformed
         // TODO add your handling code here:
@@ -328,7 +319,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel labelHospitalManagementSystem3;
     private javax.swing.JLabel labelHospitalManagementSystem4;
     private javax.swing.JSplitPane splitPane;
-    private javax.swing.JTextField txtPassword;
+    private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUserName;
     private javax.swing.JPanel workspacePanel;
     // End of variables declaration//GEN-END:variables
