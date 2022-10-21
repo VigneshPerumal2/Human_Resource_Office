@@ -42,7 +42,6 @@ public class CommunityAdminDashboardJPanel extends javax.swing.JPanel {
         tabCity = new javax.swing.JPanel();
         splitPaneCity = new javax.swing.JSplitPane();
         splitNavigation = new javax.swing.JPanel();
-        btnViewCity = new javax.swing.JButton();
         btnCreateCity = new javax.swing.JButton();
         splitWorkspace = new javax.swing.JPanel();
         tabCommunity = new javax.swing.JPanel();
@@ -64,14 +63,6 @@ public class CommunityAdminDashboardJPanel extends javax.swing.JPanel {
 
         jTabbedPane1.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
 
-        btnViewCity.setFont(new java.awt.Font("Helvetica Neue", 1, 10)); // NOI18N
-        btnViewCity.setText("View City");
-        btnViewCity.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewCityActionPerformed(evt);
-            }
-        });
-
         btnCreateCity.setFont(new java.awt.Font("Helvetica Neue", 1, 10)); // NOI18N
         btnCreateCity.setText("Create City");
         btnCreateCity.addActionListener(new java.awt.event.ActionListener() {
@@ -84,20 +75,16 @@ public class CommunityAdminDashboardJPanel extends javax.swing.JPanel {
         splitNavigation.setLayout(splitNavigationLayout);
         splitNavigationLayout.setHorizontalGroup(
             splitNavigationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(splitNavigationLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(splitNavigationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnCreateCity, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
-                    .addComponent(btnViewCity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, splitNavigationLayout.createSequentialGroup()
+                .addComponent(btnCreateCity, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                .addContainerGap())
         );
         splitNavigationLayout.setVerticalGroup(
             splitNavigationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(splitNavigationLayout.createSequentialGroup()
-                .addGap(118, 118, 118)
+                .addGap(178, 178, 178)
                 .addComponent(btnCreateCity, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(btnViewCity, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(128, Short.MAX_VALUE))
+                .addContainerGap(200, Short.MAX_VALUE))
         );
 
         splitPaneCity.setLeftComponent(splitNavigation);
@@ -327,20 +314,11 @@ public class CommunityAdminDashboardJPanel extends javax.swing.JPanel {
         splitPaneCity.setRightComponent(createCityJPanel);
     }//GEN-LAST:event_btnCreateCityActionPerformed
 
-    private void btnViewCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewCityActionPerformed
-        // TODO add your handling code here:
-//        ViewPatientJPanel viewPatientJPanel= new ViewPatientJPanel(patientDirectory,deleteFlag);
-//        splitPaneCity.setRightComponent(viewPatientJPanel);
-        ViewCityJPanel viewCityJPanel = new ViewCityJPanel(cityDirectory);
-        splitPaneCity.setRightComponent(viewCityJPanel);
-    }//GEN-LAST:event_btnViewCityActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreateCity;
     private javax.swing.JButton btnCreateCommunity;
     private javax.swing.JButton btnCreateHouse;
-    private javax.swing.JButton btnViewCity;
     private javax.swing.JButton btnViewCommunity;
     private javax.swing.JButton btnViewHouse;
     private javax.swing.JLabel jLabel1;
