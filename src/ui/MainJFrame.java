@@ -6,9 +6,12 @@ package ui;
 
 import javax.swing.JOptionPane;
 import model.Admin;
+import model.CityDirectory;
+import model.CommunityDirectory;
 import model.DoctorDirectory;
 import model.EmployeeProfileHistory;
 import model.HospitalDirectory;
+import model.HouseDirectory;
 import model.PatientDirectory;
 
 /**
@@ -22,6 +25,9 @@ public class MainJFrame extends javax.swing.JFrame {
     private PatientDirectory patientDirectory;
     private DoctorDirectory doctorDirectory;
     private HospitalDirectory hospitalDirectory;
+    private CityDirectory cityDirectory;
+    private CommunityDirectory communityDirectory;
+    private HouseDirectory houseDirectory;
     
     private Admin systemAdmin;
     private Admin hospitalAdmin;
@@ -36,6 +42,10 @@ public class MainJFrame extends javax.swing.JFrame {
         patientDirectory= new PatientDirectory();
         doctorDirectory= new DoctorDirectory();
         hospitalDirectory = new HospitalDirectory();
+        
+        cityDirectory= new CityDirectory();
+        communityDirectory = new CommunityDirectory();
+        houseDirectory = new HouseDirectory();
         
         systemAdmin = new Admin("System", "SystemAdmin",  22,  "Male",  "asd@gmail.com",  123123,  "sysadmin",  "sysadmin");
         hospitalAdmin = new Admin("Hospital", "HospitalAdmin",  22,  "Male",  "asd@gmail.com",  123123,  "hosadmin",  "hosadmin");
@@ -284,6 +294,14 @@ public class MainJFrame extends javax.swing.JFrame {
         else if(communityAdmin.getUserName().equals(username) && communityAdmin.getPassword().equals(password) && role.equals("Community") ){
             btnLogout.setVisible(true);
             JOptionPane.showMessageDialog(this,"Logged in as Community Admin");
+             String text = "<html>";
+            text+= "Welcome,<br>";
+            text+="Community<br>";
+            text+="Admin";
+            text+="</html>";
+            lblWelcomeText.setText(text);
+            CommunityAdminDashboardJPanel communityAdminDashboardJPanel = new CommunityAdminDashboardJPanel(cityDirectory, houseDirectory, communityDirectory);
+            splitPane.setRightComponent(communityAdminDashboardJPanel);
         }
         
         
