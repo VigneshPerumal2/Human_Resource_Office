@@ -19,11 +19,13 @@ public class ViewPatientJPanel extends javax.swing.JPanel {
      * Creates new form ViewPatientJPanel
      */
     PatientDirectory patientDirectory;
+    
 
-    public ViewPatientJPanel(PatientDirectory patientDirectory) {
+    public ViewPatientJPanel(PatientDirectory patientDirectory,boolean deleteFlag) {
         initComponents();
 
         this.patientDirectory = patientDirectory;
+        btnDelete.setVisible(deleteFlag);
         populateTable();
     }
 

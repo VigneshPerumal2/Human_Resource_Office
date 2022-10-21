@@ -57,6 +57,7 @@ public class MainJFrame extends javax.swing.JFrame {
         splitPane = new javax.swing.JSplitPane();
         controlPanel = new javax.swing.JPanel();
         btnLogout = new javax.swing.JButton();
+        lblWelcomeText = new javax.swing.JLabel();
         workspacePanel = new javax.swing.JPanel();
         labelHospitalManagementSystem = new javax.swing.JLabel();
         labelHospitalManagementSystem1 = new javax.swing.JLabel();
@@ -80,19 +81,28 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        lblWelcomeText.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        lblWelcomeText.setForeground(new java.awt.Color(255, 255, 255));
+        lblWelcomeText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblWelcomeText.setText("Welcome");
+
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
         controlPanel.setLayout(controlPanelLayout);
         controlPanelLayout.setHorizontalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnLogout, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
+                .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(lblWelcomeText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnLogout, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE))
                 .addContainerGap())
         );
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlPanelLayout.createSequentialGroup()
-                .addGap(386, 386, 386)
+                .addGap(202, 202, 202)
+                .addComponent(lblWelcomeText, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(559, Short.MAX_VALUE))
         );
@@ -246,6 +256,12 @@ public class MainJFrame extends javax.swing.JFrame {
         if(systemAdmin.getUserName().equals(username) && systemAdmin.getPassword().equals(password) && role.equals("System") ){
             btnLogout.setVisible(true);
             JOptionPane.showMessageDialog(this,"Logged in as System Admin");
+            String text = "<html>";
+            text+= "Welcome,<br>";
+            text+="System<br>";
+            text+="Admin";
+            text+="</html>";
+            lblWelcomeText.setText(text);
             
             SystemAdminDashboardJPanel adminDashboardJPanel = new SystemAdminDashboardJPanel(patientDirectory,doctorDirectory,hospitalDirectory);
             splitPane.setRightComponent(adminDashboardJPanel);
@@ -255,6 +271,14 @@ public class MainJFrame extends javax.swing.JFrame {
         else if(hospitalAdmin.getUserName().equals(username) && hospitalAdmin.getPassword().equals(password) && role.equals("Hospital") ){
             btnLogout.setVisible(true);
             JOptionPane.showMessageDialog(this,"Logged in as Hospital Admin");
+            String text = "<html>";
+            text+= "Welcome,<br>";
+            text+="Hospital<br>";
+            text+="Admin";
+            text+="</html>";
+            lblWelcomeText.setText(text);
+            HospitalAdminDashboardJPanel hospitalAdminDashboardJPanel = new HospitalAdminDashboardJPanel(patientDirectory,doctorDirectory,hospitalDirectory);
+            splitPane.setRightComponent(hospitalAdminDashboardJPanel);
         }
         
         else if(communityAdmin.getUserName().equals(username) && communityAdmin.getPassword().equals(password) && role.equals("Community") ){
@@ -268,7 +292,11 @@ public class MainJFrame extends javax.swing.JFrame {
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
 
-        
+        String text = "<html>";
+            text+= "Welcome,<br>";
+           
+            text+="</html>";
+            lblWelcomeText.setText(text);
         splitPane.setRightComponent(workspacePanel);
         btnLogout.setVisible(false);
         txtPassword.setText("");
@@ -321,6 +349,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel labelHospitalManagementSystem2;
     private javax.swing.JLabel labelHospitalManagementSystem3;
     private javax.swing.JLabel labelHospitalManagementSystem4;
+    private javax.swing.JLabel lblWelcomeText;
     private javax.swing.JSplitPane splitPane;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUserName;

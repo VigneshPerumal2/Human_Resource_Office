@@ -20,10 +20,11 @@ public class ViewDoctorJPanel extends javax.swing.JPanel {
      */
     
     DoctorDirectory doctorDirectory;
-    public ViewDoctorJPanel(DoctorDirectory doctorDirectory) {
+    public ViewDoctorJPanel(DoctorDirectory doctorDirectory,boolean deleteFlag) {
         initComponents();
         
         this.doctorDirectory=doctorDirectory;
+        btnDelete.setVisible(deleteFlag);
         populateTable();
     }
 

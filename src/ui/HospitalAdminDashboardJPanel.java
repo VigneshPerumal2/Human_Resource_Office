@@ -12,16 +12,17 @@ import model.PatientDirectory;
  *
  * @author vigy
  */
-public class SystemAdminDashboardJPanel extends javax.swing.JPanel {
+public class HospitalAdminDashboardJPanel extends javax.swing.JPanel {
 
     PatientDirectory patientDirectory;
     DoctorDirectory doctorDirectory;
     HospitalDirectory hospitalDirectory;
-    private boolean deleteFlag=true;
+    private boolean deleteFlag=false;
+
     /**
-     * Creates new form AdminDashboardJPanel
+     * Creates new form HospitalAdminDashboardJPanel
      */
-    public SystemAdminDashboardJPanel(PatientDirectory patientDirectory, DoctorDirectory doctorDirectory,HospitalDirectory hospitalDirectory) {
+    public HospitalAdminDashboardJPanel(PatientDirectory patientDirectory, DoctorDirectory doctorDirectory,HospitalDirectory hospitalDirectory) {
         initComponents();
         this.patientDirectory = patientDirectory;
         this.doctorDirectory = doctorDirectory;
@@ -67,7 +68,7 @@ public class SystemAdminDashboardJPanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("System Admin Dashboard");
+        jLabel1.setText("Hospital Admin Dashboard");
 
         jTabbedPane1.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
 
@@ -104,7 +105,7 @@ public class SystemAdminDashboardJPanel extends javax.swing.JPanel {
                 .addComponent(btnCreatePatient, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(btnViewPatient, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addContainerGap(128, Short.MAX_VALUE))
         );
 
         splitPanePatient.setLeftComponent(splitNavigation);
@@ -115,11 +116,11 @@ public class SystemAdminDashboardJPanel extends javax.swing.JPanel {
         splitWorkspace.setLayout(splitWorkspaceLayout);
         splitWorkspaceLayout.setHorizontalGroup(
             splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 882, Short.MAX_VALUE)
+            .addGap(0, 646, Short.MAX_VALUE)
         );
         splitWorkspaceLayout.setVerticalGroup(
             splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 526, Short.MAX_VALUE)
+            .addGap(0, 483, Short.MAX_VALUE)
         );
 
         splitPanePatient.setRightComponent(splitWorkspace);
@@ -176,7 +177,7 @@ public class SystemAdminDashboardJPanel extends javax.swing.JPanel {
                 .addComponent(btnCreateDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(btnViewDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addContainerGap(128, Short.MAX_VALUE))
         );
 
         splitPaneDoctor.setLeftComponent(splitNavigation1);
@@ -187,11 +188,11 @@ public class SystemAdminDashboardJPanel extends javax.swing.JPanel {
         splitWorkspace1.setLayout(splitWorkspace1Layout);
         splitWorkspace1Layout.setHorizontalGroup(
             splitWorkspace1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 882, Short.MAX_VALUE)
+            .addGap(0, 646, Short.MAX_VALUE)
         );
         splitWorkspace1Layout.setVerticalGroup(
             splitWorkspace1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 526, Short.MAX_VALUE)
+            .addGap(0, 483, Short.MAX_VALUE)
         );
 
         splitPaneDoctor.setRightComponent(splitWorkspace1);
@@ -248,7 +249,7 @@ public class SystemAdminDashboardJPanel extends javax.swing.JPanel {
                 .addComponent(btnCreateHospital, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(btnViewHospital, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addContainerGap(128, Short.MAX_VALUE))
         );
 
         splitPaneHospital.setLeftComponent(splitNavigation2);
@@ -259,11 +260,11 @@ public class SystemAdminDashboardJPanel extends javax.swing.JPanel {
         splitWorkspace2.setLayout(splitWorkspace2Layout);
         splitWorkspace2Layout.setHorizontalGroup(
             splitWorkspace2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 882, Short.MAX_VALUE)
+            .addGap(0, 646, Short.MAX_VALUE)
         );
         splitWorkspace2Layout.setVerticalGroup(
             splitWorkspace2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 526, Short.MAX_VALUE)
+            .addGap(0, 483, Short.MAX_VALUE)
         );
 
         splitPaneHospital.setRightComponent(splitWorkspace2);
@@ -320,7 +321,7 @@ public class SystemAdminDashboardJPanel extends javax.swing.JPanel {
                 .addComponent(btnCreateDoctor2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(btnViewDoctor2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addContainerGap(128, Short.MAX_VALUE))
         );
 
         splitPaneDoctor2.setLeftComponent(splitNavigation3);
@@ -331,11 +332,11 @@ public class SystemAdminDashboardJPanel extends javax.swing.JPanel {
         splitWorkspace3.setLayout(splitWorkspace3Layout);
         splitWorkspace3Layout.setHorizontalGroup(
             splitWorkspace3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 882, Short.MAX_VALUE)
+            .addGap(0, 646, Short.MAX_VALUE)
         );
         splitWorkspace3Layout.setVerticalGroup(
             splitWorkspace3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 526, Short.MAX_VALUE)
+            .addGap(0, 483, Short.MAX_VALUE)
         );
 
         splitPaneDoctor2.setRightComponent(splitWorkspace3);
@@ -376,17 +377,17 @@ public class SystemAdminDashboardJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCreatePatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreatePatientActionPerformed
-        // TODO add your handling code here:
-        CreatePatientJPanel createPatientJPanel= new CreatePatientJPanel(patientDirectory);
-        splitPanePatient.setRightComponent(createPatientJPanel);
-    }//GEN-LAST:event_btnCreatePatientActionPerformed
-
     private void btnViewPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewPatientActionPerformed
         // TODO add your handling code here:
         ViewPatientJPanel viewPatientJPanel= new ViewPatientJPanel(patientDirectory,deleteFlag);
         splitPanePatient.setRightComponent(viewPatientJPanel);
     }//GEN-LAST:event_btnViewPatientActionPerformed
+
+    private void btnCreatePatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreatePatientActionPerformed
+        // TODO add your handling code here:
+        CreatePatientJPanel createPatientJPanel= new CreatePatientJPanel(patientDirectory);
+        splitPanePatient.setRightComponent(createPatientJPanel);
+    }//GEN-LAST:event_btnCreatePatientActionPerformed
 
     private void btnViewDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDoctorActionPerformed
         // TODO add your handling code here:
