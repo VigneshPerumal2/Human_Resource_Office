@@ -10,30 +10,32 @@ package model;
  */
 public class House extends Community {
     
-    private String houseName;
-    private int numberOfPeople;
+    private String streetName;
+    private int houseNumber;
 
-    public String getHouseName() {
-        return houseName;
+    public String getStreetName() {
+        return streetName;
     }
 
-    public void setHouseName(String houseName) {
-        this.houseName = houseName;
+    public void setStreetName(String streetName) {
+        this.streetName = streetName;
     }
 
-    public int getNumberOfPeople() {
-        return numberOfPeople;
+    public int getHouseNumber() {
+        return houseNumber;
     }
 
-    public void setNumberOfPeople(int numberOfPeople) {
-        this.numberOfPeople = numberOfPeople;
+    public void setHouseNumber(int houseNumber) {
+        this.houseNumber = houseNumber;
     }
 
-    public House(String houseName, int numberOfPeople, String communityName, String cityName) {
+    public House(String streetName, int houseNumber, String communityName, String cityName) {
         super(communityName, cityName);
-        this.houseName = houseName;
-        this.numberOfPeople = numberOfPeople;
+        this.streetName = streetName;
+        this.houseNumber = houseNumber;
     }
+
+   
     
     
     
