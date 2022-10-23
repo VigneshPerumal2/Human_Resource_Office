@@ -6,6 +6,8 @@ package ui;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import model.Community;
+import model.CommunityDirectory;
 import model.Doctor;
 import model.DoctorDirectory;
 
@@ -20,12 +22,18 @@ public class ViewDoctorJPanel extends javax.swing.JPanel {
      */
     
     DoctorDirectory doctorDirectory;
-    public ViewDoctorJPanel(DoctorDirectory doctorDirectory,boolean deleteFlag) {
+    CommunityDirectory communityDirectory;
+    public ViewDoctorJPanel(DoctorDirectory doctorDirectory,CommunityDirectory communityDirectory,boolean deleteFlag) {
         initComponents();
         
         this.doctorDirectory=doctorDirectory;
+        this.communityDirectory=communityDirectory;
         btnDelete.setVisible(deleteFlag);
         populateTable();
+        for(Community c:communityDirectory.getHistory()){
+             drpCommunityName.addItem(String.valueOf(c.getCommunityName()));
+             drpCityName.addItem(String.valueOf(c.getCityName()));
+         }
     }
 
     /**
@@ -60,6 +68,10 @@ public class ViewDoctorJPanel extends javax.swing.JPanel {
         txtEmailAddress = new javax.swing.JTextField();
         emailAddress1 = new javax.swing.JLabel();
         txtSpecialization = new javax.swing.JTextField();
+        drpCommunityName = new javax.swing.JComboBox<>();
+        cellPhoneNumber1 = new javax.swing.JLabel();
+        cellPhoneNumber2 = new javax.swing.JLabel();
+        drpCityName = new javax.swing.JComboBox<>();
 
         createEmployeeLabel.setBackground(new java.awt.Color(0, 71, 119));
         createEmployeeLabel.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
@@ -184,6 +196,10 @@ public class ViewDoctorJPanel extends javax.swing.JPanel {
             }
         });
 
+        cellPhoneNumber1.setText("Community Name:");
+
+        cellPhoneNumber2.setText("City Name:");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -214,6 +230,14 @@ public class ViewDoctorJPanel extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(cellPhoneNumber1)
+                        .addGap(18, 18, 18)
+                        .addComponent(drpCommunityName, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(cellPhoneNumber2)
+                        .addGap(18, 18, 18)
+                        .addComponent(drpCityName, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(emailAddress1)
                         .addGap(18, 18, 18)
@@ -288,7 +312,15 @@ public class ViewDoctorJPanel extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(emailAddress1)
                     .addComponent(txtSpecialization, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(137, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cellPhoneNumber1)
+                    .addComponent(drpCommunityName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cellPhoneNumber2)
+                    .addComponent(drpCityName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(73, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(0, 564, Short.MAX_VALUE)
@@ -300,21 +332,17 @@ public class ViewDoctorJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 884, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 627, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -342,6 +370,8 @@ public class ViewDoctorJPanel extends javax.swing.JPanel {
         }
 
         Doctor p = doctorDirectory.getHistory().get(selectedRow);
+        
+         System.out.println("Viewing Doctor -> "+p);
 
         txtAge.setValue(p.getAge());
         txtCellPhoneNumber.setText(String.valueOf(p.getPhoneNumber()));
@@ -351,6 +381,8 @@ public class ViewDoctorJPanel extends javax.swing.JPanel {
         txtUsername.setText(String.valueOf(p.getUserName()));
         txtSpecialization.setText(p.getSpecialization());
         txtPassword.setText(p.getPassword());
+        drpCityName.setSelectedItem(String.valueOf(p.getCommunity().getCityName()));
+        drpCommunityName.setSelectedItem(String.valueOf(p.getCommunity().getCommunityName()));
     }//GEN-LAST:event_btnReadActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
@@ -372,8 +404,11 @@ public class ViewDoctorJPanel extends javax.swing.JPanel {
         String username = txtUsername.getText();
         String password = txtPassword.getText();
         String specialization = txtSpecialization.getText();
+        String communityName = String.valueOf(drpCommunityName.getSelectedItem());
+            String cityName = String.valueOf(drpCityName.getSelectedItem());
+            Community c= new Community(communityName, cityName);
 
-        Doctor temp = new Doctor(specialization, name, age, gender, emailAddress, cellPhoneNumber, username, password);
+        Doctor temp = new Doctor(specialization,c, name, age, gender, emailAddress, cellPhoneNumber, username, password);
 
         doctorDirectory.update(temp, selectedRow);
 
@@ -391,6 +426,8 @@ public class ViewDoctorJPanel extends javax.swing.JPanel {
         txtUsername.setText("");
         txtPassword.setText("");
         txtSpecialization.setText("");
+        drpCommunityName.setSelectedIndex(0);
+        drpCityName.setSelectedIndex(0);
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
@@ -442,7 +479,11 @@ public class ViewDoctorJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnRead;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JLabel cellPhoneNumber;
+    private javax.swing.JLabel cellPhoneNumber1;
+    private javax.swing.JLabel cellPhoneNumber2;
     private javax.swing.JLabel createEmployeeLabel;
+    private javax.swing.JComboBox<String> drpCityName;
+    private javax.swing.JComboBox<String> drpCommunityName;
     private javax.swing.JComboBox<String> drpGender;
     private javax.swing.JLabel emailAddress;
     private javax.swing.JLabel emailAddress1;

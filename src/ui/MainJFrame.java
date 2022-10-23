@@ -7,6 +7,7 @@ package ui;
 import javax.swing.JOptionPane;
 import model.Admin;
 import model.CityDirectory;
+import model.Community;
 import model.CommunityDirectory;
 import model.DoctorDirectory;
 import model.EmployeeProfileHistory;
@@ -53,6 +54,10 @@ public class MainJFrame extends javax.swing.JFrame {
         communityAdmin = new Admin("Community", "CommunityAdmin",  22,  "Male",  "asd@gmail.com",  123123,  "comadmin",  "comadmin");
         
         patientDirectory.add(new Patient("Flu", "xyz", 22, "Male", "ass@gmai.com", 123123, "xyz", "xyz"));
+        
+        communityDirectory.add(new Community("Boylston", "Boston"));
+        communityDirectory.add(new Community("xyz", "Bangalore"));
+        communityDirectory.add(new Community("abc", "Chennai"));
         
         btnLogout.setVisible(false);
         
@@ -276,7 +281,7 @@ public class MainJFrame extends javax.swing.JFrame {
             text+="</html>";
             lblWelcomeText.setText(text);
             
-            SystemAdminDashboardJPanel adminDashboardJPanel = new SystemAdminDashboardJPanel(patientDirectory,doctorDirectory,hospitalDirectory);
+            SystemAdminDashboardJPanel adminDashboardJPanel = new SystemAdminDashboardJPanel(patientDirectory,doctorDirectory,hospitalDirectory,communityDirectory);
             splitPane.setRightComponent(adminDashboardJPanel);
             
         }
@@ -290,7 +295,7 @@ public class MainJFrame extends javax.swing.JFrame {
             text+="Admin";
             text+="</html>";
             lblWelcomeText.setText(text);
-            HospitalAdminDashboardJPanel hospitalAdminDashboardJPanel = new HospitalAdminDashboardJPanel(patientDirectory,doctorDirectory,hospitalDirectory);
+            HospitalAdminDashboardJPanel hospitalAdminDashboardJPanel = new HospitalAdminDashboardJPanel(patientDirectory,doctorDirectory,hospitalDirectory,communityDirectory);
             splitPane.setRightComponent(hospitalAdminDashboardJPanel);
         }
         

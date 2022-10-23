@@ -24,6 +24,11 @@ public class Community extends City {
         super(cityName);
         this.communityName = communityName;
     }
+
+    @Override
+    public String toString() {
+        return "Community{" + "communityName=" + communityName + '}';
+    }
     
     
     

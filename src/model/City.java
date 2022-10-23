@@ -23,6 +23,11 @@ public class City {
     public City(String cityName) {
         this.cityName = cityName;
     }
+
+    @Override
+    public String toString() {
+        return "City{" + "cityName=" + cityName + '}';
+    }
     
     
     

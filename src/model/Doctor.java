@@ -11,6 +11,18 @@ package model;
 public class Doctor extends Person {
     
     private String specialization;
+    private Community community;
+
+    public Community getCommunity() {
+        return community;
+    }
+
+    public void setCommunity(Community community) {
+        this.community = community;
+    }
+    
+    
+    
 
     public String getSpecialization() {
         return specialization;
@@ -19,11 +31,21 @@ public class Doctor extends Person {
     public void setSpecialization(String specialization) {
         this.specialization = specialization;
     }
-    
-    public Doctor(String specialization,String name, int age, String gender, String emailId, long phoneNumber, String userName, String password) {
-        super( name,  age,  gender,  emailId,  phoneNumber,  userName,  password);
-        this.specialization = specialization;
+
+    @Override
+    public String toString() {
+        return "Doctor{" + "specialization=" + specialization + ", community=" + community + '}';
     }
+
+    
+
+    public Doctor(String specialization, Community community, String name, int age, String gender, String emailId, long phoneNumber, String userName, String password) {
+        super(name, age, gender, emailId, phoneNumber, userName, password);
+        this.specialization = specialization;
+        this.community = community;
+    }
+    
+    
     public Doctor(){
     }
     

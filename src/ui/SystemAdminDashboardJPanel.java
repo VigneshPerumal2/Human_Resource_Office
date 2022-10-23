@@ -4,6 +4,7 @@
  */
 package ui;
 
+import model.CommunityDirectory;
 import model.DoctorDirectory;
 import model.HospitalDirectory;
 import model.PatientDirectory;
@@ -17,16 +18,17 @@ public class SystemAdminDashboardJPanel extends javax.swing.JPanel {
     PatientDirectory patientDirectory;
     DoctorDirectory doctorDirectory;
     HospitalDirectory hospitalDirectory;
+    CommunityDirectory communityDirectory;
     private boolean deleteFlag=true;
     /**
      * Creates new form AdminDashboardJPanel
      */
-    public SystemAdminDashboardJPanel(PatientDirectory patientDirectory, DoctorDirectory doctorDirectory,HospitalDirectory hospitalDirectory) {
+    public SystemAdminDashboardJPanel(PatientDirectory patientDirectory, DoctorDirectory doctorDirectory,HospitalDirectory hospitalDirectory,CommunityDirectory communityDirectory) {
         initComponents();
         this.patientDirectory = patientDirectory;
         this.doctorDirectory = doctorDirectory;
         this.hospitalDirectory = hospitalDirectory;
-       
+        this.communityDirectory=communityDirectory;
     }
 
     /**
@@ -390,13 +392,13 @@ public class SystemAdminDashboardJPanel extends javax.swing.JPanel {
 
     private void btnViewDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDoctorActionPerformed
         // TODO add your handling code here:
-        ViewDoctorJPanel viewDoctorJPanel= new ViewDoctorJPanel(doctorDirectory,deleteFlag);
+        ViewDoctorJPanel viewDoctorJPanel= new ViewDoctorJPanel(doctorDirectory,communityDirectory,deleteFlag);
         splitPaneDoctor.setRightComponent(viewDoctorJPanel);
     }//GEN-LAST:event_btnViewDoctorActionPerformed
 
     private void btnCreateDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateDoctorActionPerformed
         // TODO add your handling code here:
-        CreateDoctorJPanel createDoctorJPanel= new CreateDoctorJPanel(doctorDirectory);
+        CreateDoctorJPanel createDoctorJPanel= new CreateDoctorJPanel(doctorDirectory,communityDirectory);
         splitPaneDoctor.setRightComponent(createDoctorJPanel);
     }//GEN-LAST:event_btnCreateDoctorActionPerformed
 
