@@ -42,6 +42,15 @@ public class PatientDirectory {
     public void deleteAll(){
     history.removeAll(history);
     }
+    
+    public boolean login(String username,String password){
+        boolean flag=false;
+        for(Patient p:getHistory()){
+            if(p.getUserName().equals(username) && p.getPassword().equals(password))
+                return true;
+        }
+        return flag;
+    }
     @Override
     public String toString() {
         return "EmployeeProfileHistory{" + "history=" + history + '}';

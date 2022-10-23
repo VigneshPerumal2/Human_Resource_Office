@@ -12,6 +12,7 @@ import model.DoctorDirectory;
 import model.EmployeeProfileHistory;
 import model.HospitalDirectory;
 import model.HouseDirectory;
+import model.Patient;
 import model.PatientDirectory;
 
 /**
@@ -50,6 +51,8 @@ public class MainJFrame extends javax.swing.JFrame {
         systemAdmin = new Admin("System", "SystemAdmin",  22,  "Male",  "asd@gmail.com",  123123,  "sysadmin",  "sysadmin");
         hospitalAdmin = new Admin("Hospital", "HospitalAdmin",  22,  "Male",  "asd@gmail.com",  123123,  "hosadmin",  "hosadmin");
         communityAdmin = new Admin("Community", "CommunityAdmin",  22,  "Male",  "asd@gmail.com",  123123,  "comadmin",  "comadmin");
+        
+        patientDirectory.add(new Patient("Flu", "xyz", 22, "Male", "ass@gmai.com", 123123, "xyz", "xyz"));
         
         btnLogout.setVisible(false);
         
@@ -156,7 +159,7 @@ public class MainJFrame extends javax.swing.JFrame {
         labelHospitalManagementSystem3.setText("User Name :");
         labelHospitalManagementSystem3.setToolTipText("To create new employee");
 
-        cmbLoginType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "System", "Hospital", "Community" }));
+        cmbLoginType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Doctor", "Patient" }));
 
         labelHospitalManagementSystem4.setBackground(new java.awt.Color(153, 153, 153));
         labelHospitalManagementSystem4.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
@@ -263,7 +266,7 @@ public class MainJFrame extends javax.swing.JFrame {
         
         System.out.println(username + password + role);
         
-        if(systemAdmin.getUserName().equals(username) && systemAdmin.getPassword().equals(password) && role.equals("System") ){
+        if(systemAdmin.getUserName().equals(username) && systemAdmin.getPassword().equals(password) && role.equals("Admin") ){
             btnLogout.setVisible(true);
             JOptionPane.showMessageDialog(this,"Logged in as System Admin");
             String text = "<html>";
@@ -278,7 +281,7 @@ public class MainJFrame extends javax.swing.JFrame {
             
         }
         
-        else if(hospitalAdmin.getUserName().equals(username) && hospitalAdmin.getPassword().equals(password) && role.equals("Hospital") ){
+        else if(hospitalAdmin.getUserName().equals(username) && hospitalAdmin.getPassword().equals(password) && role.equals("Admin") ){
             btnLogout.setVisible(true);
             JOptionPane.showMessageDialog(this,"Logged in as Hospital Admin");
             String text = "<html>";
@@ -291,7 +294,7 @@ public class MainJFrame extends javax.swing.JFrame {
             splitPane.setRightComponent(hospitalAdminDashboardJPanel);
         }
         
-        else if(communityAdmin.getUserName().equals(username) && communityAdmin.getPassword().equals(password) && role.equals("Community") ){
+        else if(communityAdmin.getUserName().equals(username) && communityAdmin.getPassword().equals(password) && role.equals("Admin") ){
             btnLogout.setVisible(true);
             JOptionPane.showMessageDialog(this,"Logged in as Community Admin");
              String text = "<html>";
@@ -302,6 +305,20 @@ public class MainJFrame extends javax.swing.JFrame {
             lblWelcomeText.setText(text);
             CommunityAdminDashboardJPanel communityAdminDashboardJPanel = new CommunityAdminDashboardJPanel(cityDirectory, houseDirectory, communityDirectory);
             splitPane.setRightComponent(communityAdminDashboardJPanel);
+        }
+        else if(role.equals("Patient") && patientDirectory.login(username, password)){
+                btnLogout.setVisible(true);
+            JOptionPane.showMessageDialog(this,"Logged in as "+username);
+             String text = "<html>";
+            text+= "Welcome,<br>";
+            text+=username;
+            text+="</html>";
+            lblWelcomeText.setText(text);
+//            CommunityAdminDashboardJPanel communityAdminDashboardJPanel = new CommunityAdminDashboardJPanel(cityDirectory, houseDirectory, communityDirectory);
+//            splitPane.setRightComponent(communityAdminDashboardJPanel);
+        }
+        else{
+            JOptionPane.showMessageDialog(this,"Invalid Credentials, Try again :(");
         }
         
         
