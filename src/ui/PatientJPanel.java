@@ -33,6 +33,7 @@ public class PatientJPanel extends javax.swing.JPanel {
     private EncounterDirectory encounterDirectory;
     
     private Patient currentPatient;
+    private Doctor selectedDoctor;
     private ArrayList<Doctor> doctorList = new ArrayList<>();
     
     public PatientJPanel(PatientDirectory patientDirectory,DoctorDirectory doctorDirectory,CommunityDirectory communityDirectory,EncounterDirectory encounterDirectory,String username) {
@@ -374,11 +375,11 @@ public class PatientJPanel extends javax.swing.JPanel {
         String communityName = (String) drpCommunityName.getSelectedItem();
         String doctorName = (String) drpDoctorName.getSelectedItem();
         Date date = txtDate.getDate();
-        Doctor doctor = doctorDirectory.search(doctorName);
-        Encounter encounter = new Encounter(date, new VitalSigns(), currentPatient, doctor);
+        
+        Encounter encounter = new Encounter(date, new VitalSigns(), currentPatient, this.selectedDoctor);
         encounterDirectory.add(encounter);
         
-        JOptionPane.showMessageDialog(this,"Added a new Encounter for "+ doctor.getName()+" with "+currentPatient.getName());
+        JOptionPane.showMessageDialog(this,"Added a new Encounter for "+ this.selectedDoctor.getName()+" with "+currentPatient.getName());
         
         
     }//GEN-LAST:event_btnBookActionPerformed
@@ -388,8 +389,11 @@ public class PatientJPanel extends javax.swing.JPanel {
         drpDoctorName.removeAllItems();
         String communityName = (String) drpCommunityName.getSelectedItem();
         for(Doctor c:doctorDirectory.getHistory()){
-            if(c.getCommunity().getCommunityName().equals(communityName))
-            drpDoctorName.addItem(String.valueOf(c.getName()));
+            if(c.getCommunity().getCommunityName().equals(communityName)){
+                drpDoctorName.addItem(String.valueOf(c.getName()));
+                this.selectedDoctor = c;
+            }
+            
         }
     }//GEN-LAST:event_drpCommunityNameActionPerformed
 

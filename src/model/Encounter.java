@@ -63,13 +63,15 @@ public class Encounter {
         this.doctor = doctor;
     }
 
-    
-
-    
-
     @Override
     public String toString() {
-        return "Encounter{" + "date=" + date + ",  vitalSigns=" + vitalSigns + '}';
+        return "Encounter{" + "date=" + date + ", vitalSigns=" + vitalSigns + ", patient=" + patient + ", doctor=" + doctor + '}';
     }
+
+    
+
+    
+
+    
 
 }
