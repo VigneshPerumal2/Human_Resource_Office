@@ -51,6 +51,17 @@ public class PatientDirectory {
         }
         return flag;
     }
+    
+    public Patient search(String username){
+        Patient result = new Patient() ;
+        for(Patient p:getHistory()){
+            if(p.getUserName().equals(username)){
+                result=p;
+                break;
+            }
+        }
+        return result;
+    }
     @Override
     public String toString() {
         return "EmployeeProfileHistory{" + "history=" + history + '}';

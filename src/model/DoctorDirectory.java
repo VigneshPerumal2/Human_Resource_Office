@@ -54,4 +54,15 @@ public class DoctorDirectory {
         }
         return flag;
     }
+    
+    public Doctor search(String username){
+        Doctor result = new Doctor() ;
+        for(Doctor p:getHistory()){
+            if(p.getUserName().equals(username)){
+                result=p;
+                break;
+            }
+        }
+        return result;
+    }
 }

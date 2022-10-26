@@ -44,6 +44,32 @@ public class EncounterDirectory {
     public void deleteAll(){
     history.removeAll(history);
     }
+    
+    public ArrayList<Encounter> searchByPatient(String userName){
+        ArrayList<Encounter> list = new ArrayList<>();
+        
+        for(Encounter e : getHistory()){
+            if(e.getPatient().getUserName().equals(userName)){
+                list.add(e);
+            }
+        }
+        
+        return list;
+        
+    } 
+    
+    public ArrayList<Encounter> searchByDoctor(String userName){
+        ArrayList<Encounter> list = new ArrayList<>();
+        
+        for(Encounter e : getHistory()){
+            if(e.getDoctor().getUserName().equals(userName)){
+                list.add(e);
+            }
+        }
+        
+        return list;
+        
+    } 
     @Override
     public String toString() {
         return "EmployeeProfileHistory{" + "history=" + history + '}';

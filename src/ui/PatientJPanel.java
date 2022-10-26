@@ -4,8 +4,18 @@
  */
 package ui;
 
+import java.util.ArrayList;
+import java.util.Date;
+import javax.swing.JOptionPane;
+import model.Community;
+import model.CommunityDirectory;
+import model.Doctor;
 import model.DoctorDirectory;
+import model.Encounter;
+import model.EncounterDirectory;
+import model.Patient;
 import model.PatientDirectory;
+import model.VitalSigns;
 
 /**
  *
@@ -19,11 +29,28 @@ public class PatientJPanel extends javax.swing.JPanel {
     
     private PatientDirectory patientDirectory;
     private DoctorDirectory doctorDirectory;
+    private CommunityDirectory communityDirectory;
+    private EncounterDirectory encounterDirectory;
     
-    public PatientJPanel(PatientDirectory patientDirectory,DoctorDirectory doctorDirectory) {
+    private Patient currentPatient;
+    private ArrayList<Doctor> doctorList = new ArrayList<>();
+    
+    public PatientJPanel(PatientDirectory patientDirectory,DoctorDirectory doctorDirectory,CommunityDirectory communityDirectory,EncounterDirectory encounterDirectory,String username) {
         initComponents();
         this.patientDirectory=patientDirectory;
         this.doctorDirectory=doctorDirectory;
+        this.communityDirectory=communityDirectory;
+        this.encounterDirectory=encounterDirectory;
+        
+        this.currentPatient = patientDirectory.search(username);
+        
+        for(Community c:communityDirectory.getHistory()){
+            drpCommunityName.addItem(String.valueOf(c.getCommunityName()));
+        }
+        
+        
+        
+         
     }
 
     /**
@@ -47,13 +74,8 @@ public class PatientJPanel extends javax.swing.JPanel {
         drpDoctorName = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        txtDoctorName = new javax.swing.JTextField();
-        txtSpecialization = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        txtAge = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        txtGender = new javax.swing.JTextField();
+        txtDate = new com.toedter.calendar.JDateChooser();
+        btnBook = new javax.swing.JButton();
         tabEncounters = new javax.swing.JPanel();
         splitPaneCommunity = new javax.swing.JSplitPane();
         splitNavigation1 = new javax.swing.JPanel();
@@ -77,6 +99,11 @@ public class PatientJPanel extends javax.swing.JPanel {
         jLabel3.setText("Step 1:");
 
         drpCommunityName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        drpCommunityName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                drpCommunityNameActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
         jLabel4.setText("Step 2:");
@@ -93,23 +120,12 @@ public class PatientJPanel extends javax.swing.JPanel {
         jLabel6.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         jLabel6.setText("Doctor Details");
 
-        jLabel7.setText("Doctor Name :");
+        jLabel7.setText("Choose a date:");
 
-        jLabel8.setText("Specialization :");
-
-        txtAge.addActionListener(new java.awt.event.ActionListener() {
+        btnBook.setText("Book");
+        btnBook.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAgeActionPerformed(evt);
-            }
-        });
-
-        jLabel9.setText("Age :");
-
-        jLabel10.setText("Gender :");
-
-        txtGender.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtGenderActionPerformed(evt);
+                btnBookActionPerformed(evt);
             }
         });
 
@@ -118,9 +134,14 @@ public class PatientJPanel extends javax.swing.JPanel {
         tabDoctorLayout.setHorizontalGroup(
             tabDoctorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabDoctorLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
                 .addGroup(tabDoctorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(tabDoctorLayout.createSequentialGroup()
+                        .addGap(268, 268, 268)
+                        .addComponent(jLabel7)
+                        .addGap(29, 29, 29)
+                        .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(tabDoctorLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
                         .addGroup(tabDoctorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(tabDoctorLayout.createSequentialGroup()
                                 .addComponent(jLabel4)
@@ -130,22 +151,14 @@ public class PatientJPanel extends javax.swing.JPanel {
                                 .addComponent(jLabel3)
                                 .addGap(27, 27, 27)
                                 .addComponent(jLabel2)))
-                        .addGap(27, 27, 27))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabDoctorLayout.createSequentialGroup()
-                        .addGroup(tabDoctorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10))
-                        .addGap(29, 29, 29)))
-                .addGroup(tabDoctorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtGender)
-                    .addComponent(txtAge, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtSpecialization, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel6)
-                    .addComponent(drpCommunityName, 0, 279, Short.MAX_VALUE)
-                    .addComponent(drpDoctorName, 0, 279, Short.MAX_VALUE)
-                    .addComponent(txtDoctorName))
+                        .addGap(27, 27, 27)
+                        .addGroup(tabDoctorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(drpCommunityName, 0, 279, Short.MAX_VALUE)
+                            .addComponent(drpDoctorName, 0, 279, Short.MAX_VALUE)
+                            .addComponent(jLabel6)))
+                    .addGroup(tabDoctorLayout.createSequentialGroup()
+                        .addGap(364, 364, 364)
+                        .addComponent(btnBook)))
                 .addContainerGap(386, Short.MAX_VALUE))
         );
         tabDoctorLayout.setVerticalGroup(
@@ -163,23 +176,13 @@ public class PatientJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel4))
                 .addGap(39, 39, 39)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(tabDoctorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtDoctorName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(tabDoctorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(tabDoctorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtSpecialization, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(tabDoctorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(tabDoctorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10))
-                .addContainerGap(174, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnBook)
+                .addContainerGap(214, Short.MAX_VALUE))
         );
 
         patientTabs.addTab("Doctors", tabDoctor);
@@ -365,30 +368,45 @@ public class PatientJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_drpDoctorNameActionPerformed
 
-    private void txtAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAgeActionPerformed
+    private void btnBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtAgeActionPerformed
+        
+        String communityName = (String) drpCommunityName.getSelectedItem();
+        String doctorName = (String) drpDoctorName.getSelectedItem();
+        Date date = txtDate.getDate();
+        Doctor doctor = doctorDirectory.search(doctorName);
+        Encounter encounter = new Encounter(date, new VitalSigns(), currentPatient, doctor);
+        encounterDirectory.add(encounter);
+        
+        JOptionPane.showMessageDialog(this,"Added a new Encounter for "+ doctor.getName()+" with "+currentPatient.getName());
+        
+        
+    }//GEN-LAST:event_btnBookActionPerformed
 
-    private void txtGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGenderActionPerformed
+    private void drpCommunityNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_drpCommunityNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtGenderActionPerformed
+        drpDoctorName.removeAllItems();
+        String communityName = (String) drpCommunityName.getSelectedItem();
+        for(Doctor c:doctorDirectory.getHistory()){
+            if(c.getCommunity().getCommunityName().equals(communityName))
+            drpDoctorName.addItem(String.valueOf(c.getName()));
+        }
+    }//GEN-LAST:event_drpCommunityNameActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBook;
     private javax.swing.JButton btnCreateCommunity;
     private javax.swing.JButton btnCreateHouse;
     private javax.swing.JComboBox<String> drpCommunityName;
     private javax.swing.JComboBox<String> drpDoctorName;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTabbedPane patientTabs;
     private javax.swing.JPanel splitNavigation1;
@@ -400,9 +418,6 @@ public class PatientJPanel extends javax.swing.JPanel {
     private javax.swing.JPanel tabDetails;
     private javax.swing.JPanel tabDoctor;
     private javax.swing.JPanel tabEncounters;
-    private javax.swing.JTextField txtAge;
-    private javax.swing.JTextField txtDoctorName;
-    private javax.swing.JTextField txtGender;
-    private javax.swing.JTextField txtSpecialization;
+    private com.toedter.calendar.JDateChooser txtDate;
     // End of variables declaration//GEN-END:variables
 }

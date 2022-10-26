@@ -185,8 +185,6 @@ public class ViewCityJPanel extends javax.swing.JPanel {
         City c= cityDirectory.getHistory().get(selectedRow);
                 
 
-        
-
         txtCityName.setText(String.valueOf(c.getCityName()));
         
     }//GEN-LAST:event_btnReadActionPerformed

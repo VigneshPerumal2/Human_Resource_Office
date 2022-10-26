@@ -44,6 +44,14 @@ public class VitalSigns {
         this.height = height;
     }
 
+    public VitalSigns() {
+        this.heartRate = 0;
+        this.weight = 0;
+        this.height = 0;
+    }
+    
+    
+
     @Override
     public String toString() {
         return "VitalSigns{" + "heartRate=" + heartRate + ", weight=" + weight + ", height=" + height + '}';

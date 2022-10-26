@@ -9,8 +9,10 @@ import model.Admin;
 import model.CityDirectory;
 import model.Community;
 import model.CommunityDirectory;
+import model.Doctor;
 import model.DoctorDirectory;
 import model.EmployeeProfileHistory;
+import model.EncounterDirectory;
 import model.HospitalDirectory;
 import model.HouseDirectory;
 import model.Patient;
@@ -30,6 +32,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private CityDirectory cityDirectory;
     private CommunityDirectory communityDirectory;
     private HouseDirectory houseDirectory;
+    private EncounterDirectory encounterDirectory;
     
     private Admin systemAdmin;
     private Admin hospitalAdmin;
@@ -44,6 +47,8 @@ public class MainJFrame extends javax.swing.JFrame {
         patientDirectory= new PatientDirectory();
         doctorDirectory= new DoctorDirectory();
         hospitalDirectory = new HospitalDirectory();
+        encounterDirectory = new EncounterDirectory();
+        
         
         cityDirectory= new CityDirectory();
         communityDirectory = new CommunityDirectory();
@@ -55,9 +60,13 @@ public class MainJFrame extends javax.swing.JFrame {
         
         patientDirectory.add(new Patient("Flu", "xyz", 22, "Male", "ass@gmai.com", 123123, "xyz", "xyz"));
         
+        doctorDirectory.add(new Doctor("Heart", new Community("Boylston", "Boston"), "John", 22, "Male", "asdsa", 123123, "abc", "abc"));
+        
         communityDirectory.add(new Community("Boylston", "Boston"));
         communityDirectory.add(new Community("xyz", "Bangalore"));
         communityDirectory.add(new Community("abc", "Chennai"));
+        
+        
         
         btnLogout.setVisible(false);
         
@@ -319,8 +328,8 @@ public class MainJFrame extends javax.swing.JFrame {
             text+=username;
             text+="</html>";
             lblWelcomeText.setText(text);
-//            CommunityAdminDashboardJPanel communityAdminDashboardJPanel = new CommunityAdminDashboardJPanel(cityDirectory, houseDirectory, communityDirectory);
-//            splitPane.setRightComponent(communityAdminDashboardJPanel);
+            PatientJPanel patientJPanel = new PatientJPanel(patientDirectory, doctorDirectory, communityDirectory,encounterDirectory,username);
+            splitPane.setRightComponent(patientJPanel);
         }
         else{
             JOptionPane.showMessageDialog(this,"Invalid Credentials, Try again :(");
