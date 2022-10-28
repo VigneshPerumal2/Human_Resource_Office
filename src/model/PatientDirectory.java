@@ -36,8 +36,15 @@ public class PatientDirectory {
         history.remove(index);
     }
     
-    public void update(Patient ep,int index){
-        history.set(index,ep);
+    public void update(Patient ep){
+        int index=0;
+        for(Patient p:getHistory()){
+            if(ep.getUserName().equals(p.getUserName())){
+                history.set(index,ep);
+            }
+            index++;
+        }
+        
     }
     public void deleteAll(){
     history.removeAll(history);

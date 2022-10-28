@@ -355,7 +355,7 @@ public class ViewPatientJPanel extends javax.swing.JPanel {
 
         Patient temp = new Patient(disease, name, age, gender, emailAddress, cellPhoneNumber, username, password);
 
-        patientDirectory.update(temp, selectedRow);
+        patientDirectory.update(temp);
 
         JOptionPane.showMessageDialog(this, "Row is updated!");
 

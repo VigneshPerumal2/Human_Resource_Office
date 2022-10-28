@@ -51,6 +51,24 @@ public class PatientJPanel extends javax.swing.JPanel {
             drpCommunityName.addItem(String.valueOf(c.getCommunityName()));
         }
 
+        String name = currentPatient.getName();
+        String pusername = currentPatient.getUserName();
+        String password = currentPatient.getPassword();
+        int age = currentPatient.getAge();
+        String gender = currentPatient.getGender();
+        long cellPhoneNumber = currentPatient.getPhoneNumber();
+        String emailAddress = currentPatient.getEmailId();
+        String disease = currentPatient.getDisease();
+
+        txtName.setText(name);
+        txtCellPhoneNumber.setText(String.valueOf(cellPhoneNumber));
+        txtDisease.setText(disease);
+        txtEmailAddress.setText(emailAddress);
+        txtPassword.setText(password);
+        txtUsername.setText(username);
+        txtAge.setValue(age);
+        drpGender.setSelectedItem(currentPatient.getGender());
+
     }
 
     /**
@@ -76,19 +94,37 @@ public class PatientJPanel extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         txtDate = new com.toedter.calendar.JDateChooser();
         btnBook = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
         tabEncounters = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblEncountersPatient = new javax.swing.JTable();
         tabDetails = new javax.swing.JPanel();
-        splitPaneHouse = new javax.swing.JSplitPane();
-        splitNavigation2 = new javax.swing.JPanel();
-        btnCreateHouse = new javax.swing.JButton();
-        splitWorkspace2 = new javax.swing.JPanel();
+        splitWorkspace = new javax.swing.JPanel();
+        employeeId = new javax.swing.JLabel();
+        Update = new javax.swing.JButton();
+        txtAge = new javax.swing.JSpinner();
+        txtName = new javax.swing.JTextField();
+        name = new javax.swing.JLabel();
+        gender = new javax.swing.JLabel();
+        emailAddress = new javax.swing.JLabel();
+        txtEmailAddress = new javax.swing.JTextField();
+        txtUsername = new javax.swing.JTextField();
+        createEmployeeLabel = new javax.swing.JLabel();
+        txtCellPhoneNumber = new javax.swing.JTextField();
+        drpGender = new javax.swing.JComboBox<>();
+        age = new javax.swing.JLabel();
+        cellPhoneNumber = new javax.swing.JLabel();
+        txtPassword = new javax.swing.JTextField();
+        employeeId1 = new javax.swing.JLabel();
+        txtDisease = new javax.swing.JTextField();
+        emailAddress1 = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Patient Dashbaord");
+        jLabel1.setText("Patient Dashboard");
 
+        patientTabs.setBackground(new java.awt.Color(204, 0, 51));
+        patientTabs.setForeground(new java.awt.Color(255, 255, 255));
         patientTabs.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
 
         jLabel2.setText("Select a community :");
@@ -116,7 +152,8 @@ public class PatientJPanel extends javax.swing.JPanel {
         });
 
         jLabel6.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        jLabel6.setText("Doctor Details");
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Book Appointment");
 
         jLabel7.setText("Choose a date:");
 
@@ -127,6 +164,9 @@ public class PatientJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel8.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
+        jLabel8.setText("Step 3:");
+
         javax.swing.GroupLayout tabDoctorLayout = new javax.swing.GroupLayout(tabDoctor);
         tabDoctor.setLayout(tabDoctorLayout);
         tabDoctorLayout.setHorizontalGroup(
@@ -134,30 +174,35 @@ public class PatientJPanel extends javax.swing.JPanel {
             .addGroup(tabDoctorLayout.createSequentialGroup()
                 .addGroup(tabDoctorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(tabDoctorLayout.createSequentialGroup()
-                        .addGap(268, 268, 268)
-                        .addComponent(jLabel7)
-                        .addGap(29, 29, 29)
-                        .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(tabDoctorLayout.createSequentialGroup()
                         .addGap(31, 31, 31)
-                        .addGroup(tabDoctorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(tabDoctorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(tabDoctorLayout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(53, 53, 53)
-                                .addComponent(jLabel5))
-                            .addGroup(tabDoctorLayout.createSequentialGroup()
-                                .addComponent(jLabel3)
+                                .addGroup(tabDoctorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(tabDoctorLayout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addGap(53, 53, 53)
+                                        .addComponent(jLabel5))
+                                    .addGroup(tabDoctorLayout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addGap(27, 27, 27)
+                                        .addComponent(jLabel2)))
                                 .addGap(27, 27, 27)
-                                .addComponent(jLabel2)))
-                        .addGap(27, 27, 27)
-                        .addGroup(tabDoctorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(drpCommunityName, 0, 279, Short.MAX_VALUE)
-                            .addComponent(drpDoctorName, 0, 279, Short.MAX_VALUE)
-                            .addComponent(jLabel6)))
+                                .addGroup(tabDoctorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(drpCommunityName, 0, 279, Short.MAX_VALUE)
+                                    .addComponent(drpDoctorName, 0, 279, Short.MAX_VALUE)))
+                            .addGroup(tabDoctorLayout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addGap(64, 64, 64)
+                                .addComponent(jLabel7)
+                                .addGap(26, 26, 26)
+                                .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnBook, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 379, Short.MAX_VALUE))
                     .addGroup(tabDoctorLayout.createSequentialGroup()
-                        .addGap(364, 364, 364)
-                        .addComponent(btnBook)))
-                .addContainerGap(386, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         tabDoctorLayout.setVerticalGroup(
             tabDoctorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,10 +222,10 @@ public class PatientJPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(tabDoctorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGap(18, 18, 18)
-                .addComponent(btnBook)
-                .addContainerGap(214, Short.MAX_VALUE))
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8)
+                    .addComponent(btnBook))
+                .addContainerGap(335, Short.MAX_VALUE))
         );
 
         patientTabs.addTab("Doctors", tabDoctor);
@@ -233,67 +278,203 @@ public class PatientJPanel extends javax.swing.JPanel {
             .addGroup(tabEncountersLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(145, Short.MAX_VALUE))
         );
 
         patientTabs.addTab("Encounters", tabEncounters);
 
-        btnCreateHouse.setFont(new java.awt.Font("Helvetica Neue", 1, 10)); // NOI18N
-        btnCreateHouse.setText("Search ");
-        btnCreateHouse.addActionListener(new java.awt.event.ActionListener() {
+        tabDetails.setBackground(new java.awt.Color(102, 204, 255));
+
+        splitWorkspace.setBackground(new java.awt.Color(204, 204, 255));
+
+        employeeId.setText("Username:");
+
+        Update.setBackground(new java.awt.Color(255, 119, 0));
+        Update.setForeground(new java.awt.Color(255, 255, 255));
+        Update.setText("Update");
+        Update.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCreateHouseActionPerformed(evt);
+                UpdateActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout splitNavigation2Layout = new javax.swing.GroupLayout(splitNavigation2);
-        splitNavigation2.setLayout(splitNavigation2Layout);
-        splitNavigation2Layout.setHorizontalGroup(
-            splitNavigation2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(splitNavigation2Layout.createSequentialGroup()
-                .addComponent(btnCreateHouse, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
-        );
-        splitNavigation2Layout.setVerticalGroup(
-            splitNavigation2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(splitNavigation2Layout.createSequentialGroup()
-                .addGap(179, 179, 179)
-                .addComponent(btnCreateHouse, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(202, Short.MAX_VALUE))
-        );
+        txtAge.setModel(new javax.swing.SpinnerNumberModel(18, 18, 60, 1));
 
-        splitPaneHouse.setLeftComponent(splitNavigation2);
+        txtName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNameActionPerformed(evt);
+            }
+        });
 
-        splitWorkspace2.setBackground(new java.awt.Color(204, 204, 255));
+        name.setText("Name:");
 
-        javax.swing.GroupLayout splitWorkspace2Layout = new javax.swing.GroupLayout(splitWorkspace2);
-        splitWorkspace2.setLayout(splitWorkspace2Layout);
-        splitWorkspace2Layout.setHorizontalGroup(
-            splitWorkspace2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 832, Short.MAX_VALUE)
+        gender.setText("Gender:");
+
+        emailAddress.setText("Email Address:");
+
+        txtEmailAddress.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmailAddressActionPerformed(evt);
+            }
+        });
+
+        txtUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsernameActionPerformed(evt);
+            }
+        });
+
+        createEmployeeLabel.setBackground(new java.awt.Color(153, 153, 153));
+        createEmployeeLabel.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        createEmployeeLabel.setForeground(new java.awt.Color(0, 71, 119));
+        createEmployeeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        createEmployeeLabel.setText("View/Edit Details");
+        createEmployeeLabel.setToolTipText("To create new employee");
+
+        txtCellPhoneNumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCellPhoneNumberActionPerformed(evt);
+            }
+        });
+
+        drpGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Others" }));
+
+        age.setText("Age:");
+
+        cellPhoneNumber.setText("Cell Phone Number:");
+
+        txtPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPasswordActionPerformed(evt);
+            }
+        });
+
+        employeeId1.setText("Password:");
+
+        txtDisease.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDiseaseActionPerformed(evt);
+            }
+        });
+
+        emailAddress1.setText("Disease:");
+
+        javax.swing.GroupLayout splitWorkspaceLayout = new javax.swing.GroupLayout(splitWorkspace);
+        splitWorkspace.setLayout(splitWorkspaceLayout);
+        splitWorkspaceLayout.setHorizontalGroup(
+            splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(splitWorkspaceLayout.createSequentialGroup()
+                .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(splitWorkspaceLayout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(splitWorkspaceLayout.createSequentialGroup()
+                                .addComponent(emailAddress)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtEmailAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(splitWorkspaceLayout.createSequentialGroup()
+                                .addComponent(cellPhoneNumber)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtCellPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(splitWorkspaceLayout.createSequentialGroup()
+                                .addComponent(employeeId1)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(splitWorkspaceLayout.createSequentialGroup()
+                                .addComponent(emailAddress1)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtDisease, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(splitWorkspaceLayout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(splitWorkspaceLayout.createSequentialGroup()
+                                .addComponent(age)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(13, 13, 13))
+                            .addGroup(splitWorkspaceLayout.createSequentialGroup()
+                                .addComponent(gender)
+                                .addGap(18, 18, 18)
+                                .addComponent(drpGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, splitWorkspaceLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Update, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(576, Short.MAX_VALUE))
+            .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(splitWorkspaceLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(createEmployeeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(splitWorkspaceLayout.createSequentialGroup()
+                            .addGap(80, 80, 80)
+                            .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(name, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(employeeId, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addGap(18, 18, 18)
+                            .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 575, Short.MAX_VALUE)))
+                    .addContainerGap()))
         );
-        splitWorkspace2Layout.setVerticalGroup(
-            splitWorkspace2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 486, Short.MAX_VALUE)
+        splitWorkspaceLayout.setVerticalGroup(
+            splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(splitWorkspaceLayout.createSequentialGroup()
+                .addGap(155, 155, 155)
+                .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(employeeId1)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(age)
+                    .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(gender)
+                    .addComponent(drpGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(cellPhoneNumber)
+                    .addComponent(txtCellPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(emailAddress)
+                    .addComponent(txtEmailAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(emailAddress1)
+                    .addComponent(txtDisease, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8)
+                .addComponent(Update)
+                .addContainerGap(234, Short.MAX_VALUE))
+            .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(splitWorkspaceLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(createEmployeeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(18, 18, 18)
+                    .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(name)
+                        .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(employeeId)
+                        .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap(453, Short.MAX_VALUE)))
         );
-
-        splitPaneHouse.setRightComponent(splitWorkspace2);
 
         javax.swing.GroupLayout tabDetailsLayout = new javax.swing.GroupLayout(tabDetails);
         tabDetails.setLayout(tabDetailsLayout);
         tabDetailsLayout.setHorizontalGroup(
             tabDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tabDetailsLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(splitPaneHouse)
-                .addContainerGap())
+            .addGap(0, 992, Short.MAX_VALUE)
+            .addGroup(tabDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(splitWorkspace, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         tabDetailsLayout.setVerticalGroup(
             tabDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tabDetailsLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(splitPaneHouse)
-                .addContainerGap())
+            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(tabDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(splitWorkspace, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         patientTabs.addTab("Details", tabDetails);
@@ -330,7 +511,7 @@ public class PatientJPanel extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 603, Short.MAX_VALUE)
+            .addGap(0, 705, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -338,14 +519,6 @@ public class PatientJPanel extends javax.swing.JPanel {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnCreateHouseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateHouseActionPerformed
-        // TODO add your handling code here:
-        //        CreateHospitalJPanel createHospitalJPanel= new CreateHospitalJPanel(hospitalDirectory);
-        //        splitPaneHouse.setRightComponent(createHospitalJPanel);
-//        CreateHouseJPanel createHouseJPanel = new CreateHouseJPanel(houseDirectory);
-//        splitPaneHouse.setRightComponent(createHouseJPanel);
-    }//GEN-LAST:event_btnCreateHouseActionPerformed
 
     private void drpDoctorNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_drpDoctorNameActionPerformed
         // TODO add your handling code here:
@@ -379,6 +552,59 @@ public class PatientJPanel extends javax.swing.JPanel {
 
         }
     }//GEN-LAST:event_drpCommunityNameActionPerformed
+
+    private void UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateActionPerformed
+        // TODO add your handling code here:
+
+        //Reset validation
+        //        valName.setText("");
+        //        valEmployeeId.setText("");
+        //        valDate.setText("");
+        //        valTeamInfo.setText("");
+        //        valCellPhoneNumber.setText("");
+        //        valEmailAddress.setText("");
+        //        valPhoto.setText("");
+        //        if(validation()){
+        String name = txtName.getText();
+        String username = txtUsername.getText();
+        String password = txtPassword.getText();
+        int age = Integer.parseInt(txtAge.getValue().toString());
+        String gender = (String) drpGender.getSelectedItem();
+        long cellPhoneNumber = Long.parseLong(txtCellPhoneNumber.getText());
+        String emailAddress = txtEmailAddress.getText();
+        String disease = txtDisease.getText();
+
+        Patient p = new Patient(disease, name, age, gender, emailAddress, cellPhoneNumber, username, password);
+
+        patientDirectory.update(p);
+        JOptionPane.showMessageDialog(this, " Patient Details was updated ! ");
+        
+        //    }
+    }//GEN-LAST:event_UpdateActionPerformed
+
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNameActionPerformed
+
+    private void txtEmailAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailAddressActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmailAddressActionPerformed
+
+    private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsernameActionPerformed
+
+    private void txtCellPhoneNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCellPhoneNumberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCellPhoneNumberActionPerformed
+
+    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPasswordActionPerformed
+
+    private void txtDiseaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDiseaseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDiseaseActionPerformed
     private void populateTable() {
 
         DefaultTableModel model = (DefaultTableModel) tblEncountersPatient.getModel();
@@ -401,10 +627,19 @@ public class PatientJPanel extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Update;
+    private javax.swing.JLabel age;
     private javax.swing.JButton btnBook;
-    private javax.swing.JButton btnCreateHouse;
+    private javax.swing.JLabel cellPhoneNumber;
+    private javax.swing.JLabel createEmployeeLabel;
     private javax.swing.JComboBox<String> drpCommunityName;
     private javax.swing.JComboBox<String> drpDoctorName;
+    private javax.swing.JComboBox<String> drpGender;
+    private javax.swing.JLabel emailAddress;
+    private javax.swing.JLabel emailAddress1;
+    private javax.swing.JLabel employeeId;
+    private javax.swing.JLabel employeeId1;
+    private javax.swing.JLabel gender;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -412,16 +647,23 @@ public class PatientJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel name;
     private javax.swing.JTabbedPane patientTabs;
-    private javax.swing.JPanel splitNavigation2;
-    private javax.swing.JSplitPane splitPaneHouse;
-    private javax.swing.JPanel splitWorkspace2;
+    private javax.swing.JPanel splitWorkspace;
     private javax.swing.JPanel tabDetails;
     private javax.swing.JPanel tabDoctor;
     private javax.swing.JPanel tabEncounters;
     private javax.swing.JTable tblEncountersPatient;
+    private javax.swing.JSpinner txtAge;
+    private javax.swing.JTextField txtCellPhoneNumber;
     private com.toedter.calendar.JDateChooser txtDate;
+    private javax.swing.JTextField txtDisease;
+    private javax.swing.JTextField txtEmailAddress;
+    private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtPassword;
+    private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 }
