@@ -4,9 +4,12 @@
  */
 package ui;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import model.Community;
 import model.CommunityDirectory;
 import model.Doctor;
@@ -26,32 +29,28 @@ public class PatientJPanel extends javax.swing.JPanel {
     /**
      * Creates new form PatientJPanel
      */
-    
     private PatientDirectory patientDirectory;
     private DoctorDirectory doctorDirectory;
     private CommunityDirectory communityDirectory;
     private EncounterDirectory encounterDirectory;
-    
+
     private Patient currentPatient;
     private Doctor selectedDoctor;
     private ArrayList<Doctor> doctorList = new ArrayList<>();
-    
-    public PatientJPanel(PatientDirectory patientDirectory,DoctorDirectory doctorDirectory,CommunityDirectory communityDirectory,EncounterDirectory encounterDirectory,String username) {
+
+    public PatientJPanel(PatientDirectory patientDirectory, DoctorDirectory doctorDirectory, CommunityDirectory communityDirectory, EncounterDirectory encounterDirectory, String username) {
         initComponents();
-        this.patientDirectory=patientDirectory;
-        this.doctorDirectory=doctorDirectory;
-        this.communityDirectory=communityDirectory;
-        this.encounterDirectory=encounterDirectory;
-        
+        this.patientDirectory = patientDirectory;
+        this.doctorDirectory = doctorDirectory;
+        this.communityDirectory = communityDirectory;
+        this.encounterDirectory = encounterDirectory;
+
         this.currentPatient = patientDirectory.search(username);
-        
-        for(Community c:communityDirectory.getHistory()){
+
+        for (Community c : communityDirectory.getHistory()) {
             drpCommunityName.addItem(String.valueOf(c.getCommunityName()));
         }
-        
-        
-        
-         
+
     }
 
     /**
@@ -78,10 +77,8 @@ public class PatientJPanel extends javax.swing.JPanel {
         txtDate = new com.toedter.calendar.JDateChooser();
         btnBook = new javax.swing.JButton();
         tabEncounters = new javax.swing.JPanel();
-        splitPaneCommunity = new javax.swing.JSplitPane();
-        splitNavigation1 = new javax.swing.JPanel();
-        btnCreateCommunity = new javax.swing.JButton();
-        splitWorkspace1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblEncountersPatient = new javax.swing.JTable();
         tabDetails = new javax.swing.JPanel();
         splitPaneHouse = new javax.swing.JSplitPane();
         splitNavigation2 = new javax.swing.JPanel();
@@ -188,62 +185,55 @@ public class PatientJPanel extends javax.swing.JPanel {
 
         patientTabs.addTab("Doctors", tabDoctor);
 
-        btnCreateCommunity.setFont(new java.awt.Font("Helvetica Neue", 1, 10)); // NOI18N
-        btnCreateCommunity.setText("Read Encounters");
-        btnCreateCommunity.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCreateCommunityActionPerformed(evt);
+        tblEncountersPatient.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Doctor Name", "Date", "Community Name", "City Name", "Specilization", "Disease"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
-
-        javax.swing.GroupLayout splitNavigation1Layout = new javax.swing.GroupLayout(splitNavigation1);
-        splitNavigation1.setLayout(splitNavigation1Layout);
-        splitNavigation1Layout.setHorizontalGroup(
-            splitNavigation1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(splitNavigation1Layout.createSequentialGroup()
-                .addComponent(btnCreateCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        splitNavigation1Layout.setVerticalGroup(
-            splitNavigation1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(splitNavigation1Layout.createSequentialGroup()
-                .addGap(178, 178, 178)
-                .addComponent(btnCreateCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(203, Short.MAX_VALUE))
-        );
-
-        splitPaneCommunity.setLeftComponent(splitNavigation1);
-
-        splitWorkspace1.setBackground(new java.awt.Color(204, 204, 255));
-
-        javax.swing.GroupLayout splitWorkspace1Layout = new javax.swing.GroupLayout(splitWorkspace1);
-        splitWorkspace1.setLayout(splitWorkspace1Layout);
-        splitWorkspace1Layout.setHorizontalGroup(
-            splitWorkspace1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 838, Short.MAX_VALUE)
-        );
-        splitWorkspace1Layout.setVerticalGroup(
-            splitWorkspace1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 486, Short.MAX_VALUE)
-        );
-
-        splitPaneCommunity.setRightComponent(splitWorkspace1);
+        jScrollPane1.setViewportView(tblEncountersPatient);
 
         javax.swing.GroupLayout tabEncountersLayout = new javax.swing.GroupLayout(tabEncounters);
         tabEncounters.setLayout(tabEncountersLayout);
         tabEncountersLayout.setHorizontalGroup(
             tabEncountersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabEncountersLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(splitPaneCommunity)
-                .addContainerGap())
+                .addGap(62, 62, 62)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(70, Short.MAX_VALUE))
         );
         tabEncountersLayout.setVerticalGroup(
             tabEncountersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabEncountersLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(splitPaneCommunity)
-                .addContainerGap())
+                .addGap(28, 28, 28)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         patientTabs.addTab("Encounters", tabEncounters);
@@ -349,14 +339,6 @@ public class PatientJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCreateCommunityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateCommunityActionPerformed
-        // TODO add your handling code here:
-        //        CreateDoctorJPanel createDoctorJPanel= new CreateDoctorJPanel(doctorDirectory);
-        //        splitPaneCommunity.setRightComponent(createDoctorJPanel);
-//        CreateCommunityJPanel createCommunityJPanel = new CreateCommunityJPanel(communityDirectory);
-//        splitPaneCommunity.setRightComponent(createCommunityJPanel);
-    }//GEN-LAST:event_btnCreateCommunityActionPerformed
-
     private void btnCreateHouseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateHouseActionPerformed
         // TODO add your handling code here:
         //        CreateHospitalJPanel createHospitalJPanel= new CreateHospitalJPanel(hospitalDirectory);
@@ -371,36 +353,55 @@ public class PatientJPanel extends javax.swing.JPanel {
 
     private void btnBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookActionPerformed
         // TODO add your handling code here:
-        
+
         String communityName = (String) drpCommunityName.getSelectedItem();
         String doctorName = (String) drpDoctorName.getSelectedItem();
         Date date = txtDate.getDate();
-        
+
         Encounter encounter = new Encounter(date, new VitalSigns(), currentPatient, this.selectedDoctor);
         encounterDirectory.add(encounter);
-        
-        JOptionPane.showMessageDialog(this,"Added a new Encounter for "+ this.selectedDoctor.getName()+" with "+currentPatient.getName());
-        
-        
+        populateTable();
+
+        JOptionPane.showMessageDialog(this, "Added a new Encounter for " + this.selectedDoctor.getName() + " with " + currentPatient.getName());
+
+
     }//GEN-LAST:event_btnBookActionPerformed
 
     private void drpCommunityNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_drpCommunityNameActionPerformed
         // TODO add your handling code here:
         drpDoctorName.removeAllItems();
         String communityName = (String) drpCommunityName.getSelectedItem();
-        for(Doctor c:doctorDirectory.getHistory()){
-            if(c.getCommunity().getCommunityName().equals(communityName)){
+        for (Doctor c : doctorDirectory.getHistory()) {
+            if (c.getCommunity().getCommunityName().equals(communityName)) {
                 drpDoctorName.addItem(String.valueOf(c.getName()));
                 this.selectedDoctor = c;
             }
-            
+
         }
     }//GEN-LAST:event_drpCommunityNameActionPerformed
+    private void populateTable() {
 
+        DefaultTableModel model = (DefaultTableModel) tblEncountersPatient.getModel();
+        model.setRowCount(0);
+
+        for (Encounter e : encounterDirectory.searchByPatient(currentPatient.getUserName())) {
+            Object row[] = new Object[10];
+            row[0] = e.getDoctor().getName();
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
+            String strDate = dateFormat.format(e.getDate());
+            row[1] = strDate;
+            row[2] = e.getDoctor().getCommunity().getCommunityName();
+            row[3] = e.getDoctor().getCommunity().getCityName();
+            row[4] = e.getDoctor().getSpecialization();
+            row[5] = e.getPatient().getDisease();
+
+            model.addRow(row);
+
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBook;
-    private javax.swing.JButton btnCreateCommunity;
     private javax.swing.JButton btnCreateHouse;
     private javax.swing.JComboBox<String> drpCommunityName;
     private javax.swing.JComboBox<String> drpDoctorName;
@@ -412,16 +413,15 @@ public class PatientJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane patientTabs;
-    private javax.swing.JPanel splitNavigation1;
     private javax.swing.JPanel splitNavigation2;
-    private javax.swing.JSplitPane splitPaneCommunity;
     private javax.swing.JSplitPane splitPaneHouse;
-    private javax.swing.JPanel splitWorkspace1;
     private javax.swing.JPanel splitWorkspace2;
     private javax.swing.JPanel tabDetails;
     private javax.swing.JPanel tabDoctor;
     private javax.swing.JPanel tabEncounters;
+    private javax.swing.JTable tblEncountersPatient;
     private com.toedter.calendar.JDateChooser txtDate;
     // End of variables declaration//GEN-END:variables
 }
