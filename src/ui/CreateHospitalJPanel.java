@@ -219,10 +219,6 @@ public class CreateHospitalJPanel extends javax.swing.JPanel {
         //    }
     }//GEN-LAST:event_saveActionPerformed
 
-    private void txtCityNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCityNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCityNameActionPerformed
-
     private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
         // TODO add your handling code here:
         txtCityName.setText("");
@@ -240,13 +236,17 @@ public class CreateHospitalJPanel extends javax.swing.JPanel {
         //        valPhoto.setText("");
     }//GEN-LAST:event_resetActionPerformed
 
-    private void txtCommunityNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCommunityNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCommunityNameActionPerformed
-
     private void txtHospitalNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHospitalNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtHospitalNameActionPerformed
+
+    private void txtCityNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCityNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCityNameActionPerformed
+
+    private void txtCommunityNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCommunityNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCommunityNameActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
