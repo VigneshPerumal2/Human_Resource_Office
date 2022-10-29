@@ -6,6 +6,7 @@ package ui;
 
 import model.CommunityDirectory;
 import model.DoctorDirectory;
+import model.EncounterDirectory;
 import model.HospitalDirectory;
 import model.PatientDirectory;
 
@@ -19,16 +20,18 @@ public class SystemAdminDashboardJPanel extends javax.swing.JPanel {
     DoctorDirectory doctorDirectory;
     HospitalDirectory hospitalDirectory;
     CommunityDirectory communityDirectory;
+    EncounterDirectory encounterDirectory;
     private boolean deleteFlag=true;
     /**
      * Creates new form AdminDashboardJPanel
      */
-    public SystemAdminDashboardJPanel(PatientDirectory patientDirectory, DoctorDirectory doctorDirectory,HospitalDirectory hospitalDirectory,CommunityDirectory communityDirectory) {
+    public SystemAdminDashboardJPanel(PatientDirectory patientDirectory, DoctorDirectory doctorDirectory,HospitalDirectory hospitalDirectory,CommunityDirectory communityDirectory,EncounterDirectory encounterDirectory) {
         initComponents();
         this.patientDirectory = patientDirectory;
         this.doctorDirectory = doctorDirectory;
         this.hospitalDirectory = hospitalDirectory;
         this.communityDirectory=communityDirectory;
+        this.encounterDirectory=encounterDirectory;
     }
 
     /**
@@ -61,10 +64,10 @@ public class SystemAdminDashboardJPanel extends javax.swing.JPanel {
         btnCreateHospital = new javax.swing.JButton();
         splitWorkspace2 = new javax.swing.JPanel();
         tabEncounters = new javax.swing.JPanel();
-        splitPaneDoctor2 = new javax.swing.JSplitPane();
+        splitPaneEncounter = new javax.swing.JSplitPane();
         splitNavigation3 = new javax.swing.JPanel();
-        btnViewDoctor2 = new javax.swing.JButton();
-        btnCreateDoctor2 = new javax.swing.JButton();
+        btnViewEncounter = new javax.swing.JButton();
+        btnCreateEncounter = new javax.swing.JButton();
         splitWorkspace3 = new javax.swing.JPanel();
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
@@ -289,19 +292,19 @@ public class SystemAdminDashboardJPanel extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Hospital", tabHospital);
 
-        btnViewDoctor2.setFont(new java.awt.Font("Helvetica Neue", 1, 10)); // NOI18N
-        btnViewDoctor2.setText("View Doctor");
-        btnViewDoctor2.addActionListener(new java.awt.event.ActionListener() {
+        btnViewEncounter.setFont(new java.awt.Font("Helvetica Neue", 1, 10)); // NOI18N
+        btnViewEncounter.setText("View Encounter");
+        btnViewEncounter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewDoctor2ActionPerformed(evt);
+                btnViewEncounterActionPerformed(evt);
             }
         });
 
-        btnCreateDoctor2.setFont(new java.awt.Font("Helvetica Neue", 1, 10)); // NOI18N
-        btnCreateDoctor2.setText("Create Doctor");
-        btnCreateDoctor2.addActionListener(new java.awt.event.ActionListener() {
+        btnCreateEncounter.setFont(new java.awt.Font("Helvetica Neue", 1, 10)); // NOI18N
+        btnCreateEncounter.setText("Create Encounter");
+        btnCreateEncounter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCreateDoctor2ActionPerformed(evt);
+                btnCreateEncounterActionPerformed(evt);
             }
         });
 
@@ -312,20 +315,20 @@ public class SystemAdminDashboardJPanel extends javax.swing.JPanel {
             .addGroup(splitNavigation3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(splitNavigation3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnCreateDoctor2, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
-                    .addComponent(btnViewDoctor2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(btnCreateEncounter, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                    .addComponent(btnViewEncounter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         splitNavigation3Layout.setVerticalGroup(
             splitNavigation3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(splitNavigation3Layout.createSequentialGroup()
                 .addGap(118, 118, 118)
-                .addComponent(btnCreateDoctor2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnCreateEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addComponent(btnViewDoctor2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnViewEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(171, Short.MAX_VALUE))
         );
 
-        splitPaneDoctor2.setLeftComponent(splitNavigation3);
+        splitPaneEncounter.setLeftComponent(splitNavigation3);
 
         splitWorkspace3.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -340,7 +343,7 @@ public class SystemAdminDashboardJPanel extends javax.swing.JPanel {
             .addGap(0, 526, Short.MAX_VALUE)
         );
 
-        splitPaneDoctor2.setRightComponent(splitWorkspace3);
+        splitPaneEncounter.setRightComponent(splitWorkspace3);
 
         javax.swing.GroupLayout tabEncountersLayout = new javax.swing.GroupLayout(tabEncounters);
         tabEncounters.setLayout(tabEncountersLayout);
@@ -348,14 +351,14 @@ public class SystemAdminDashboardJPanel extends javax.swing.JPanel {
             tabEncountersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabEncountersLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(splitPaneDoctor2)
+                .addComponent(splitPaneEncounter)
                 .addContainerGap())
         );
         tabEncountersLayout.setVerticalGroup(
             tabEncountersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabEncountersLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(splitPaneDoctor2)
+                .addComponent(splitPaneEncounter)
                 .addContainerGap())
         );
 
@@ -414,22 +417,26 @@ public class SystemAdminDashboardJPanel extends javax.swing.JPanel {
         splitPaneHospital.setRightComponent(createHospitalJPanel);
     }//GEN-LAST:event_btnCreateHospitalActionPerformed
 
-    private void btnViewDoctor2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDoctor2ActionPerformed
+    private void btnViewEncounterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewEncounterActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnViewDoctor2ActionPerformed
+        ViewEncounterJPanel viewEncounterJPanel = new ViewEncounterJPanel(patientDirectory, doctorDirectory, encounterDirectory,true);
+        splitPaneEncounter.setRightComponent(viewEncounterJPanel);
+    }//GEN-LAST:event_btnViewEncounterActionPerformed
 
-    private void btnCreateDoctor2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateDoctor2ActionPerformed
+    private void btnCreateEncounterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateEncounterActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnCreateDoctor2ActionPerformed
+        CreateEncounterJPanel createEncounterJPanel = new CreateEncounterJPanel(patientDirectory, doctorDirectory, encounterDirectory);
+        splitPaneEncounter.setRightComponent(createEncounterJPanel);
+    }//GEN-LAST:event_btnCreateEncounterActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreateDoctor;
-    private javax.swing.JButton btnCreateDoctor2;
+    private javax.swing.JButton btnCreateEncounter;
     private javax.swing.JButton btnCreateHospital;
     private javax.swing.JButton btnCreatePatient;
     private javax.swing.JButton btnViewDoctor;
-    private javax.swing.JButton btnViewDoctor2;
+    private javax.swing.JButton btnViewEncounter;
     private javax.swing.JButton btnViewHospital;
     private javax.swing.JButton btnViewPatient;
     private javax.swing.JLabel jLabel1;
@@ -439,7 +446,7 @@ public class SystemAdminDashboardJPanel extends javax.swing.JPanel {
     private javax.swing.JPanel splitNavigation2;
     private javax.swing.JPanel splitNavigation3;
     private javax.swing.JSplitPane splitPaneDoctor;
-    private javax.swing.JSplitPane splitPaneDoctor2;
+    private javax.swing.JSplitPane splitPaneEncounter;
     private javax.swing.JSplitPane splitPaneHospital;
     private javax.swing.JSplitPane splitPanePatient;
     private javax.swing.JPanel splitWorkspace;

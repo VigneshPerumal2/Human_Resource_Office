@@ -290,7 +290,7 @@ public class MainJFrame extends javax.swing.JFrame {
             text+="</html>";
             lblWelcomeText.setText(text);
             
-            SystemAdminDashboardJPanel adminDashboardJPanel = new SystemAdminDashboardJPanel(patientDirectory,doctorDirectory,hospitalDirectory,communityDirectory);
+            SystemAdminDashboardJPanel adminDashboardJPanel = new SystemAdminDashboardJPanel(patientDirectory,doctorDirectory,hospitalDirectory,communityDirectory,encounterDirectory);
             splitPane.setRightComponent(adminDashboardJPanel);
             
         }
