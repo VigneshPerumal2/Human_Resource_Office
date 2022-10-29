@@ -304,7 +304,7 @@ public class MainJFrame extends javax.swing.JFrame {
             text+="Admin";
             text+="</html>";
             lblWelcomeText.setText(text);
-            HospitalAdminDashboardJPanel hospitalAdminDashboardJPanel = new HospitalAdminDashboardJPanel(patientDirectory,doctorDirectory,hospitalDirectory,communityDirectory);
+            HospitalAdminDashboardJPanel hospitalAdminDashboardJPanel = new HospitalAdminDashboardJPanel(patientDirectory,doctorDirectory,hospitalDirectory,communityDirectory,encounterDirectory);
             splitPane.setRightComponent(hospitalAdminDashboardJPanel);
         }
         
