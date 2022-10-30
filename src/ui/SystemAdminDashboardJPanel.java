@@ -4,6 +4,7 @@
  */
 package ui;
 
+import model.CityDirectory;
 import model.CommunityDirectory;
 import model.DoctorDirectory;
 import model.EncounterDirectory;
@@ -23,11 +24,12 @@ public class SystemAdminDashboardJPanel extends javax.swing.JPanel {
     CommunityDirectory communityDirectory;
     EncounterDirectory encounterDirectory;
     HouseDirectory houseDirectory;
+    CityDirectory cityDirectory;
     private boolean deleteFlag=true;
     /**
      * Creates new form AdminDashboardJPanel
      */
-    public SystemAdminDashboardJPanel(PatientDirectory patientDirectory, DoctorDirectory doctorDirectory,HospitalDirectory hospitalDirectory,CommunityDirectory communityDirectory,EncounterDirectory encounterDirectory,HouseDirectory houseDirectory) {
+    public SystemAdminDashboardJPanel(PatientDirectory patientDirectory, DoctorDirectory doctorDirectory,HospitalDirectory hospitalDirectory,CommunityDirectory communityDirectory,EncounterDirectory encounterDirectory,HouseDirectory houseDirectory,CityDirectory cityDirectory) {
         initComponents();
         this.patientDirectory = patientDirectory;
         this.doctorDirectory = doctorDirectory;
@@ -35,6 +37,7 @@ public class SystemAdminDashboardJPanel extends javax.swing.JPanel {
         this.communityDirectory=communityDirectory;
         this.encounterDirectory=encounterDirectory;
         this.houseDirectory= houseDirectory;
+        this.cityDirectory=cityDirectory;
     }
 
     /**
@@ -416,7 +419,7 @@ public class SystemAdminDashboardJPanel extends javax.swing.JPanel {
 
     private void btnCreateHospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateHospitalActionPerformed
         // TODO add your handling code here:
-        CreateHospitalJPanel createHospitalJPanel= new CreateHospitalJPanel(hospitalDirectory,communityDirectory);
+        CreateHospitalJPanel createHospitalJPanel= new CreateHospitalJPanel(hospitalDirectory,communityDirectory,cityDirectory);
         splitPaneHospital.setRightComponent(createHospitalJPanel);
     }//GEN-LAST:event_btnCreateHospitalActionPerformed
 

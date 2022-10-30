@@ -25,17 +25,18 @@ public class CreateHospitalJPanel extends javax.swing.JPanel {
     CommunityDirectory communityDirectory;
     CityDirectory cityDirectory;
 
-    public CreateHospitalJPanel(HospitalDirectory hospitalDirectory,CommunityDirectory communityDirectory) {
+    public CreateHospitalJPanel(HospitalDirectory hospitalDirectory,CommunityDirectory communityDirectory,CityDirectory cityDirectory) {
         initComponents();
         this.hospitalDirectory = hospitalDirectory;
         this.communityDirectory=communityDirectory;
+        this.cityDirectory = cityDirectory;
         
         for(Community c:communityDirectory.getHistory()){
              drpCommunityName.addItem(String.valueOf(c.getCommunityName()));
              
          }
         for(City c:cityDirectory.getHistory()){
-             drpCommunityName.addItem(String.valueOf(c.getCityName()));
+             drpCityName.addItem(String.valueOf(c.getCityName()));
              
          }
     }

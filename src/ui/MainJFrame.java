@@ -60,7 +60,6 @@ public class MainJFrame extends javax.swing.JFrame {
         communityAdmin = new Admin("Community", "CommunityAdmin",  22,  "Male",  "asd@gmail.com",  123123,  "comadmin",  "comadmin");
         
         patientDirectory.add(new Patient("Flu",new House(), "xyz", 22, "Male", "ass@gmai.com", 123123, "xyz", "xyz"));
-        //String specialization, Community community, String name, int age, String gender, String emailId, long phoneNumber, String userName, String password
         doctorDirectory.add(new Doctor("Heart", new Community("Boylston",213,"asda", "Boston","asdas","asd"), "John", 22, "Male", "asdsa", 123123, "abc", "abc"));
         
         communityDirectory.add(new Community("Boylston",213,"asda", "Boston","asdas","asd"));
@@ -291,7 +290,7 @@ public class MainJFrame extends javax.swing.JFrame {
             text+="</html>";
             lblWelcomeText.setText(text);
             
-            SystemAdminDashboardJPanel adminDashboardJPanel = new SystemAdminDashboardJPanel(patientDirectory,doctorDirectory,hospitalDirectory,communityDirectory,encounterDirectory,houseDirectory);
+            SystemAdminDashboardJPanel adminDashboardJPanel = new SystemAdminDashboardJPanel(patientDirectory,doctorDirectory,hospitalDirectory,communityDirectory,encounterDirectory,houseDirectory,cityDirectory);
             splitPane.setRightComponent(adminDashboardJPanel);
             
         }
@@ -305,7 +304,7 @@ public class MainJFrame extends javax.swing.JFrame {
             text+="Admin";
             text+="</html>";
             lblWelcomeText.setText(text);
-            HospitalAdminDashboardJPanel hospitalAdminDashboardJPanel = new HospitalAdminDashboardJPanel(patientDirectory,doctorDirectory,hospitalDirectory,communityDirectory,encounterDirectory,houseDirectory);
+            HospitalAdminDashboardJPanel hospitalAdminDashboardJPanel = new HospitalAdminDashboardJPanel(patientDirectory,doctorDirectory,hospitalDirectory,communityDirectory,encounterDirectory,houseDirectory,cityDirectory);
             splitPane.setRightComponent(hospitalAdminDashboardJPanel);
         }
         
