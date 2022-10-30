@@ -240,13 +240,13 @@ public class CreateHospitalJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtHospitalNameActionPerformed
 
-    private void txtCityNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCityNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCityNameActionPerformed
-
     private void txtCommunityNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCommunityNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCommunityNameActionPerformed
+
+    private void txtCityNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCityNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCityNameActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
