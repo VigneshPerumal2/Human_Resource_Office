@@ -314,7 +314,7 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
             String specialization = txtSpecialization.getText();
             String communityName = String.valueOf(drpCommunityName.getSelectedItem());
             String cityName = String.valueOf(drpCityName.getSelectedItem());
-            Community c= new Community(communityName, cityName);
+            Community c= communityDirectory.search(communityName);
 
             Doctor d = new Doctor(specialization,c, name, age, gender, emailAddress, cellPhoneNumber, username, password);
 

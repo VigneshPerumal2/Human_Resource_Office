@@ -21,6 +21,9 @@ public class Community extends City {
         this.landMark = landMark;
     }
 
+    Community() {
+    }
+
     public int getPinCode() {
         return pinCode;
     }

@@ -8,6 +8,7 @@ import model.CommunityDirectory;
 import model.DoctorDirectory;
 import model.EncounterDirectory;
 import model.HospitalDirectory;
+import model.HouseDirectory;
 import model.PatientDirectory;
 
 /**
@@ -21,17 +22,19 @@ public class SystemAdminDashboardJPanel extends javax.swing.JPanel {
     HospitalDirectory hospitalDirectory;
     CommunityDirectory communityDirectory;
     EncounterDirectory encounterDirectory;
+    HouseDirectory houseDirectory;
     private boolean deleteFlag=true;
     /**
      * Creates new form AdminDashboardJPanel
      */
-    public SystemAdminDashboardJPanel(PatientDirectory patientDirectory, DoctorDirectory doctorDirectory,HospitalDirectory hospitalDirectory,CommunityDirectory communityDirectory,EncounterDirectory encounterDirectory) {
+    public SystemAdminDashboardJPanel(PatientDirectory patientDirectory, DoctorDirectory doctorDirectory,HospitalDirectory hospitalDirectory,CommunityDirectory communityDirectory,EncounterDirectory encounterDirectory,HouseDirectory houseDirectory) {
         initComponents();
         this.patientDirectory = patientDirectory;
         this.doctorDirectory = doctorDirectory;
         this.hospitalDirectory = hospitalDirectory;
         this.communityDirectory=communityDirectory;
         this.encounterDirectory=encounterDirectory;
+        this.houseDirectory= houseDirectory;
     }
 
     /**
@@ -383,13 +386,13 @@ public class SystemAdminDashboardJPanel extends javax.swing.JPanel {
 
     private void btnCreatePatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreatePatientActionPerformed
         // TODO add your handling code here:
-        CreatePatientJPanel createPatientJPanel= new CreatePatientJPanel(patientDirectory);
+        CreatePatientJPanel createPatientJPanel= new CreatePatientJPanel(patientDirectory,houseDirectory);
         splitPanePatient.setRightComponent(createPatientJPanel);
     }//GEN-LAST:event_btnCreatePatientActionPerformed
 
     private void btnViewPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewPatientActionPerformed
         // TODO add your handling code here:
-        ViewPatientJPanel viewPatientJPanel= new ViewPatientJPanel(patientDirectory,deleteFlag);
+        ViewPatientJPanel viewPatientJPanel= new ViewPatientJPanel(patientDirectory,houseDirectory,deleteFlag);
         splitPanePatient.setRightComponent(viewPatientJPanel);
     }//GEN-LAST:event_btnViewPatientActionPerformed
 
@@ -407,13 +410,13 @@ public class SystemAdminDashboardJPanel extends javax.swing.JPanel {
 
     private void btnViewHospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewHospitalActionPerformed
         // TODO add your handling code here:
-        ViewHospitalJPanel viewHospitalJPanel= new ViewHospitalJPanel(hospitalDirectory,deleteFlag);
+        ViewHospitalJPanel viewHospitalJPanel= new ViewHospitalJPanel(hospitalDirectory,communityDirectory,deleteFlag);
         splitPaneHospital.setRightComponent(viewHospitalJPanel);
     }//GEN-LAST:event_btnViewHospitalActionPerformed
 
     private void btnCreateHospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateHospitalActionPerformed
         // TODO add your handling code here:
-        CreateHospitalJPanel createHospitalJPanel= new CreateHospitalJPanel(hospitalDirectory);
+        CreateHospitalJPanel createHospitalJPanel= new CreateHospitalJPanel(hospitalDirectory,communityDirectory);
         splitPaneHospital.setRightComponent(createHospitalJPanel);
     }//GEN-LAST:event_btnCreateHospitalActionPerformed
 

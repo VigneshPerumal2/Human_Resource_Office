@@ -20,8 +20,6 @@ public class Patient extends Person {
     public void setHouse(House house) {
         this.house = house;
     }
-    
-    
 
     public String getDisease() {
         return disease;
@@ -31,7 +29,7 @@ public class Patient extends Person {
         this.disease = disease;
     }
 
-    public Patient(String disease,House house, String name, int age, String gender, String emailId, long phoneNumber, String userName, String password) {
+    public Patient(String disease, House house, String name, int age, String gender, String emailId, long phoneNumber, String userName, String password) {
         super(name, age, gender, emailId, phoneNumber, userName, password);
         this.disease = disease;
         this.house = house;
@@ -39,7 +37,7 @@ public class Patient extends Person {
     }
 
     public Patient() {
-        this.disease="";
+        this.disease = "";
     }
 
     @Override

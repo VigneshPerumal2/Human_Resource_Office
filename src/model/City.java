@@ -21,6 +21,9 @@ public class City {
         this.country = country;
         
     }
+
+    City() {
+    }
     
     
     public String getStateName() {
