@@ -98,9 +98,11 @@ public class MainJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        controlPanel.setBackground(new java.awt.Color(0, 71, 119));
+        controlPanel.setBackground(new java.awt.Color(13, 6, 48));
         controlPanel.setForeground(new java.awt.Color(51, 51, 255));
 
+        btnLogout.setBackground(new java.awt.Color(239, 99, 81));
+        btnLogout.setForeground(new java.awt.Color(247, 249, 249));
         btnLogout.setText("Logout");
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,18 +138,18 @@ public class MainJFrame extends javax.swing.JFrame {
 
         splitPane.setLeftComponent(controlPanel);
 
-        workspacePanel.setBackground(new java.awt.Color(239, 210, 141));
+        workspacePanel.setBackground(new java.awt.Color(247, 249, 249));
 
         labelHospitalManagementSystem.setBackground(new java.awt.Color(153, 153, 153));
         labelHospitalManagementSystem.setFont(new java.awt.Font("Helvetica Neue", 2, 14)); // NOI18N
-        labelHospitalManagementSystem.setForeground(new java.awt.Color(0, 71, 119));
+        labelHospitalManagementSystem.setForeground(new java.awt.Color(13, 6, 48));
         labelHospitalManagementSystem.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelHospitalManagementSystem.setText("Please enter the login credentials");
         labelHospitalManagementSystem.setToolTipText("To create new employee");
 
         labelHospitalManagementSystem1.setBackground(new java.awt.Color(153, 153, 153));
         labelHospitalManagementSystem1.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
-        labelHospitalManagementSystem1.setForeground(new java.awt.Color(0, 71, 119));
+        labelHospitalManagementSystem1.setForeground(new java.awt.Color(13, 6, 48));
         labelHospitalManagementSystem1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelHospitalManagementSystem1.setText("Hospital Management System");
         labelHospitalManagementSystem1.setToolTipText("To create new employee");
@@ -161,14 +163,14 @@ public class MainJFrame extends javax.swing.JFrame {
 
         labelHospitalManagementSystem2.setBackground(new java.awt.Color(153, 153, 153));
         labelHospitalManagementSystem2.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        labelHospitalManagementSystem2.setForeground(new java.awt.Color(0, 71, 119));
+        labelHospitalManagementSystem2.setForeground(new java.awt.Color(13, 6, 48));
         labelHospitalManagementSystem2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelHospitalManagementSystem2.setText("Login As :");
         labelHospitalManagementSystem2.setToolTipText("To create new employee");
 
         labelHospitalManagementSystem3.setBackground(new java.awt.Color(153, 153, 153));
         labelHospitalManagementSystem3.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        labelHospitalManagementSystem3.setForeground(new java.awt.Color(0, 71, 119));
+        labelHospitalManagementSystem3.setForeground(new java.awt.Color(13, 6, 48));
         labelHospitalManagementSystem3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelHospitalManagementSystem3.setText("User Name :");
         labelHospitalManagementSystem3.setToolTipText("To create new employee");
@@ -177,12 +179,12 @@ public class MainJFrame extends javax.swing.JFrame {
 
         labelHospitalManagementSystem4.setBackground(new java.awt.Color(153, 153, 153));
         labelHospitalManagementSystem4.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        labelHospitalManagementSystem4.setForeground(new java.awt.Color(0, 71, 119));
+        labelHospitalManagementSystem4.setForeground(new java.awt.Color(13, 6, 48));
         labelHospitalManagementSystem4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelHospitalManagementSystem4.setText("Password :");
         labelHospitalManagementSystem4.setToolTipText("To create new employee");
 
-        btnLogin.setBackground(new java.awt.Color(0, 71, 119));
+        btnLogin.setBackground(new java.awt.Color(105, 153, 93));
         btnLogin.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("Login");
