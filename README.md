@@ -72,9 +72,8 @@ This role has the the control to perform CRU [Create-Read-Update] operations
 Class Diagram -
 
 
-<img width="468" alt="image" src="https://user-images.githubusercontent.com/34863107/198932119-5c5a3fd8-df2f-4de7-830e-6222abb45f14.png">
 
-
+![ClassDiagram](https://user-images.githubusercontent.com/34863107/198932309-8c57fc1d-5e0b-4591-9432-d612e49db79e.png)
 
 
 
