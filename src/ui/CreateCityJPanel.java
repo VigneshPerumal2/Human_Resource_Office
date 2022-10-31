@@ -403,6 +403,8 @@ public class CreateCityJPanel extends javax.swing.JPanel {
         populateTable();
 
         txtUpdateCityName.setText("");
+        txtUpdateStateName.setText("");
+        txtUpdateCountry.setText("");
 
 
     }//GEN-LAST:event_btnUpdateActionPerformed
