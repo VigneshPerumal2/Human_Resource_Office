@@ -1,4 +1,4 @@
-#Hospital Management System - 
+# Hospital Management System - 
 This application is a platform for people to find medical resource in different city and 
 community.  
 Encounter represent a visit to the doctor’s office. The vital signs timeline is linked to the encounters. Each Encounter will have a single Vital Sign component.
@@ -7,7 +7,7 @@ Java SDK - 17.0+
 NetBeans 
 
 
-#System Admin - 
+# System Admin - 
 
 This user role has the the control to perform CRUD [Create-Read-Update-Delete]operations 
 	◦ Patient - 
@@ -24,7 +24,7 @@ This user role has the the control to perform CRUD [Create-Read-Update-Delete]op
 		‣ Can View/Update Encounters
 
 
-#Hospital Admin - 
+# Hospital Admin - 
 
 This user role has the the control to perform CRU [Create-Read-Update] operations 
 	◦ Patient - 
@@ -40,7 +40,7 @@ This user role has the the control to perform CRU [Create-Read-Update] operation
 		‣ Can Create new Encounters
 		‣ Can View/Update Encounters
 
-#Community Admin - 
+# Community Admin - 
 
 This user role has the the control to perform CRU [Create-Read-Update] operations 
 	◦ City - 
@@ -53,7 +53,7 @@ This user role has the the control to perform CRU [Create-Read-Update] operation
 		‣ Can Create new House
 		‣ Can View/Update House
 
-#Patient - 
+# Patient - 
 
 This role has the the control to perform CRU [Create-Read-Update] operations 
 	◦ Encounter - 
@@ -61,7 +61,7 @@ This role has the the control to perform CRU [Create-Read-Update] operations
 	◦ Personal Details - 
 		‣ Can View/Update personal details.
 
-#Doctor - 
+# Doctor - 
 
 This role has the the control to perform CRU [Create-Read-Update] operations 
 	◦ Encounter - 
@@ -69,13 +69,13 @@ This role has the the control to perform CRU [Create-Read-Update] operations
 		‣ Can read, view and update vital signs
 		
 		
-#Class Diagram -
+# Class Diagram -
 
 
 
 ![ClassDiagram](https://user-images.githubusercontent.com/34863107/198932309-8c57fc1d-5e0b-4591-9432-d612e49db79e.png)
 
-Sequence Diagram -
+# Sequence Diagram -
 
 ![image](https://user-images.githubusercontent.com/34863107/198932867-81e3a5eb-c3d7-4e22-a0d8-b03783b1ef7c.png)
 
