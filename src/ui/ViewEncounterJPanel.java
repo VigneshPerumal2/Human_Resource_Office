@@ -361,7 +361,7 @@ public class ViewEncounterJPanel extends javax.swing.JPanel {
         else{
             encounterDirectory.delete(selectedRow);
             populateTable();
-            JOptionPane.showMessageDialog(this, "Employee Deleted");
+            JOptionPane.showMessageDialog(this, "Encounter Deleted");
         }
     }//GEN-LAST:event_btnDeleteActionPerformed
     private void populateTable() {
