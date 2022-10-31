@@ -1,4 +1,4 @@
-Hospital Management System - 
+#Hospital Management System - 
 This application is a platform for people to find medical resource in different city and 
 community.  
 Encounter represent a visit to the doctor’s office. The vital signs timeline is linked to the encounters. Each Encounter will have a single Vital Sign component.
@@ -7,7 +7,7 @@ Java SDK - 17.0+
 NetBeans 
 
 
-System Admin - 
+#System Admin - 
 
 This user role has the the control to perform CRUD [Create-Read-Update-Delete]operations 
 	◦ Patient - 
@@ -24,7 +24,7 @@ This user role has the the control to perform CRUD [Create-Read-Update-Delete]op
 		‣ Can View/Update Encounters
 
 
-Hospital Admin - 
+#Hospital Admin - 
 
 This user role has the the control to perform CRU [Create-Read-Update] operations 
 	◦ Patient - 
@@ -40,7 +40,7 @@ This user role has the the control to perform CRU [Create-Read-Update] operation
 		‣ Can Create new Encounters
 		‣ Can View/Update Encounters
 
-Community Admin - 
+#Community Admin - 
 
 This user role has the the control to perform CRU [Create-Read-Update] operations 
 	◦ City - 
@@ -53,7 +53,7 @@ This user role has the the control to perform CRU [Create-Read-Update] operation
 		‣ Can Create new House
 		‣ Can View/Update House
 
-Patient - 
+#Patient - 
 
 This role has the the control to perform CRU [Create-Read-Update] operations 
 	◦ Encounter - 
@@ -61,7 +61,7 @@ This role has the the control to perform CRU [Create-Read-Update] operations
 	◦ Personal Details - 
 		‣ Can View/Update personal details.
 
-Doctor - 
+#Doctor - 
 
 This role has the the control to perform CRU [Create-Read-Update] operations 
 	◦ Encounter - 
@@ -69,7 +69,7 @@ This role has the the control to perform CRU [Create-Read-Update] operations
 		‣ Can read, view and update vital signs
 		
 		
-Class Diagram -
+#Class Diagram -
 
 
 
@@ -86,6 +86,15 @@ Sequence Diagram -
 ![image](https://user-images.githubusercontent.com/34863107/198932742-10eff5ef-9049-4417-a6ac-01faaa26ed93.png)
 
 ![image](https://user-images.githubusercontent.com/34863107/198932794-18bdd85a-3e73-4f5d-a382-e00ed2712e24.png)
+
+![image](https://user-images.githubusercontent.com/34863107/198933584-4e36ceb6-c8eb-4a0c-8258-6cd0b5d6ce10.png)
+
+![image](https://user-images.githubusercontent.com/34863107/198933636-5302d628-c419-4a52-a1ba-281b6a22799d.png)
+
+![image](https://user-images.githubusercontent.com/34863107/198933670-a87edc88-66ba-4d45-9c2c-6e55003dffd6.png)
+
+![image](https://user-images.githubusercontent.com/34863107/198933822-58bede3e-7e95-415b-96b9-adccd7938685.png)
+
 
 
 
