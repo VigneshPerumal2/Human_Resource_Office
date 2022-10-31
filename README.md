@@ -77,7 +77,7 @@ Class Diagram -
 
 Sequence Diagram -
 
-<img width="468" alt="image" src="https://user-images.githubusercontent.com/34863107/198932575-5f357ad3-3e60-4b47-b9b1-03373a7f3aa8.png">
+![image](https://user-images.githubusercontent.com/34863107/198932867-81e3a5eb-c3d7-4e22-a0d8-b03783b1ef7c.png)
 
 ![image](https://user-images.githubusercontent.com/34863107/198932630-d465f66c-2c46-4296-9ad1-baafd7d7638f.png)
 
