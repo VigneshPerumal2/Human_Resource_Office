@@ -75,6 +75,20 @@ Class Diagram -
 
 ![ClassDiagram](https://user-images.githubusercontent.com/34863107/198932309-8c57fc1d-5e0b-4591-9432-d612e49db79e.png)
 
+Sequence Diagram -
+
+<img width="468" alt="image" src="https://user-images.githubusercontent.com/34863107/198932575-5f357ad3-3e60-4b47-b9b1-03373a7f3aa8.png">
+
+![image](https://user-images.githubusercontent.com/34863107/198932630-d465f66c-2c46-4296-9ad1-baafd7d7638f.png)
+
+![image](https://user-images.githubusercontent.com/34863107/198932709-86103eeb-64a4-439b-8126-370ed2aa1769.png)
+
+![image](https://user-images.githubusercontent.com/34863107/198932742-10eff5ef-9049-4417-a6ac-01faaa26ed93.png)
+
+![image](https://user-images.githubusercontent.com/34863107/198932794-18bdd85a-3e73-4f5d-a382-e00ed2712e24.png)
+
+
+
 
 
 
