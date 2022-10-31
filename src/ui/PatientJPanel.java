@@ -54,6 +54,10 @@ public class PatientJPanel extends javax.swing.JPanel {
         for (Community c : communityDirectory.getHistory()) {
             drpCommunityName.addItem(String.valueOf(c.getCommunityName()));
         }
+        
+        for(House h:houseDirectory.getHistory()){
+            drpHouse.addItem(String.valueOf(h.getStreetName()));
+        }
 
         String name = currentPatient.getName();
         String pusername = currentPatient.getUserName();
@@ -74,7 +78,8 @@ public class PatientJPanel extends javax.swing.JPanel {
         txtAge.setValue(age);
         drpGender.setSelectedItem(currentPatient.getGender());
         drpHouse.setSelectedItem(String.valueOf(house.getStreetName()));
-
+        
+        populateTable();
     }
 
     /**
@@ -240,26 +245,26 @@ public class PatientJPanel extends javax.swing.JPanel {
 
         tblEncountersPatient.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Doctor Name", "Date", "Community Name", "City Name", "Specilization", "Disease"
+                "Doctor Name", "Date", "Specilization", "Disease", "Heart Rate", "Weight", "Height"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, true, true, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -552,7 +557,7 @@ public class PatientJPanel extends javax.swing.JPanel {
         populateTable();
 
         JOptionPane.showMessageDialog(this, "Added a new Encounter for " + this.selectedDoctor.getName() + " with " + currentPatient.getName());
-
+        populateTable();
 
     }//GEN-LAST:event_btnBookActionPerformed
 
@@ -567,6 +572,7 @@ public class PatientJPanel extends javax.swing.JPanel {
             }
 
         }
+        
     }//GEN-LAST:event_drpCommunityNameActionPerformed
 
     private void UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateActionPerformed
@@ -590,12 +596,14 @@ public class PatientJPanel extends javax.swing.JPanel {
         String emailAddress = txtEmailAddress.getText();
         String disease = txtDisease.getText();
         House house = houseDirectory.search(String.valueOf(drpHouse.getSelectedItem()));
+        
+        
 
         Patient p = new Patient(disease,house, name, age, gender, emailAddress, cellPhoneNumber, username, password);
 
         patientDirectory.update(p);
         JOptionPane.showMessageDialog(this, " Patient Details was updated ! ");
-        
+        populateTable();
         //    }
     }//GEN-LAST:event_UpdateActionPerformed
 
@@ -633,10 +641,11 @@ public class PatientJPanel extends javax.swing.JPanel {
             DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
             String strDate = dateFormat.format(e.getDate());
             row[1] = strDate;
-            row[2] = e.getDoctor().getCommunity().getCommunityName();
-            row[3] = e.getDoctor().getCommunity().getCityName();
-            row[4] = e.getDoctor().getSpecialization();
-            row[5] = e.getPatient().getDisease();
+            row[2] = e.getDoctor().getSpecialization();
+            row[3] = e.getPatient().getDisease();
+            row[4] = e.getVitalSigns().getHeartRate();
+            row[5] = e.getVitalSigns().getWeight();
+            row[6] = e.getVitalSigns().getHeight();
 
             model.addRow(row);
 

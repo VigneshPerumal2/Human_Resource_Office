@@ -267,26 +267,26 @@ public class DoctorJPanel extends javax.swing.JPanel {
 
         tblEncountersPatient.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Doctor Name", "Date", "Community Name", "City Name", "Specilization", "Disease"
+                "Doctor Name", "Date", "Specilization", "Disease", "Heart Rate", "Weight", "Height"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -518,10 +518,10 @@ public class DoctorJPanel extends javax.swing.JPanel {
             DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
             String strDate = dateFormat.format(e.getDate());
             row[1] = strDate;
-            row[2] = e.getDoctor().getCommunity().getCommunityName();
-            row[3] = e.getDoctor().getCommunity().getCityName();
-            row[4] = e.getDoctor().getSpecialization();
             row[5] = e.getPatient().getDisease();
+            row[4] = e.getVitalSigns().getHeartRate();
+            row[5] = e.getVitalSigns().getWeight();
+            row[6] = e.getVitalSigns().getHeight();
 
             model.addRow(row);
 

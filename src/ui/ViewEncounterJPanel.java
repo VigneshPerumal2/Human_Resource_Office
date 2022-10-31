@@ -329,6 +329,15 @@ public class ViewEncounterJPanel extends javax.swing.JPanel {
             encounterDirectory.update(e, updateIndex);
             JOptionPane.showMessageDialog(this, " Encounter Was updated! ");
             populateTable();
+            
+            drpDoctorName.setSelectedIndex(0);
+            drpPatientName.setSelectedIndex(0);
+            txtUpdateDate.setDate(null);
+            txtUpdateHearRate.setText("");
+            txtUpdateHeight.setText("");
+            txtUpdateWeight.setText("");
+                    
+            
 
             //    }
     }//GEN-LAST:event_UpdateActionPerformed

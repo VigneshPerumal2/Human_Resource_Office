@@ -58,12 +58,12 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         drpGender = new javax.swing.JComboBox<>();
         age = new javax.swing.JLabel();
         cellPhoneNumber = new javax.swing.JLabel();
-        txtPassword = new javax.swing.JTextField();
         employeeId1 = new javax.swing.JLabel();
         txtDisease = new javax.swing.JTextField();
         emailAddress1 = new javax.swing.JLabel();
         emailAddress2 = new javax.swing.JLabel();
         drpHouse = new javax.swing.JComboBox<>();
+        txtPassword = new javax.swing.JPasswordField();
 
         splitWorkspace.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -129,12 +129,6 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         age.setText("Age:");
 
         cellPhoneNumber.setText("Cell Phone Number:");
-
-        txtPassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPasswordActionPerformed(evt);
-            }
-        });
 
         employeeId1.setText("Password:");
 
@@ -356,10 +350,6 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCellPhoneNumberActionPerformed
 
-    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPasswordActionPerformed
-
     private void txtDiseaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDiseaseActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDiseaseActionPerformed
@@ -386,7 +376,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtDisease;
     private javax.swing.JTextField txtEmailAddress;
     private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtPassword;
+    private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 }
