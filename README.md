@@ -67,6 +67,13 @@ This role has the the control to perform CRU [Create-Read-Update] operations
 	◦ Encounter - 
 		‣ Can Create new Encounter with Patients
 		‣ Can read, view and update vital signs
+		
+		
+Class Diagram -
+
+
+<img width="468" alt="image" src="https://user-images.githubusercontent.com/34863107/198932119-5c5a3fd8-df2f-4de7-830e-6222abb45f14.png">
+
 
 
 
