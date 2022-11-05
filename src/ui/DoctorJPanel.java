@@ -515,10 +515,11 @@ public class DoctorJPanel extends javax.swing.JPanel {
         for (Encounter e : encounterDirectory.searchByDoctor(currentDoctor.getUserName())) {
             Object row[] = new Object[10];
             row[0] = e.getDoctor().getName();
-            DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
+            DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
             String strDate = dateFormat.format(e.getDate());
             row[1] = strDate;
-            row[5] = e.getPatient().getDisease();
+            row[2] = e.getDoctor().getSpecialization();
+            row[3] = e.getPatient().getDisease();
             row[4] = e.getVitalSigns().getHeartRate();
             row[5] = e.getVitalSigns().getWeight();
             row[6] = e.getVitalSigns().getHeight();

@@ -19,18 +19,18 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
     /**
      * Creates new form CreateDoctorJPanel
      */
-    
     DoctorDirectory doctorDirectory;
     CommunityDirectory communityDirectory;
-    public CreateDoctorJPanel(DoctorDirectory doctorDirectory,CommunityDirectory communityDirectory) {
+
+    public CreateDoctorJPanel(DoctorDirectory doctorDirectory, CommunityDirectory communityDirectory) {
         initComponents();
-         this.communityDirectory=communityDirectory;
-         this.doctorDirectory = doctorDirectory;
-         
-         for(Community c:communityDirectory.getHistory()){
-             drpCommunityName.addItem(String.valueOf(c.getCommunityName()));
-             drpCityName.addItem(String.valueOf(c.getCityName()));
-         }
+        this.communityDirectory = communityDirectory;
+        this.doctorDirectory = doctorDirectory;
+
+        for (Community c : communityDirectory.getHistory()) {
+            drpCommunityName.addItem(String.valueOf(c.getCommunityName()));
+            drpCityName.addItem(String.valueOf(c.getCityName()));
+        }
     }
 
     /**
@@ -66,6 +66,12 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
         drpCommunityName = new javax.swing.JComboBox<>();
         drpCityName = new javax.swing.JComboBox<>();
         txtPassword = new javax.swing.JPasswordField();
+        valName = new javax.swing.JLabel();
+        valUsername = new javax.swing.JLabel();
+        valPassword = new javax.swing.JLabel();
+        valCellPhoneNumber = new javax.swing.JLabel();
+        valEmailAddress = new javax.swing.JLabel();
+        valSpecialization = new javax.swing.JLabel();
 
         splitWorkspace.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -146,11 +152,23 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
 
         cellPhoneNumber2.setText("City Name:");
 
+        valName.setForeground(new java.awt.Color(255, 51, 51));
+
+        valUsername.setForeground(new java.awt.Color(255, 51, 51));
+
+        valPassword.setForeground(new java.awt.Color(255, 51, 51));
+
+        valCellPhoneNumber.setForeground(new java.awt.Color(255, 51, 51));
+
+        valEmailAddress.setForeground(new java.awt.Color(255, 51, 51));
+
+        valSpecialization.setForeground(new java.awt.Color(255, 51, 51));
+
         javax.swing.GroupLayout splitWorkspaceLayout = new javax.swing.GroupLayout(splitWorkspace);
         splitWorkspace.setLayout(splitWorkspaceLayout);
         splitWorkspaceLayout.setHorizontalGroup(
             splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(splitWorkspaceLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, splitWorkspaceLayout.createSequentialGroup()
                 .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(splitWorkspaceLayout.createSequentialGroup()
                         .addGap(32, 32, 32)
@@ -195,7 +213,15 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
                                 .addComponent(gender)
                                 .addGap(18, 18, 18)
                                 .addComponent(drpGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(472, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
+                .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(valPassword)
+                    .addComponent(valUsername)
+                    .addComponent(valName)
+                    .addComponent(valCellPhoneNumber)
+                    .addComponent(valEmailAddress)
+                    .addComponent(valSpecialization))
+                .addGap(341, 341, 341))
             .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(splitWorkspaceLayout.createSequentialGroup()
                     .addContainerGap()
@@ -207,16 +233,30 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
                                 .addComponent(name, javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(employeeId, javax.swing.GroupLayout.Alignment.TRAILING))
                             .addGap(18, 18, 18)
-                            .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 471, Short.MAX_VALUE)))
                     .addContainerGap()))
         );
         splitWorkspaceLayout.setVerticalGroup(
             splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(splitWorkspaceLayout.createSequentialGroup()
-                .addGap(155, 155, 155)
+                .addGap(96, 96, 96)
+                .addComponent(valName)
+                .addGap(29, 29, 29)
+                .addComponent(valUsername)
+                .addGap(16, 16, 16)
+                .addComponent(valPassword)
+                .addGap(76, 76, 76)
+                .addComponent(valCellPhoneNumber)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(valEmailAddress)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(valSpecialization)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, splitWorkspaceLayout.createSequentialGroup()
+                .addContainerGap(155, Short.MAX_VALUE)
                 .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(employeeId1)
                     .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -252,7 +292,7 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
                 .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(save)
                     .addComponent(reset))
-                .addContainerGap(151, Short.MAX_VALUE))
+                .addGap(151, 151, 151))
             .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(splitWorkspaceLayout.createSequentialGroup()
                     .addContainerGap()
@@ -298,6 +338,7 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
         //        valEmailAddress.setText("");
         //        valPhoto.setText("");
         //        if(validation()){
+        if (validation()) {
             String name = txtName.getText();
             String username = txtUsername.getText();
             String password = txtPassword.getText();
@@ -308,9 +349,9 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
             String specialization = txtSpecialization.getText();
             String communityName = String.valueOf(drpCommunityName.getSelectedItem());
             String cityName = String.valueOf(drpCityName.getSelectedItem());
-            Community c= communityDirectory.search(communityName);
+            Community c = communityDirectory.search(communityName);
 
-            Doctor d = new Doctor(specialization,c, name, age, gender, emailAddress, cellPhoneNumber, username, password);
+            Doctor d = new Doctor(specialization, c, name, age, gender, emailAddress, cellPhoneNumber, username, password);
 
             doctorDirectory.add(d);
             JOptionPane.showMessageDialog(this, "New Doctor Details was created ! ");
@@ -324,9 +365,10 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
             txtUsername.setText("");
             txtPassword.setText("");
             txtSpecialization.setText("");
-            
-            System.out.println("Creating DOctor -> "+d);
-            //    }
+
+            System.out.println("Creating DOctor -> " + d);
+        }
+        //    }
     }//GEN-LAST:event_saveActionPerformed
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
@@ -371,6 +413,52 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSpecializationActionPerformed
 
+    private boolean validation() {
+        boolean validation = true;
+
+        String name = txtName.getText();
+        String username = txtUsername.getText();
+        String password = txtPassword.getText();
+        String cellPhoneNumber = txtCellPhoneNumber.getText();
+        String emailAddress = txtEmailAddress.getText();
+        String specialization = txtSpecialization.getText();
+
+        valName.setText("");
+        valCellPhoneNumber.setText("");
+        valEmailAddress.setText("");
+        valPassword.setText("");
+        valSpecialization.setText("");
+        valUsername.setText("");
+
+        if (name.length() <= 0) {
+            valName.setText("Please enter  Name");
+            validation = false;
+        }
+
+        if (username.length() <= 0) {
+            valUsername.setText("Please enter Username");
+            validation = false;
+        }
+
+        if (password.length() <= 0) {
+            valPassword.setText("Please enter Password");
+            validation = false;
+        }
+        if (cellPhoneNumber.length() <= 0) {
+            valCellPhoneNumber.setText("Please enter cellphone number");
+            validation = false;
+        }
+        if (emailAddress.length() <= 0) {
+            valEmailAddress.setText("Please enter email address");
+            validation = false;
+        }
+        if (specialization.length() <= 0) {
+            valSpecialization.setText("Please enter specialization");
+            validation = false;
+        }
+
+        return validation;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel age;
@@ -397,5 +485,11 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtSpecialization;
     private javax.swing.JTextField txtUsername;
+    private javax.swing.JLabel valCellPhoneNumber;
+    private javax.swing.JLabel valEmailAddress;
+    private javax.swing.JLabel valName;
+    private javax.swing.JLabel valPassword;
+    private javax.swing.JLabel valSpecialization;
+    private javax.swing.JLabel valUsername;
     // End of variables declaration//GEN-END:variables
 }

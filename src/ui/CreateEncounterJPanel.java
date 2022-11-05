@@ -74,6 +74,10 @@ public class CreateEncounterJPanel extends javax.swing.JPanel {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         createEmployeeLabel = new javax.swing.JLabel();
+        valHeartRate = new javax.swing.JLabel();
+        valDate = new javax.swing.JLabel();
+        valHeight = new javax.swing.JLabel();
+        valWeight = new javax.swing.JLabel();
 
         jLabel2.setText("Select a Patient :");
 
@@ -141,6 +145,14 @@ public class CreateEncounterJPanel extends javax.swing.JPanel {
         createEmployeeLabel.setText("Create Encounter");
         createEmployeeLabel.setToolTipText("To create new employee");
 
+        valHeartRate.setForeground(new java.awt.Color(255, 51, 51));
+
+        valDate.setForeground(new java.awt.Color(255, 51, 51));
+
+        valHeight.setForeground(new java.awt.Color(255, 51, 51));
+
+        valWeight.setForeground(new java.awt.Color(255, 51, 51));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -159,16 +171,13 @@ public class CreateEncounterJPanel extends javax.swing.JPanel {
                                 .addGap(91, 91, 91)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(22, 22, 22)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(lblHeartRate1)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(txtHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(lblHeartRate2)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(txtWeight, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(lblHeartRate1)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(lblHeartRate2)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtWeight, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(lblHeartRate)
                                         .addGap(18, 18, 18)
@@ -178,7 +187,16 @@ public class CreateEncounterJPanel extends javax.swing.JPanel {
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel5)
                                     .addComponent(jLabel11))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 290, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(valHeight)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 188, Short.MAX_VALUE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(valHeartRate)
+                                            .addComponent(valWeight))
+                                        .addGap(0, 0, Short.MAX_VALUE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -187,7 +205,9 @@ public class CreateEncounterJPanel extends javax.swing.JPanel {
                                         .addGap(60, 60, 60)
                                         .addComponent(jLabel7)
                                         .addGap(26, 26, 26)
-                                        .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(34, 34, 34)
+                                        .addComponent(valDate))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(402, 402, 402)
                                         .addComponent(btnBook, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -230,7 +250,8 @@ public class CreateEncounterJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
-                    .addComponent(jLabel8))
+                    .addComponent(jLabel8)
+                    .addComponent(valDate))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -242,17 +263,20 @@ public class CreateEncounterJPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblHeartRate)
                             .addComponent(txtHearRate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
+                            .addComponent(jLabel4)
+                            .addComponent(valHeartRate))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblHeartRate1)
                             .addComponent(txtHeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5))
+                            .addComponent(jLabel5)
+                            .addComponent(valHeight))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblHeartRate2)
                             .addComponent(txtWeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel11))))
+                            .addComponent(jLabel11)
+                            .addComponent(valWeight))))
                 .addGap(48, 48, 48)
                 .addComponent(btnBook)
                 .addGap(72, 72, 72))
@@ -265,29 +289,63 @@ public class CreateEncounterJPanel extends javax.swing.JPanel {
 
     private void btnBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookActionPerformed
         // TODO add your handling code here:
+        if (validation()) {
+            String patientName = (String) drpPatientName.getSelectedItem();
+            String doctorName = (String) drpDoctorName.getSelectedItem();
 
-        String patientName = (String) drpPatientName.getSelectedItem();
-        String doctorName = (String) drpDoctorName.getSelectedItem();
-        
-        
-        Doctor d = doctorDirectory.search(doctorName);
-        Patient p = patientDirectory.search(patientName);
+            Doctor d = doctorDirectory.search(doctorName);
+            Patient p = patientDirectory.search(patientName);
 
-        java.util.Date date = txtDate.getDate();
-        VitalSigns vs = new VitalSigns(Integer.parseInt(txtHearRate.getText()), Integer.parseInt(txtWeight.getText()), Integer.parseInt(txtHeight.getText()));
+            java.util.Date date = txtDate.getDate();
+            VitalSigns vs = new VitalSigns(Integer.parseInt(txtHearRate.getText()), Integer.parseInt(txtWeight.getText()), Integer.parseInt(txtHeight.getText()));
 
-        Encounter encounter = new Encounter(date, vs, p, d);
-        encounterDirectory.add(encounter);
-        
+            Encounter encounter = new Encounter(date, vs, p, d);
+            encounterDirectory.add(encounter);
 
-        JOptionPane.showMessageDialog(this, "Added a new Encounter for " + d.getName() + " with " + p.getName());
+            JOptionPane.showMessageDialog(this, "Added a new Encounter for " + d.getName() + " with " + p.getName());
+        }
+
     }//GEN-LAST:event_btnBookActionPerformed
 
     private void drpDoctorNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_drpDoctorNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_drpDoctorNameActionPerformed
 
+    private boolean validation() {
+        boolean validation = true;
 
+        String date = String.valueOf(txtDate.getDate());
+        String weight = txtWeight.getText();
+        String height = txtHeight.getText();
+        String heartRate = txtHearRate.getText();
+
+        valDate.setText("");
+        valHeartRate.setText("");
+        valHeight.setText("");
+        valWeight.setText("");
+
+        if (date.length() <= 0) {
+            valDate.setText("Please Enter Date");
+            validation = false;
+        }
+
+        if (weight.length() <= 0) {
+            valWeight.setText("Please Enter Weight");
+            validation = false;
+        }
+
+        if (height.length() <= 0) {
+            valHeight.setText("Please Enter Height");
+            validation = false;
+        }
+
+        if (heartRate.length() <= 0) {
+            valHeartRate.setText("Please Enter Heart Rate");
+            validation = false;
+        }
+
+        return validation;
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBook;
     private javax.swing.JLabel createEmployeeLabel;
@@ -312,5 +370,9 @@ public class CreateEncounterJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtHearRate;
     private javax.swing.JTextField txtHeight;
     private javax.swing.JTextField txtWeight;
+    private javax.swing.JLabel valDate;
+    private javax.swing.JLabel valHeartRate;
+    private javax.swing.JLabel valHeight;
+    private javax.swing.JLabel valWeight;
     // End of variables declaration//GEN-END:variables
 }

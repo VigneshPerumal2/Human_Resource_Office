@@ -55,6 +55,12 @@ public class CreateCityJPanel extends javax.swing.JPanel {
         txtUpdateStateName = new javax.swing.JTextField();
         name5 = new javax.swing.JLabel();
         txtUpdateCountry = new javax.swing.JTextField();
+        valCityName = new javax.swing.JLabel();
+        valCountryName = new javax.swing.JLabel();
+        valStateName = new javax.swing.JLabel();
+        valUpdateCityName = new javax.swing.JLabel();
+        valUpdateStateName = new javax.swing.JLabel();
+        valUpdateCountry = new javax.swing.JLabel();
 
         splitWorkspace.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -180,6 +186,18 @@ public class CreateCityJPanel extends javax.swing.JPanel {
             }
         });
 
+        valCityName.setForeground(new java.awt.Color(255, 51, 51));
+
+        valCountryName.setForeground(new java.awt.Color(255, 51, 51));
+
+        valStateName.setForeground(new java.awt.Color(255, 51, 51));
+
+        valUpdateCityName.setForeground(new java.awt.Color(255, 51, 51));
+
+        valUpdateStateName.setForeground(new java.awt.Color(255, 51, 51));
+
+        valUpdateCountry.setForeground(new java.awt.Color(255, 51, 51));
+
         javax.swing.GroupLayout splitWorkspaceLayout = new javax.swing.GroupLayout(splitWorkspace);
         splitWorkspace.setLayout(splitWorkspaceLayout);
         splitWorkspaceLayout.setHorizontalGroup(
@@ -209,9 +227,14 @@ public class CreateCityJPanel extends javax.swing.JPanel {
                                         .addComponent(name5)
                                         .addGap(18, 18, 18)
                                         .addComponent(txtUpdateCountry, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(299, 299, 299))
+                                .addGap(18, 18, 18)
+                                .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(valUpdateCityName)
+                                    .addComponent(valUpdateStateName)
+                                    .addComponent(valUpdateCountry))
+                                .addGap(227, 227, 227))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, splitWorkspaceLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGap(0, 34, Short.MAX_VALUE)
                                 .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(btnRead)
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -226,11 +249,20 @@ public class CreateCityJPanel extends javax.swing.JPanel {
                         .addComponent(name3)
                         .addGap(18, 18, 18)
                         .addComponent(txtCountry, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31))))
-            .addGroup(splitWorkspaceLayout.createSequentialGroup()
-                .addGap(380, 380, 380)
-                .addComponent(save, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(31, 31, 31))
+                    .addGroup(splitWorkspaceLayout.createSequentialGroup()
+                        .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(splitWorkspaceLayout.createSequentialGroup()
+                                .addGap(374, 374, 374)
+                                .addComponent(save, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(splitWorkspaceLayout.createSequentialGroup()
+                                .addGap(206, 206, 206)
+                                .addComponent(valCityName)
+                                .addGap(256, 256, 256)
+                                .addComponent(valStateName)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(valCountryName)
+                        .addGap(152, 152, 152))))
             .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(splitWorkspaceLayout.createSequentialGroup()
                     .addContainerGap()
@@ -253,26 +285,34 @@ public class CreateCityJPanel extends javax.swing.JPanel {
                     .addComponent(txtStateName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(name3)
                     .addComponent(txtCountry, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(valCityName)
+                    .addComponent(valStateName)
+                    .addComponent(valCountryName))
+                .addGap(21, 21, 21)
                 .addComponent(save)
                 .addGap(29, 29, 29)
                 .addComponent(createEmployeeLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnRead)
                 .addGap(12, 12, 12)
                 .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(name1)
-                    .addComponent(txtUpdateCityName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtUpdateCityName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(valUpdateCityName))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(name4)
-                    .addComponent(txtUpdateStateName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtUpdateStateName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(valUpdateStateName))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(splitWorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(name5)
-                    .addComponent(txtUpdateCountry, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtUpdateCountry, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(valUpdateCountry))
                 .addGap(29, 29, 29)
                 .addComponent(btnUpdate)
                 .addGap(170, 170, 170))
@@ -321,18 +361,21 @@ public class CreateCityJPanel extends javax.swing.JPanel {
         //        valEmailAddress.setText("");
         //        valPhoto.setText("");
         //        if(validation()){
-        String cityName = txtCityName.getText();
-        String stateName = txtStateName.getText();
-        String country = txtCountry.getText();
+        
+        if (validation()) {
+            String cityName = txtCityName.getText();
+            String stateName = txtStateName.getText();
+            String country = txtCountry.getText();
 
-        City c = new City(cityName, stateName, country);
-        cityDirectory.add(c);
+            City c = new City(cityName, stateName, country);
+            cityDirectory.add(c);
 
-        JOptionPane.showMessageDialog(this, "New City Details was created ! ");
-        populateTable();
-        txtCityName.setText("");
-        txtStateName.setText("");
-        txtCountry.setText("");
+            JOptionPane.showMessageDialog(this, "New City Details was created ! ");
+            populateTable();
+            txtCityName.setText("");
+            txtStateName.setText("");
+            txtCountry.setText("");
+        }
 
         //    }
     }//GEN-LAST:event_saveActionPerformed
@@ -372,21 +415,23 @@ public class CreateCityJPanel extends javax.swing.JPanel {
         }
         City c = cityDirectory.getHistory().get(selectedRow);
 
-        String cityName = txtUpdateCityName.getText();
-        String stateName = txtUpdateStateName.getText();
-        String country = txtUpdateCountry.getText();
+        if (updateValidation()) {
+            String cityName = txtUpdateCityName.getText();
+            String stateName = txtUpdateStateName.getText();
+            String country = txtUpdateCountry.getText();
 
-        City temp = new City(cityName,stateName, country);
+            City temp = new City(cityName, stateName, country);
 
-        cityDirectory.update(temp, selectedRow);
+            cityDirectory.update(temp, selectedRow);
 
-        JOptionPane.showMessageDialog(this, "Row is updated!");
+            JOptionPane.showMessageDialog(this, "Row is updated!");
 
-        populateTable();
+            populateTable();
 
-        txtUpdateCityName.setText("");
-        txtUpdateStateName.setText("");
-        txtUpdateCountry.setText("");
+            txtUpdateCityName.setText("");
+            txtUpdateStateName.setText("");
+            txtUpdateCountry.setText("");
+        }
 
 
     }//GEN-LAST:event_btnUpdateActionPerformed
@@ -421,6 +466,60 @@ public class CreateCityJPanel extends javax.swing.JPanel {
 
         }
     }
+    private boolean updateValidation(){
+        boolean validation=true;
+        String updateCityName = txtUpdateCityName.getText();
+        String updateStateName = txtUpdateStateName.getText();
+        String updateCountry = txtUpdateCountry.getText();
+        valUpdateCityName.setText("");
+        valUpdateCountry.setText("");
+        valUpdateStateName.setText("");
+
+        //CityName Validation
+        if (updateCityName.length() <= 0) {
+            valUpdateCityName.setText("Please Enter City Name");
+            validation = false;
+        }
+        //stateName Validation
+        if (updateStateName.length() <= 0) {
+            valUpdateStateName.setText("Please Enter State Name");
+            validation = false;
+        }
+        //country Validation
+        if (updateCountry.length() <= 0) {
+            valUpdateCountry.setText("Please Enter Country Name");
+            validation = false;
+        }
+
+        return validation;
+    }
+    private boolean validation() {
+        boolean validation = true;
+        String cityName = txtCityName.getText();
+        String stateName = txtStateName.getText();
+        String country = txtCountry.getText();
+        valCityName.setText("");
+        valCountryName.setText("");
+        valStateName.setText("");
+
+        //CityName Validation
+        if (cityName.length() <= 0) {
+            valCityName.setText("Please Enter City Name");
+            validation = false;
+        }
+        //stateName Validation
+        if (stateName.length() <= 0) {
+            valStateName.setText("Please Enter State Name");
+            validation = false;
+        }
+        //country Validation
+        if (country.length() <= 0) {
+            valCountryName.setText("Please Enter Country Name");
+            validation = false;
+        }
+
+        return validation;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRead;
@@ -443,5 +542,11 @@ public class CreateCityJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtUpdateCityName;
     private javax.swing.JTextField txtUpdateCountry;
     private javax.swing.JTextField txtUpdateStateName;
+    private javax.swing.JLabel valCityName;
+    private javax.swing.JLabel valCountryName;
+    private javax.swing.JLabel valStateName;
+    private javax.swing.JLabel valUpdateCityName;
+    private javax.swing.JLabel valUpdateCountry;
+    private javax.swing.JLabel valUpdateStateName;
     // End of variables declaration//GEN-END:variables
 }

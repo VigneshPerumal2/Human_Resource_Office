@@ -372,7 +372,7 @@ public class ViewEncounterJPanel extends javax.swing.JPanel {
         for (Encounter e : encounterDirectory.getHistory()) {
             Object row[] = new Object[10];
             row[0] = e.getDoctor().getName();
-            DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             String strDate = dateFormat.format(e.getDate());
             row[1] = strDate;
             row[2] = e.getDoctor().getCommunity().getCommunityName();

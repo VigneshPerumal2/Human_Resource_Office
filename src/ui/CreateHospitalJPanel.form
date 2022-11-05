@@ -91,7 +91,13 @@
                           <Component id="txtHospitalName" alignment="0" max="32767" attributes="0"/>
                           <Component id="save" alignment="1" pref="256" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="466" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="valHospitalName" min="-2" max="-2" attributes="0"/>
+                          <Component id="valNumberOfDoctors" min="-2" max="-2" attributes="0"/>
+                          <Component id="valSpeciality" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="394" max="32767" attributes="0"/>
                   </Group>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
@@ -123,16 +129,19 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="employeeId1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtHospitalName" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="valHospitalName" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="employeeId2" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtNumberOfDoctors" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="valNumberOfDoctors" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="employeeId3" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtSpeciality" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="valSpeciality" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Component id="save" min="-2" max="-2" attributes="0"/>
@@ -243,6 +252,27 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSpecialityActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="valHospitalName">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="33" green="33" red="ff" type="rgb"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="valNumberOfDoctors">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="33" green="33" red="ff" type="rgb"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="valSpeciality">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="33" green="33" red="ff" type="rgb"/>
+                </Property>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>

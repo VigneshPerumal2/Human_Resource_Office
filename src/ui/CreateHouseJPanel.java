@@ -362,37 +362,89 @@ public class CreateHouseJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
+    private void drpUpdateCityNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_drpUpdateCityNameActionPerformed
         // TODO add your handling code here:
+        drpUpdateCommunityName.removeAllItems();
+        for(Community c:communityDirectory.searchByCityName((String) drpUpdateCityName.getSelectedItem())){
+            drpUpdateCommunityName.addItem(String.valueOf(c.getCommunityName()));
 
-        //Reset validation
-        //        valName.setText("");
-        //        valEmployeeId.setText("");
-        //        valDate.setText("");
-        //        valTeamInfo.setText("");
-        //        valCellPhoneNumber.setText("");
-        //        valEmailAddress.setText("");
-        //        valPhoto.setText("");
-        //        if(validation()){
-        String cityName = (String) drpCityName.getSelectedItem();
-        String communityName = (String) drpCommunityName.getSelectedItem();
+        }
+    }//GEN-LAST:event_drpUpdateCityNameActionPerformed
+
+    private void drpCityNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_drpCityNameActionPerformed
+        // TODO add your handling code here:
+        drpCommunityName.removeAllItems();
+
+        for(Community c:communityDirectory.searchByCityName((String) drpCityName.getSelectedItem())){
+            drpCommunityName.addItem(String.valueOf(c.getCommunityName()));
+
+        }
+    }//GEN-LAST:event_drpCityNameActionPerformed
+
+    private void txtUpdateStreetNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUpdateStreetNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUpdateStreetNameActionPerformed
+
+    private void txtUpdateHouseNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUpdateHouseNumberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUpdateHouseNumberActionPerformed
+
+    private void txtStreetNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStreetNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtStreetNameActionPerformed
+
+    private void txtHouseNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHouseNumberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtHouseNumberActionPerformed
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblEmployeeHistory.getSelectedRow();
+
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(this, "Please select a row to edit");
+            return;
+        }
+
+        House h = houseDirectory.getHistory().get(selectedRow);
+
+        String cityName = (String) drpUpdateCityName.getSelectedItem();
+        String communityName = (String) drpUpdateCommunityName.getSelectedItem();
         Community c = communityDirectory.search(communityName);
-        
-        int houseNumber = Integer.parseInt(txtHouseNumber.getText());
-        String streetName = txtStreetName.getText();
 
-        House h = new House(streetName, houseNumber, c.getCommunityName(), c.getPinCode(),c.getLandMark(),c.getCityName(),c.getStateName(),c.getCountry());
-        houseDirectory.add(h);
+        int houseNumber = Integer.parseInt(txtUpdateHouseNumber.getText());
+        String streetName = txtUpdateStreetName.getText();
 
-        JOptionPane.showMessageDialog(this, "New House Details was created ! ");
+        House newHouse = new House(streetName, houseNumber, c.getCommunityName(), c.getPinCode(),c.getLandMark(),c.getCityName(),c.getStateName(),c.getCountry());
+
+        houseDirectory.update(newHouse, selectedRow);
+
+        JOptionPane.showMessageDialog(this, "Row is updated!");
+
         populateTable();
-        drpCityName.setSelectedIndex(0);
-        drpCommunityName.setSelectedIndex(0);
-        txtHouseNumber.setText("");
-        txtStreetName.setText("");
 
-        //    }
-    }//GEN-LAST:event_saveActionPerformed
+        drpUpdateCityName.setSelectedIndex(0);
+        drpUpdateCommunityName.setSelectedIndex(0);
+        txtUpdateHouseNumber.setText("");
+        txtUpdateStreetName.setText("");
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnReadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReadActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblEmployeeHistory.getSelectedRow();
+
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(this, "Please select a row to edit");
+            return;
+        }
+        House c = houseDirectory.getHistory().get(selectedRow);
+
+        drpCityName.setSelectedItem(String.valueOf(c.getCityName()));
+        drpCommunityName.setSelectedItem(String.valueOf(c.getCommunityName()));
+
+        txtUpdateHouseNumber.setText(String.valueOf(c.getHouseNumber()));
+        txtUpdateStreetName.setText(c.getStreetName());
+    }//GEN-LAST:event_btnReadActionPerformed
 
     private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
         // TODO add your handling code here:
@@ -411,93 +463,37 @@ public class CreateHouseJPanel extends javax.swing.JPanel {
         //        valPhoto.setText("");
     }//GEN-LAST:event_resetActionPerformed
 
-    private void btnReadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReadActionPerformed
+    private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
         // TODO add your handling code here:
-        int selectedRow = tblEmployeeHistory.getSelectedRow();
 
-        if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(this, "Please select a row to edit");
-            return;
-        }
-        House c = houseDirectory.getHistory().get(selectedRow);
-        
-        drpCityName.setSelectedItem(String.valueOf(c.getCityName()));
-        drpCommunityName.setSelectedItem(String.valueOf(c.getCommunityName()));
-        
-        txtUpdateHouseNumber.setText(String.valueOf(c.getHouseNumber()));
-        txtUpdateStreetName.setText(c.getStreetName());
-    }//GEN-LAST:event_btnReadActionPerformed
+        //Reset validation
+        //        valName.setText("");
+        //        valEmployeeId.setText("");
+        //        valDate.setText("");
+        //        valTeamInfo.setText("");
+        //        valCellPhoneNumber.setText("");
+        //        valEmailAddress.setText("");
+        //        valPhoto.setText("");
+        //        if(validation()){
+            String cityName = (String) drpCityName.getSelectedItem();
+            String communityName = (String) drpCommunityName.getSelectedItem();
+            Community c = communityDirectory.search(communityName);
 
-    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-        // TODO add your handling code here:
-        int selectedRow = tblEmployeeHistory.getSelectedRow();
+            int houseNumber = Integer.parseInt(txtHouseNumber.getText());
+            String streetName = txtStreetName.getText();
 
-        if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(this, "Please select a row to edit");
-            return;
-        }
+            House h = new House(streetName, houseNumber, c.getCommunityName(), c.getPinCode(),c.getLandMark(),c.getCityName(),c.getStateName(),c.getCountry());
+            houseDirectory.add(h);
 
-        House h = houseDirectory.getHistory().get(selectedRow);
-        
-        
-        String cityName = (String) drpUpdateCityName.getSelectedItem();
-        String communityName = (String) drpUpdateCommunityName.getSelectedItem();
-        Community c = communityDirectory.search(communityName);
-        
-        int houseNumber = Integer.parseInt(txtUpdateHouseNumber.getText());
-        String streetName = txtUpdateStreetName.getText();
+            JOptionPane.showMessageDialog(this, "New House Details was created ! ");
+            populateTable();
+            drpCityName.setSelectedIndex(0);
+            drpCommunityName.setSelectedIndex(0);
+            txtHouseNumber.setText("");
+            txtStreetName.setText("");
 
-        House newHouse = new House(streetName, houseNumber, c.getCommunityName(), c.getPinCode(),c.getLandMark(),c.getCityName(),c.getStateName(),c.getCountry());
-        
-        
-        
-        
-
-        
-
-        houseDirectory.update(newHouse, selectedRow);
-
-        JOptionPane.showMessageDialog(this, "Row is updated!");
-
-        populateTable();
-
-        drpUpdateCityName.setSelectedIndex(0);
-        drpUpdateCommunityName.setSelectedIndex(0);
-        txtUpdateHouseNumber.setText("");
-        txtUpdateStreetName.setText("");
-    }//GEN-LAST:event_btnUpdateActionPerformed
-
-    private void txtHouseNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHouseNumberActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtHouseNumberActionPerformed
-
-    private void txtStreetNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStreetNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtStreetNameActionPerformed
-
-    private void txtUpdateHouseNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUpdateHouseNumberActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUpdateHouseNumberActionPerformed
-
-    private void txtUpdateStreetNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUpdateStreetNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUpdateStreetNameActionPerformed
-
-    private void drpCityNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_drpCityNameActionPerformed
-        // TODO add your handling code here:
-        for(Community c:communityDirectory.searchByCityName((String) drpCityName.getSelectedItem())){
-             drpCommunityName.addItem(String.valueOf(c.getCommunityName()));
-             
-         }
-    }//GEN-LAST:event_drpCityNameActionPerformed
-
-    private void drpUpdateCityNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_drpUpdateCityNameActionPerformed
-        // TODO add your handling code here:
-        for(Community c:communityDirectory.searchByCityName((String) drpUpdateCityName.getSelectedItem())){
-             drpUpdateCommunityName.addItem(String.valueOf(c.getCommunityName()));
-             
-         }
-    }//GEN-LAST:event_drpUpdateCityNameActionPerformed
+            //    }
+    }//GEN-LAST:event_saveActionPerformed
 
     private void populateTable() {
 

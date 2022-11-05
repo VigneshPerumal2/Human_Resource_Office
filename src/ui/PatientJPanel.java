@@ -638,7 +638,7 @@ public class PatientJPanel extends javax.swing.JPanel {
         for (Encounter e : encounterDirectory.searchByPatient(currentPatient.getUserName())) {
             Object row[] = new Object[10];
             row[0] = e.getDoctor().getName();
-            DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             String strDate = dateFormat.format(e.getDate());
             row[1] = strDate;
             row[2] = e.getDoctor().getSpecialization();
